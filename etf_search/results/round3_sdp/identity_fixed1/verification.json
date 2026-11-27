@@ -1,0 +1,54 @@
+{
+  "certificate_sha256": "7b011013f148ec3c43229b0bd28200f8ec7858148655c65ee09354b89c2a28b2",
+  "constraint_provenance": {
+    "scope": "ETF(4,9), antiunitary cycle type 2^4 1",
+    "source": "independent_fixed1_equations",
+    "status": "matched"
+  },
+  "etf_nonexistence_verified": true,
+  "identity": {
+    "holds": true,
+    "nonzero_residual_terms": 0
+  },
+  "mode": "exact",
+  "passed": true,
+  "polynomial_system_refuted": true,
+  "psd": {
+    "blocks": [
+      {
+        "holds": true,
+        "rank": 1
+      },
+      {
+        "holds": true,
+        "rank": 1
+      },
+      {
+        "holds": true,
+        "rank": 1
+      },
+      {
+        "holds": true,
+        "rank": 1
+      },
+      {
+        "holds": true,
+        "rank": 1
+      },
+      {
+        "holds": true,
+        "rank": 1
+      },
+      {
+        "holds": true,
+        "rank": 1
+      },
+      {
+        "holds": true,
+        "rank": 1
+      }
+    ],
+    "holds": true
+  },
+  "trusted_constraints_sha256": "f5612a72122c7b38400664084e738a0991bd334e346abc0ace31c8f765a892e1"
+}

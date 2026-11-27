@@ -1,0 +1,29 @@
+{
+  "checks": {
+    "hermitian": true,
+    "tightness": false,
+    "unit_diagonal": true,
+    "welch_modulus": true
+  },
+  "d": 4,
+  "exact_arithmetic_tightness_approx": "0.12771512284654286032147693262458167",
+  "gram_file": "best_gram.npy",
+  "gram_sha256": "7dd26f94784f81b627840b13a5c4acf55507eb54f6683996eba6b9befc9a37c5",
+  "matches_final_stack": true,
+  "matches_metadata": true,
+  "matrix_index": 388,
+  "metrics": {
+    "diagonal_max_error": 0.0,
+    "hermitian_max_error": 0.0,
+    "tightness_frobenius": 0.12771512284654224,
+    "welch_max_error": 5.551115123125783e-17
+  },
+  "mode": "numeric",
+  "mu": 0.408248290463863,
+  "n": 10,
+  "passed": false,
+  "seed": 388,
+  "tightness_squared_exact_for_stored_binary64": "230554496808103661575546604753410546088917082906364441015106327286849025/14134776518227074636666380005943348126619871175004951664972849610340958208",
+  "tolerance": 1e-12,
+  "verifier_exit_code": 1
+}
