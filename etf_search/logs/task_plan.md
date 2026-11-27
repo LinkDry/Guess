@@ -18,3 +18,10 @@
 Record research observations in `findings.md` and milestone evidence in `progress.md`.
 
 All Round 1 phases executed on 2026-11-27. See [progress.md](progress.md) for evidence and the next model.
+
+## Round 2
+
+1. Agent 4 audits the prime-order proof and its complete list of permutation types.
+2. After audit, run three configurations in parallel. Agent 3 runs 28 phases without symmetry constraints. Coordination runs the 16- and 15-phase antiunitary configurations with the same projection/refinement objectives. Agent 2 examines exact antiunitary restrictions and the best observed minima. Agent 1 checks published approaches relevant to choosing the next target.
+3. Record every seed, distribution and ten smallest final residuals. Independently verify every final Gram and each provisional numerical pass. Attempt exact recovery for any tightness residual below $10^{-12}$.
+4. Record a Round 3 decision and compare the local and remote commit after pushing.

@@ -1,0 +1,3334 @@
+{
+  "model": {
+    "fixed_points": 1,
+    "triangle_sign": 1,
+    "permutation": [
+      0,
+      2,
+      1,
+      4,
+      3,
+      6,
+      5,
+      8,
+      7
+    ],
+    "phase_dimension": 16
+  },
+  "settings": {
+    "seed_start": 0,
+    "seeds": 128,
+    "steps": 1800,
+    "maxiter": 1000
+  },
+  "seconds": 3.6228451998904347,
+  "best": {
+    "seed": 54,
+    "best_projected_step": 1031,
+    "best_projected": {
+      "tightness_frobenius": 1.060295256019937,
+      "welch_max_error": 5.551115123125783e-17,
+      "hermitian_max_error": 0.0,
+      "diagonal_max_error": 0.0
+    },
+    "final": {
+      "tightness_frobenius": 0.7851319973351303,
+      "welch_max_error": 5.551115123125783e-17,
+      "hermitian_max_error": 0.0,
+      "diagonal_max_error": 0.0
+    },
+    "optimizer_status": 0,
+    "optimizer_iterations": 57,
+    "gradient_inf_norm": 3.457079119325904e-09,
+    "retained": {
+      "tightness_frobenius": 0.7851319973351303,
+      "welch_max_error": 5.551115123125783e-17,
+      "hermitian_max_error": 0.0,
+      "diagonal_max_error": 0.0
+    }
+  },
+  "distribution": {
+    "quantiles": {
+      "min": 0.7851319973351303,
+      "q25": 0.7851319973351307,
+      "median": 0.7851319973351308,
+      "q75": 0.7851319973351313,
+      "max": 0.7977750492067249
+    },
+    "count_within_1e-8_of_min": 110
+  },
+  "top_ten_final": [
+    {
+      "seed": 54,
+      "tightness_frobenius": 0.7851319973351303,
+      "welch_max_error": 5.551115123125783e-17,
+      "hermitian_max_error": 0.0,
+      "diagonal_max_error": 0.0
+    },
+    {
+      "seed": 91,
+      "tightness_frobenius": 0.7851319973351303,
+      "welch_max_error": 5.551115123125783e-17,
+      "hermitian_max_error": 0.0,
+      "diagonal_max_error": 0.0
+    },
+    {
+      "seed": 102,
+      "tightness_frobenius": 0.7851319973351303,
+      "welch_max_error": 5.551115123125783e-17,
+      "hermitian_max_error": 0.0,
+      "diagonal_max_error": 0.0
+    },
+    {
+      "seed": 40,
+      "tightness_frobenius": 0.7851319973351304,
+      "welch_max_error": 5.551115123125783e-17,
+      "hermitian_max_error": 0.0,
+      "diagonal_max_error": 0.0
+    },
+    {
+      "seed": 46,
+      "tightness_frobenius": 0.7851319973351304,
+      "welch_max_error": 5.551115123125783e-17,
+      "hermitian_max_error": 0.0,
+      "diagonal_max_error": 0.0
+    },
+    {
+      "seed": 52,
+      "tightness_frobenius": 0.7851319973351304,
+      "welch_max_error": 5.551115123125783e-17,
+      "hermitian_max_error": 0.0,
+      "diagonal_max_error": 0.0
+    },
+    {
+      "seed": 63,
+      "tightness_frobenius": 0.7851319973351304,
+      "welch_max_error": 5.551115123125783e-17,
+      "hermitian_max_error": 0.0,
+      "diagonal_max_error": 0.0
+    },
+    {
+      "seed": 26,
+      "tightness_frobenius": 0.7851319973351305,
+      "welch_max_error": 5.551115123125783e-17,
+      "hermitian_max_error": 0.0,
+      "diagonal_max_error": 0.0
+    },
+    {
+      "seed": 43,
+      "tightness_frobenius": 0.7851319973351305,
+      "welch_max_error": 5.551115123125783e-17,
+      "hermitian_max_error": 0.0,
+      "diagonal_max_error": 0.0
+    },
+    {
+      "seed": 98,
+      "tightness_frobenius": 0.7851319973351305,
+      "welch_max_error": 5.551115123125783e-17,
+      "hermitian_max_error": 0.0,
+      "diagonal_max_error": 0.0
+    }
+  ],
+  "runs": [
+    {
+      "seed": 0,
+      "best_projected_step": 7,
+      "best_projected": {
+        "tightness_frobenius": 0.9410059823140766,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 60,
+      "gradient_inf_norm": 5.767904543424283e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 1,
+      "best_projected_step": 89,
+      "best_projected": {
+        "tightness_frobenius": 0.9492570735720199,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7977750492067233,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 48,
+      "gradient_inf_norm": 1.7063199624347128e-08,
+      "retained": {
+        "tightness_frobenius": 0.7977750492067233,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 2,
+      "best_projected_step": 842,
+      "best_projected": {
+        "tightness_frobenius": 0.9474932662108163,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 56,
+      "gradient_inf_norm": 5.586725970365165e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 3,
+      "best_projected_step": 1448,
+      "best_projected": {
+        "tightness_frobenius": 0.9417785717038129,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.797775049206723,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 55,
+      "gradient_inf_norm": 7.42219576208173e-09,
+      "retained": {
+        "tightness_frobenius": 0.797775049206723,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 4,
+      "best_projected_step": 1042,
+      "best_projected": {
+        "tightness_frobenius": 0.9118193087982861,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351313,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 46,
+      "gradient_inf_norm": 5.729963413153217e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351313,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 5,
+      "best_projected_step": 831,
+      "best_projected": {
+        "tightness_frobenius": 0.9806317335325351,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.785131997335132,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 47,
+      "gradient_inf_norm": 7.802231910633285e-09,
+      "retained": {
+        "tightness_frobenius": 0.785131997335132,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 6,
+      "best_projected_step": 238,
+      "best_projected": {
+        "tightness_frobenius": 0.9811878381574181,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 57,
+      "gradient_inf_norm": 3.840903762144491e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 7,
+      "best_projected_step": 1276,
+      "best_projected": {
+        "tightness_frobenius": 0.934063556102408,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7977750492067232,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 51,
+      "gradient_inf_norm": 5.6023703875743345e-09,
+      "retained": {
+        "tightness_frobenius": 0.7977750492067232,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 8,
+      "best_projected_step": 420,
+      "best_projected": {
+        "tightness_frobenius": 0.9539209035504972,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7977750492067228,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 49,
+      "gradient_inf_norm": 7.01520796271069e-09,
+      "retained": {
+        "tightness_frobenius": 0.7977750492067228,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 9,
+      "best_projected_step": 1195,
+      "best_projected": {
+        "tightness_frobenius": 0.9194297305366597,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 56,
+      "gradient_inf_norm": 2.4601146949296686e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 10,
+      "best_projected_step": 711,
+      "best_projected": {
+        "tightness_frobenius": 1.0067524740862603,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 61,
+      "gradient_inf_norm": 6.296836092275249e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 11,
+      "best_projected_step": 309,
+      "best_projected": {
+        "tightness_frobenius": 0.9483809382899513,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.797775049206724,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 54,
+      "gradient_inf_norm": 2.336284618922291e-08,
+      "retained": {
+        "tightness_frobenius": 0.797775049206724,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 12,
+      "best_projected_step": 1333,
+      "best_projected": {
+        "tightness_frobenius": 0.9199775034194271,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351314,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 55,
+      "gradient_inf_norm": 1.6393786857451657e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351314,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 13,
+      "best_projected_step": 831,
+      "best_projected": {
+        "tightness_frobenius": 0.9381159114264969,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 58,
+      "gradient_inf_norm": 4.683116019367217e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 14,
+      "best_projected_step": 723,
+      "best_projected": {
+        "tightness_frobenius": 0.9258971479733467,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 48,
+      "gradient_inf_norm": 5.6348775410871086e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 15,
+      "best_projected_step": 1017,
+      "best_projected": {
+        "tightness_frobenius": 0.8569977676670231,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 50,
+      "gradient_inf_norm": 3.320237524920886e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 16,
+      "best_projected_step": 44,
+      "best_projected": {
+        "tightness_frobenius": 0.8839318221868447,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351313,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 44,
+      "gradient_inf_norm": 7.487708191622892e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351313,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 17,
+      "best_projected_step": 121,
+      "best_projected": {
+        "tightness_frobenius": 0.9040198242435332,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 54,
+      "gradient_inf_norm": 7.949724263932978e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 18,
+      "best_projected_step": 116,
+      "best_projected": {
+        "tightness_frobenius": 0.8772509728041834,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 48,
+      "gradient_inf_norm": 3.802820252508077e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 19,
+      "best_projected_step": 608,
+      "best_projected": {
+        "tightness_frobenius": 0.9317861268507607,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 57,
+      "gradient_inf_norm": 5.096903483228847e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 20,
+      "best_projected_step": 1122,
+      "best_projected": {
+        "tightness_frobenius": 0.8939289755053293,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351324,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 47,
+      "gradient_inf_norm": 3.906808736788228e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351324,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 21,
+      "best_projected_step": 675,
+      "best_projected": {
+        "tightness_frobenius": 0.9554559575492312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351318,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 48,
+      "gradient_inf_norm": 2.4469238788320973e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351318,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 22,
+      "best_projected_step": 1482,
+      "best_projected": {
+        "tightness_frobenius": 0.9389086431604377,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.797775049206723,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 46,
+      "gradient_inf_norm": 5.798303924094333e-09,
+      "retained": {
+        "tightness_frobenius": 0.797775049206723,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 23,
+      "best_projected_step": 606,
+      "best_projected": {
+        "tightness_frobenius": 0.9094888054429844,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 57,
+      "gradient_inf_norm": 5.7886590529998965e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 24,
+      "best_projected_step": 128,
+      "best_projected": {
+        "tightness_frobenius": 0.9242375580540724,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.785131997335131,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 51,
+      "gradient_inf_norm": 4.1581661677476985e-09,
+      "retained": {
+        "tightness_frobenius": 0.785131997335131,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 25,
+      "best_projected_step": 1119,
+      "best_projected": {
+        "tightness_frobenius": 0.9244879565529035,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7977750492067233,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 45,
+      "gradient_inf_norm": 5.266825103570195e-09,
+      "retained": {
+        "tightness_frobenius": 0.7977750492067233,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 26,
+      "best_projected_step": 198,
+      "best_projected": {
+        "tightness_frobenius": 0.908998752913891,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351305,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 58,
+      "gradient_inf_norm": 2.5056069143284956e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351305,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 27,
+      "best_projected_step": 796,
+      "best_projected": {
+        "tightness_frobenius": 0.8985129743678115,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 47,
+      "gradient_inf_norm": 4.3053839031396396e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 28,
+      "best_projected_step": 841,
+      "best_projected": {
+        "tightness_frobenius": 0.9029949099407066,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.785131997335131,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 54,
+      "gradient_inf_norm": 5.511176644652829e-09,
+      "retained": {
+        "tightness_frobenius": 0.785131997335131,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 29,
+      "best_projected_step": 780,
+      "best_projected": {
+        "tightness_frobenius": 0.9055164540283135,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351318,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 52,
+      "gradient_inf_norm": 5.8687087069316686e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351318,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 30,
+      "best_projected_step": 226,
+      "best_projected": {
+        "tightness_frobenius": 0.906783750418924,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 49,
+      "gradient_inf_norm": 5.861204187052155e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 31,
+      "best_projected_step": 596,
+      "best_projected": {
+        "tightness_frobenius": 0.9497708046853566,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 56,
+      "gradient_inf_norm": 6.916662437092132e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 32,
+      "best_projected_step": 997,
+      "best_projected": {
+        "tightness_frobenius": 0.914122130273799,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 49,
+      "gradient_inf_norm": 6.217504137734985e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 33,
+      "best_projected_step": 1158,
+      "best_projected": {
+        "tightness_frobenius": 0.9349722281410072,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 55,
+      "gradient_inf_norm": 5.302629808208339e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 34,
+      "best_projected_step": 1044,
+      "best_projected": {
+        "tightness_frobenius": 0.9777903312693131,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 55,
+      "gradient_inf_norm": 4.58443053516467e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 35,
+      "best_projected_step": 54,
+      "best_projected": {
+        "tightness_frobenius": 0.877661294501123,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.785131997335131,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 45,
+      "gradient_inf_norm": 5.980613666556809e-09,
+      "retained": {
+        "tightness_frobenius": 0.785131997335131,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 36,
+      "best_projected_step": 120,
+      "best_projected": {
+        "tightness_frobenius": 0.8681753656698705,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 46,
+      "gradient_inf_norm": 1.6305313996237748e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 37,
+      "best_projected_step": 1104,
+      "best_projected": {
+        "tightness_frobenius": 0.9258737300432844,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 49,
+      "gradient_inf_norm": 4.071362224455301e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 38,
+      "best_projected_step": 1540,
+      "best_projected": {
+        "tightness_frobenius": 0.9006547777084535,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 42,
+      "gradient_inf_norm": 3.896109017830192e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 39,
+      "best_projected_step": 692,
+      "best_projected": {
+        "tightness_frobenius": 1.0292939702120703,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 52,
+      "gradient_inf_norm": 9.971693968036269e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 40,
+      "best_projected_step": 908,
+      "best_projected": {
+        "tightness_frobenius": 0.9537488409471367,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351304,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 51,
+      "gradient_inf_norm": 2.211115837363226e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351304,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 41,
+      "best_projected_step": 787,
+      "best_projected": {
+        "tightness_frobenius": 0.9182520358326058,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351318,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 43,
+      "gradient_inf_norm": 1.6878596184036038e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351318,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 42,
+      "best_projected_step": 663,
+      "best_projected": {
+        "tightness_frobenius": 0.897084224586076,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.797775049206723,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 53,
+      "gradient_inf_norm": 3.3310859841974525e-09,
+      "retained": {
+        "tightness_frobenius": 0.797775049206723,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 43,
+      "best_projected_step": 992,
+      "best_projected": {
+        "tightness_frobenius": 0.9695482420359685,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351305,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 46,
+      "gradient_inf_norm": 4.935873786673756e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351305,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 44,
+      "best_projected_step": 1148,
+      "best_projected": {
+        "tightness_frobenius": 0.9514943590161218,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 48,
+      "gradient_inf_norm": 5.626113610733762e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 45,
+      "best_projected_step": 1465,
+      "best_projected": {
+        "tightness_frobenius": 0.9727516992466979,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.785131997335131,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 49,
+      "gradient_inf_norm": 4.329214672073103e-09,
+      "retained": {
+        "tightness_frobenius": 0.785131997335131,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 46,
+      "best_projected_step": 443,
+      "best_projected": {
+        "tightness_frobenius": 0.9026427583424205,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351304,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 57,
+      "gradient_inf_norm": 3.774380650616782e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351304,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 47,
+      "best_projected_step": 1724,
+      "best_projected": {
+        "tightness_frobenius": 0.8862985963519251,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 45,
+      "gradient_inf_norm": 1.0891775426676377e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 48,
+      "best_projected_step": 1502,
+      "best_projected": {
+        "tightness_frobenius": 0.9167068091021955,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 48,
+      "gradient_inf_norm": 4.30074913359996e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 49,
+      "best_projected_step": 476,
+      "best_projected": {
+        "tightness_frobenius": 0.9105230084855189,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 46,
+      "gradient_inf_norm": 3.6511974547194864e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 50,
+      "best_projected_step": 1306,
+      "best_projected": {
+        "tightness_frobenius": 0.9339653233797763,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 49,
+      "gradient_inf_norm": 6.341304293086171e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 51,
+      "best_projected_step": 684,
+      "best_projected": {
+        "tightness_frobenius": 0.942789472639051,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 51,
+      "gradient_inf_norm": 3.388963362534355e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 52,
+      "best_projected_step": 30,
+      "best_projected": {
+        "tightness_frobenius": 0.8581014583296817,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351304,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 50,
+      "gradient_inf_norm": 9.56142410630753e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351304,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 53,
+      "best_projected_step": 1792,
+      "best_projected": {
+        "tightness_frobenius": 0.9508239110337008,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 50,
+      "gradient_inf_norm": 4.3758934550440015e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 54,
+      "best_projected_step": 1031,
+      "best_projected": {
+        "tightness_frobenius": 1.060295256019937,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351303,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 57,
+      "gradient_inf_norm": 3.457079119325904e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351303,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 55,
+      "best_projected_step": 1206,
+      "best_projected": {
+        "tightness_frobenius": 0.892477349482142,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 52,
+      "gradient_inf_norm": 1.1703113567155494e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 56,
+      "best_projected_step": 1670,
+      "best_projected": {
+        "tightness_frobenius": 0.8699243695917942,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 53,
+      "gradient_inf_norm": 5.480335637736919e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 57,
+      "best_projected_step": 1377,
+      "best_projected": {
+        "tightness_frobenius": 0.8724479885423101,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 45,
+      "gradient_inf_norm": 8.289654183877888e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 58,
+      "best_projected_step": 128,
+      "best_projected": {
+        "tightness_frobenius": 0.9825881077471695,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 59,
+      "gradient_inf_norm": 5.148146848618146e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 59,
+      "best_projected_step": 158,
+      "best_projected": {
+        "tightness_frobenius": 0.9093250805695499,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 52,
+      "gradient_inf_norm": 7.45331128861905e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 60,
+      "best_projected_step": 878,
+      "best_projected": {
+        "tightness_frobenius": 0.8798162552757951,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 49,
+      "gradient_inf_norm": 1.2723109498202655e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 61,
+      "best_projected_step": 906,
+      "best_projected": {
+        "tightness_frobenius": 0.9451442575037425,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 54,
+      "gradient_inf_norm": 6.3302796520109986e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 62,
+      "best_projected_step": 607,
+      "best_projected": {
+        "tightness_frobenius": 1.0438208297639235,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7977750492067227,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 53,
+      "gradient_inf_norm": 3.15839919196866e-09,
+      "retained": {
+        "tightness_frobenius": 0.7977750492067227,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 63,
+      "best_projected_step": 382,
+      "best_projected": {
+        "tightness_frobenius": 0.9872407907600786,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351304,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 57,
+      "gradient_inf_norm": 3.780150265262273e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351304,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 64,
+      "best_projected_step": 114,
+      "best_projected": {
+        "tightness_frobenius": 0.8713358840258654,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7977750492067232,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 47,
+      "gradient_inf_norm": 1.3156764776053129e-08,
+      "retained": {
+        "tightness_frobenius": 0.7977750492067232,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 65,
+      "best_projected_step": 887,
+      "best_projected": {
+        "tightness_frobenius": 0.980609403833445,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7977750492067235,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 48,
+      "gradient_inf_norm": 6.291819153244121e-09,
+      "retained": {
+        "tightness_frobenius": 0.7977750492067235,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 66,
+      "best_projected_step": 1032,
+      "best_projected": {
+        "tightness_frobenius": 0.9632431821150448,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 47,
+      "gradient_inf_norm": 5.7019663916685695e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 67,
+      "best_projected_step": 621,
+      "best_projected": {
+        "tightness_frobenius": 0.9392674850962457,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 47,
+      "gradient_inf_norm": 5.360419462458183e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 68,
+      "best_projected_step": 1266,
+      "best_projected": {
+        "tightness_frobenius": 0.9598812646424422,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 53,
+      "gradient_inf_norm": 5.304648164082207e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 69,
+      "best_projected_step": 221,
+      "best_projected": {
+        "tightness_frobenius": 0.9229853253780269,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 49,
+      "gradient_inf_norm": 1.3174277779117897e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 70,
+      "best_projected_step": 1383,
+      "best_projected": {
+        "tightness_frobenius": 0.927663115864741,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 47,
+      "gradient_inf_norm": 8.148071293543674e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 71,
+      "best_projected_step": 326,
+      "best_projected": {
+        "tightness_frobenius": 0.9604829441524457,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 45,
+      "gradient_inf_norm": 7.635828196923854e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 72,
+      "best_projected_step": 883,
+      "best_projected": {
+        "tightness_frobenius": 0.892357625720787,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351315,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 56,
+      "gradient_inf_norm": 1.5380833406859075e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351315,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 73,
+      "best_projected_step": 521,
+      "best_projected": {
+        "tightness_frobenius": 0.9081277391220038,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 51,
+      "gradient_inf_norm": 7.892455699269131e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 74,
+      "best_projected_step": 1535,
+      "best_projected": {
+        "tightness_frobenius": 0.8996523857601897,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.797775049206723,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 51,
+      "gradient_inf_norm": 6.155322038338398e-09,
+      "retained": {
+        "tightness_frobenius": 0.797775049206723,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 75,
+      "best_projected_step": 401,
+      "best_projected": {
+        "tightness_frobenius": 0.917268345738752,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 64,
+      "gradient_inf_norm": 1.0586799071354943e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 76,
+      "best_projected_step": 170,
+      "best_projected": {
+        "tightness_frobenius": 0.9501035768691399,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 51,
+      "gradient_inf_norm": 4.738101083208928e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 77,
+      "best_projected_step": 1326,
+      "best_projected": {
+        "tightness_frobenius": 0.9548629281593507,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 55,
+      "gradient_inf_norm": 2.9216832824645395e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 78,
+      "best_projected_step": 389,
+      "best_projected": {
+        "tightness_frobenius": 0.9418422385825272,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351313,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 54,
+      "gradient_inf_norm": 5.754452391805449e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351313,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 79,
+      "best_projected_step": 1023,
+      "best_projected": {
+        "tightness_frobenius": 0.8875803274317746,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 52,
+      "gradient_inf_norm": 1.5336545274891967e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 80,
+      "best_projected_step": 453,
+      "best_projected": {
+        "tightness_frobenius": 0.8998577557875824,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7977750492067228,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 48,
+      "gradient_inf_norm": 5.29346460513088e-09,
+      "retained": {
+        "tightness_frobenius": 0.7977750492067228,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 81,
+      "best_projected_step": 173,
+      "best_projected": {
+        "tightness_frobenius": 0.9187152974195669,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 49,
+      "gradient_inf_norm": 7.103504185628886e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 82,
+      "best_projected_step": 21,
+      "best_projected": {
+        "tightness_frobenius": 0.8765912803926109,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 45,
+      "gradient_inf_norm": 1.5567897739181606e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 83,
+      "best_projected_step": 1446,
+      "best_projected": {
+        "tightness_frobenius": 0.8883593734704486,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351316,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 42,
+      "gradient_inf_norm": 8.753256516009695e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351316,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 84,
+      "best_projected_step": 900,
+      "best_projected": {
+        "tightness_frobenius": 0.9080682324757537,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 57,
+      "gradient_inf_norm": 2.886466337075464e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 85,
+      "best_projected_step": 402,
+      "best_projected": {
+        "tightness_frobenius": 0.8806993705049606,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.785131997335131,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 44,
+      "gradient_inf_norm": 4.988637477629056e-09,
+      "retained": {
+        "tightness_frobenius": 0.785131997335131,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 86,
+      "best_projected_step": 264,
+      "best_projected": {
+        "tightness_frobenius": 0.9429833189507376,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.785131997335132,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 52,
+      "gradient_inf_norm": 1.5775858860082528e-08,
+      "retained": {
+        "tightness_frobenius": 0.785131997335132,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 87,
+      "best_projected_step": 1503,
+      "best_projected": {
+        "tightness_frobenius": 0.9326807712792962,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 47,
+      "gradient_inf_norm": 3.730296222214139e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 88,
+      "best_projected_step": 42,
+      "best_projected": {
+        "tightness_frobenius": 0.9402334909567706,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 64,
+      "gradient_inf_norm": 3.780284700989091e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 89,
+      "best_projected_step": 890,
+      "best_projected": {
+        "tightness_frobenius": 0.8585677071389913,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 47,
+      "gradient_inf_norm": 5.382631418681999e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 90,
+      "best_projected_step": 138,
+      "best_projected": {
+        "tightness_frobenius": 0.9895676352369431,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 53,
+      "gradient_inf_norm": 1.0508187659392452e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 91,
+      "best_projected_step": 1769,
+      "best_projected": {
+        "tightness_frobenius": 0.9165033074081071,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351303,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 55,
+      "gradient_inf_norm": 1.0564197672245437e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351303,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 92,
+      "best_projected_step": 886,
+      "best_projected": {
+        "tightness_frobenius": 0.9483925370232006,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 48,
+      "gradient_inf_norm": 5.269981174376047e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 93,
+      "best_projected_step": 980,
+      "best_projected": {
+        "tightness_frobenius": 0.9173389431058214,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 47,
+      "gradient_inf_norm": 6.66740497758859e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 94,
+      "best_projected_step": 1518,
+      "best_projected": {
+        "tightness_frobenius": 0.9143728997808183,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 51,
+      "gradient_inf_norm": 1.6733592358475102e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 95,
+      "best_projected_step": 993,
+      "best_projected": {
+        "tightness_frobenius": 0.9393681604440516,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 55,
+      "gradient_inf_norm": 1.9581597210089943e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 96,
+      "best_projected_step": 175,
+      "best_projected": {
+        "tightness_frobenius": 0.9331376801549328,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 53,
+      "gradient_inf_norm": 7.635106296746245e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 97,
+      "best_projected_step": 1360,
+      "best_projected": {
+        "tightness_frobenius": 0.8537589862251846,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.797775049206724,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 48,
+      "gradient_inf_norm": 1.0649321300918648e-08,
+      "retained": {
+        "tightness_frobenius": 0.797775049206724,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 98,
+      "best_projected_step": 1573,
+      "best_projected": {
+        "tightness_frobenius": 0.9768589441124922,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351305,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 44,
+      "gradient_inf_norm": 5.215748549284664e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351305,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 99,
+      "best_projected_step": 57,
+      "best_projected": {
+        "tightness_frobenius": 0.9398319620485207,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.785131997335132,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 62,
+      "gradient_inf_norm": 2.3211502282383993e-08,
+      "retained": {
+        "tightness_frobenius": 0.785131997335132,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 100,
+      "best_projected_step": 1375,
+      "best_projected": {
+        "tightness_frobenius": 0.8837866563227138,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 46,
+      "gradient_inf_norm": 1.4056430619271418e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 101,
+      "best_projected_step": 1535,
+      "best_projected": {
+        "tightness_frobenius": 0.9216591663685652,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.785131997335131,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 47,
+      "gradient_inf_norm": 6.318916150527472e-09,
+      "retained": {
+        "tightness_frobenius": 0.785131997335131,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 102,
+      "best_projected_step": 727,
+      "best_projected": {
+        "tightness_frobenius": 0.8945123225472579,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351303,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 52,
+      "gradient_inf_norm": 3.6128716031066954e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351303,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 103,
+      "best_projected_step": 1638,
+      "best_projected": {
+        "tightness_frobenius": 0.9028383713094733,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 48,
+      "gradient_inf_norm": 3.5903554495325575e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 104,
+      "best_projected_step": 39,
+      "best_projected": {
+        "tightness_frobenius": 0.9215814367516416,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7977750492067229,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 49,
+      "gradient_inf_norm": 4.931130455031522e-09,
+      "retained": {
+        "tightness_frobenius": 0.7977750492067229,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 105,
+      "best_projected_step": 1565,
+      "best_projected": {
+        "tightness_frobenius": 1.0322841002641179,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7977750492067249,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 43,
+      "gradient_inf_norm": 4.455105728845923e-08,
+      "retained": {
+        "tightness_frobenius": 0.7977750492067249,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 106,
+      "best_projected_step": 1692,
+      "best_projected": {
+        "tightness_frobenius": 0.9741637686452754,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7977750492067229,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 53,
+      "gradient_inf_norm": 2.1333110634021704e-09,
+      "retained": {
+        "tightness_frobenius": 0.7977750492067229,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 107,
+      "best_projected_step": 724,
+      "best_projected": {
+        "tightness_frobenius": 0.9770046495473295,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 52,
+      "gradient_inf_norm": 6.0526981572069205e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 108,
+      "best_projected_step": 685,
+      "best_projected": {
+        "tightness_frobenius": 1.0054761005851423,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 48,
+      "gradient_inf_norm": 5.619569101325351e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 109,
+      "best_projected_step": 1793,
+      "best_projected": {
+        "tightness_frobenius": 0.8967529933467316,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351305,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 45,
+      "gradient_inf_norm": 4.7642779251071945e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351305,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 110,
+      "best_projected_step": 484,
+      "best_projected": {
+        "tightness_frobenius": 0.9543999592626616,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 44,
+      "gradient_inf_norm": 8.370530679794125e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 111,
+      "best_projected_step": 347,
+      "best_projected": {
+        "tightness_frobenius": 0.8964297537443274,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 52,
+      "gradient_inf_norm": 4.2984038332337e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 112,
+      "best_projected_step": 844,
+      "best_projected": {
+        "tightness_frobenius": 0.9580801867848928,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.785131997335134,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 49,
+      "gradient_inf_norm": 1.374365859393281e-08,
+      "retained": {
+        "tightness_frobenius": 0.785131997335134,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 113,
+      "best_projected_step": 622,
+      "best_projected": {
+        "tightness_frobenius": 0.9394433110440603,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7977750492067229,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 51,
+      "gradient_inf_norm": 2.76433892538148e-09,
+      "retained": {
+        "tightness_frobenius": 0.7977750492067229,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 114,
+      "best_projected_step": 371,
+      "best_projected": {
+        "tightness_frobenius": 0.8303580510431618,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 45,
+      "gradient_inf_norm": 8.828188316112279e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 115,
+      "best_projected_step": 829,
+      "best_projected": {
+        "tightness_frobenius": 0.9733202889806458,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 50,
+      "gradient_inf_norm": 5.529863304746061e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 116,
+      "best_projected_step": 1255,
+      "best_projected": {
+        "tightness_frobenius": 0.9109176367823293,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 53,
+      "gradient_inf_norm": 6.1852266922023106e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 117,
+      "best_projected_step": 1766,
+      "best_projected": {
+        "tightness_frobenius": 0.9158736639385843,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.785131997335131,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 43,
+      "gradient_inf_norm": 1.4181498404663366e-08,
+      "retained": {
+        "tightness_frobenius": 0.785131997335131,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 118,
+      "best_projected_step": 508,
+      "best_projected": {
+        "tightness_frobenius": 0.95715973934373,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 48,
+      "gradient_inf_norm": 8.35478316553383e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351312,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 119,
+      "best_projected_step": 1313,
+      "best_projected": {
+        "tightness_frobenius": 0.896546726599203,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 52,
+      "gradient_inf_norm": 5.48346364820259e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 120,
+      "best_projected_step": 1767,
+      "best_projected": {
+        "tightness_frobenius": 0.9878984089944842,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 51,
+      "gradient_inf_norm": 4.40656878655989e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 121,
+      "best_projected_step": 1167,
+      "best_projected": {
+        "tightness_frobenius": 0.9134753587415231,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 45,
+      "gradient_inf_norm": 3.8136483992883135e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 122,
+      "best_projected_step": 221,
+      "best_projected": {
+        "tightness_frobenius": 0.9059287290485518,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351318,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 59,
+      "gradient_inf_norm": 8.466133015887498e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351318,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 123,
+      "best_projected_step": 567,
+      "best_projected": {
+        "tightness_frobenius": 0.9781175158197614,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 49,
+      "gradient_inf_norm": 8.079037345169332e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 124,
+      "best_projected_step": 766,
+      "best_projected": {
+        "tightness_frobenius": 0.960898667052691,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 53,
+      "gradient_inf_norm": 6.525141640693533e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351307,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 125,
+      "best_projected_step": 130,
+      "best_projected": {
+        "tightness_frobenius": 0.9881381511144745,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 63,
+      "gradient_inf_norm": 6.327077277177704e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351306,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 126,
+      "best_projected_step": 1056,
+      "best_projected": {
+        "tightness_frobenius": 0.8699903705493617,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351317,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 48,
+      "gradient_inf_norm": 2.1888062452050245e-08,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351317,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    },
+    {
+      "seed": 127,
+      "best_projected_step": 266,
+      "best_projected": {
+        "tightness_frobenius": 0.9657919164345556,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "final": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      },
+      "optimizer_status": 0,
+      "optimizer_iterations": 55,
+      "gradient_inf_norm": 4.0491674571450315e-09,
+      "retained": {
+        "tightness_frobenius": 0.7851319973351308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0
+      }
+    }
+  ]
+}
