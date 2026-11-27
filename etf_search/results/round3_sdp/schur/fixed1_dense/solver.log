@@ -1,0 +1,28 @@
+fixed1 dense: A(239735, 58905) nnz=1045705 PSD=[33, 561]
+------------------------------------------------------------------
+	       SCS v3.3.2 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+------------------------------------------------------------------
+problem:  variables n: 58905, constraints m: 239735
+cones: 	  z: primal zero / dual free vars: 81533
+	  s: psd vars: 158202, ssize: 2
+settings: eps_abs: 1.0e-06, eps_rel: 1.0e-06, eps_infeas: 1.0e-07
+	  alpha: 1.50, scale: 1.00e-01, adaptive_scale: 1
+	  max_iters: 20000, normalize: 1, rho_x: 1.00e-06
+	  acceleration_lookback: 10, acceleration_interval: 5
+	  time_limit_secs: 3.96e+02
+lin-sys:  sparse-indirect-scs
+	  nnz(A): 1045705, nnz(P): 0
+------------------------------------------------------------------
+ iter | pri res | dua res |   gap   |   obj   |  scale  | time (s)
+------------------------------------------------------------------
+     0| 6.51e-01  3.42e-01  3.68e+01  1.84e+01  1.00e-01  3.67e+00
+    50| 1.85e-09  1.50e-07  4.79e-09  2.39e-09  1.00e-01  2.82e+01
+------------------------------------------------------------------
+status:  solved
+timings: total: 2.82e+01s = setup: 1.21e-01s + solve: 2.81e+01s
+	 lin-sys: 2.16e+01s, cones: 2.90e+00s, accel: 2.84e-02s
+------------------------------------------------------------------
+objective = 0.000000
+------------------------------------------------------------------
+solved False

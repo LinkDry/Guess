@@ -37,3 +37,24 @@ python -B etf_search/src/analyze_round2.py --output etf_search/results/round2_un
 ```
 
 [第一轮证明审计](audit_round1.md) · [反酉模型的多项式化简](antiunitary_analysis.md) · [第三轮决策](logs/progress.md#agent-2--round-3-决策)
+
+## 复现第三轮
+
+```powershell
+python -B etf_search/src/search_unconstrained.py --d 4 --n 10 --seeds 1000 --seed-start 0 --steps 1800 --relaxation 1.0 --refine-maxiter 750 --workers 4 --batch-size 25 --output-dir etf_search/results/round3_4_10
+python -B etf_search/src/verify_etf.py etf_search/results/round3_4_10/best_gram.npy --d 4 --n 10
+python -B etf_search/src/generate_single_fixed_sos.py etf_search/results/round3_sdp/identity_fixed1
+python -B etf_search/src/verify_sdp_cert.py etf_search/results/round3_sdp/identity_fixed1/certificate.json --fixed1
+```
+
+Gram 验收器应返回退出码 `1`。SOS 验收器应返回 `0`，并将结论限定在 ETF$(4,9)$ 的单固定点反酉分支。证书验证只需 Python 与 mpmath（数值模式）或标准库（精确模式）。生成证书需 SymPy。SDP 实验的依赖和命令见 [实验记录](results/round3_sdp/schur/search_sdp_plan.md)。
+
+复核三固定点的两个对偶证书。验收会独立重建被证书使用的 Schur 方程，并使用整数与有理区间计算。
+
+```powershell
+$results = 'etf_search/results/round3_sdp/schur'
+foreach ($branch in @('fixed3_positive_dense', 'fixed3_negative_dense')) {
+    $dir = Join-Path $results $branch
+    python -B etf_search/src/verify_sdp_cert.py "$dir/certificate.json" --model "$dir/model.json"
+}
+```

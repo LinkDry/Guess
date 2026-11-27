@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "kill_reason": null,
+  "peak_sampled_rss_bytes": 146493440,
+  "wall_seconds": 2.670228899922222,
+  "memory_limit_mib": 2048,
+  "time_limit_seconds": 900
+}

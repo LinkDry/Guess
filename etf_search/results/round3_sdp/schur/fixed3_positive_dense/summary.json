@@ -1,0 +1,72 @@
+{
+  "branch": "fixed3_positive",
+  "layout": "dense",
+  "settings": {
+    "eps_abs": 1e-06,
+    "eps_rel": 1e-06,
+    "eps_infeas": 1e-07,
+    "max_iters": 20000,
+    "time_limit_secs": 387.87975820014253,
+    "verbose": true
+  },
+  "solver": "SCS indirect",
+  "solver_info": {
+    "status_val": -2,
+    "iter": 175,
+    "scale_updates": 1,
+    "scale": 0.1,
+    "pobj": null,
+    "dobj": null,
+    "res_pri": null,
+    "res_dual": null,
+    "gap": null,
+    "res_infeas": 1.3052909034219807e-12,
+    "res_unbdd_a": null,
+    "res_unbdd_p": null,
+    "comp_slack": 0.0,
+    "solve_time": 306369.4511,
+    "setup_time": 147.4756,
+    "lin_sys_time": 285583.65539999993,
+    "cone_time": 7594.270199999999,
+    "accel_time": 156.40530000000004,
+    "rejected_accel_steps": 2,
+    "accepted_accel_steps": 0,
+    "status": "infeasible",
+    "lin_sys_solver": "sparse-indirect-scs",
+    "aa_stats": {
+      "iter": 4,
+      "n_accept": 2,
+      "n_reject_lapack": 0,
+      "n_reject_rank0": 0,
+      "n_reject_nonfinite": 0,
+      "n_reject_weight_cap": 0,
+      "n_safeguard_reject": 2,
+      "last_rank": 10,
+      "last_aa_norm": 5.913259960464105e-08,
+      "last_regularization": 1.3446359267513556e-05
+    }
+  },
+  "matrix_shape": [
+    192817,
+    46376
+  ],
+  "matrix_nonzeros": 711868,
+  "psd_block_sizes": [
+    31,
+    496
+  ],
+  "exact_certificate": true,
+  "dual_max_error": 1.3119505481995475e-12,
+  "certificate_residual_bound": 4.04058796118732e-07,
+  "worker_wall_seconds": 334.2579236999154,
+  "recovery_wall_seconds": 16.883879199856892,
+  "versions": {
+    "scs": "3.3.2",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "psutil": "7.2.2"
+  },
+  "phase_coordinate_count": 30,
+  "equality_row_count": 69065
+}

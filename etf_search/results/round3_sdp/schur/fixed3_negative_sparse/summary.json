@@ -1,0 +1,88 @@
+{
+  "branch": "fixed3_negative",
+  "layout": "sparse",
+  "settings": {
+    "eps_abs": 1e-06,
+    "eps_rel": 1e-06,
+    "eps_infeas": 1e-07,
+    "max_iters": 20000,
+    "time_limit_secs": 889.4376727000345,
+    "verbose": true
+  },
+  "solver": "SCS indirect",
+  "solver_info": {
+    "status_val": 1,
+    "iter": 150,
+    "scale_updates": 1,
+    "scale": 0.1,
+    "pobj": 0.0,
+    "dobj": -9.236178542902538e-08,
+    "res_pri": 2.7935025273754573e-08,
+    "res_dual": 8.712789477763957e-08,
+    "gap": 9.236178542902538e-08,
+    "res_infeas": null,
+    "res_unbdd_a": null,
+    "res_unbdd_p": null,
+    "comp_slack": 3.1305524578889576e-14,
+    "solve_time": 32521.3045,
+    "setup_time": 26.5039,
+    "lin_sys_time": 15874.360400000001,
+    "cone_time": 2089.5469000000003,
+    "accel_time": 34.301,
+    "rejected_accel_steps": 1,
+    "accepted_accel_steps": 0,
+    "status": "solved",
+    "lin_sys_solver": "sparse-indirect-scs",
+    "aa_stats": {
+      "iter": 10,
+      "n_accept": 1,
+      "n_reject_lapack": 0,
+      "n_reject_rank0": 0,
+      "n_reject_nonfinite": 0,
+      "n_reject_weight_cap": 0,
+      "n_safeguard_reject": 1,
+      "last_rank": 10,
+      "last_aa_norm": 59.62147559673512,
+      "last_regularization": 0.00030537144694823203
+    }
+  },
+  "matrix_shape": [
+    69298,
+    18686
+  ],
+  "matrix_nonzeros": 134116,
+  "psd_block_sizes": [
+    31,
+    120,
+    153,
+    153,
+    120,
+    120,
+    153,
+    28,
+    28
+  ],
+  "exact_certificate": false,
+  "equality_max_error": 2.7935025292968874e-08,
+  "moment_min_eigenvalues": [
+    -4.610152205327304e-11,
+    -1.5377985685791348e-10,
+    -1.0725058403163549e-10,
+    -7.550036401375775e-11,
+    -1.646657835504638e-10,
+    -1.4650224577669546e-10,
+    -9.589926364441208e-11,
+    -1.892517554324148e-10,
+    -9.422676729905461e-11
+  ],
+  "worker_wall_seconds": 41.20241380017251,
+  "versions": {
+    "scs": "3.3.2",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "psutil": "7.2.2"
+  },
+  "phase_coordinate_count": 30,
+  "equality_row_count": 10867
+}

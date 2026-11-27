@@ -1,0 +1,28 @@
+fixed3_positive dense: A(192817, 46376) nnz=711868 PSD=[31, 496]
+------------------------------------------------------------------
+	       SCS v3.3.2 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+------------------------------------------------------------------
+problem:  variables n: 46376, constraints m: 192817
+cones: 	  z: primal zero / dual free vars: 69065
+	  s: psd vars: 123752, ssize: 2
+settings: eps_abs: 1.0e-06, eps_rel: 1.0e-06, eps_infeas: 1.0e-07
+	  alpha: 1.50, scale: 1.00e-01, adaptive_scale: 1
+	  max_iters: 20000, normalize: 1, rho_x: 1.00e-06
+	  acceleration_lookback: 10, acceleration_interval: 5
+	  time_limit_secs: 3.88e+02
+lin-sys:  sparse-indirect-scs
+	  nnz(A): 711868, nnz(P): 0
+------------------------------------------------------------------
+ iter | pri res | dua res |   gap   |   obj   |  scale  | time (s)
+------------------------------------------------------------------
+     0| 6.59e-01  4.15e-01  3.59e+01  1.79e+01  1.00e-01  3.84e+00
+   175| 1.26e+07  1.71e+05  1.31e+17  6.56e+16  1.00e-01  3.07e+02
+------------------------------------------------------------------
+status:  infeasible
+timings: total: 3.07e+02s = setup: 1.47e-01s + solve: 3.06e+02s
+	 lin-sys: 2.86e+02s, cones: 7.59e+00s, accel: 1.56e-01s
+------------------------------------------------------------------
+objective = inf
+------------------------------------------------------------------
+infeasible False

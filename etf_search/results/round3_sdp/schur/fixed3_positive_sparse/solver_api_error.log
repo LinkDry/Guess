@@ -1,0 +1,20 @@
+fixed3_positive sparse: A(69298, 18686) nnz=134116 PSD=[31, 120, 153, 153, 120, 120, 153, 28, 28]
+Traceback (most recent call last):
+  File "E:\Research\Guess\etf_search\src\search_sdp_cert.py", line 353, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "E:\Research\Guess\etf_search\src\search_sdp_cert.py", line 349, in main
+    return worker(args) if args.worker else supervise(args)
+           ^^^^^^^^^^^^
+  File "E:\Research\Guess\etf_search\src\search_sdp_cert.py", line 263, in worker
+    solution = scs.solve(data, {'z': n_eq, 's': sizes}, **settings)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Research\Guess\.venv\Lib\site-packages\scs\__init__.py", line 278, in solve
+    solver = SCS(data, cone, **settings)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Research\Guess\.venv\Lib\site-packages\scs\__init__.py", line 228, in __init__
+    _scs = _select_scs_module(self._settings)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Research\Guess\.venv\Lib\site-packages\scs\__init__.py", line 129, in _select_scs_module
+    raise TypeError(_removed_flags_message(removed))
+TypeError: The solver-selection flag(s) use_indirect=True were removed in scs 3.3.0. Pass `linear_solver=scs.LinearSolver.CPU_INDIRECT` instead.

@@ -1,0 +1,151 @@
+{
+  "versions": {
+    "scs": "3.3.2",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "psutil": "7.2.2"
+  },
+  "runs": {
+    "fixed1_dense": {
+      "solver_status": "solved",
+      "status_val": 1,
+      "phase_coordinates": 32,
+      "moment_variables": 58905,
+      "rows": 239735,
+      "equality_rows": 81533,
+      "matrix_nonzeros": 1045705,
+      "psd_sizes": [
+        33,
+        561
+      ],
+      "peak_sampled_rss_bytes": 350765056,
+      "wall_seconds": 30.793836700031534,
+      "numeric_equality_error": 1.854887898659896e-09,
+      "numeric_minimum_moment_eigenvalue": -3.358273164938586e-09,
+      "exact_verification": null
+    },
+    "fixed1_sparse": {
+      "solver_status": "solved",
+      "status_val": 1,
+      "phase_coordinates": 32,
+      "moment_variables": 12837,
+      "rows": 46292,
+      "equality_rows": 10481,
+      "matrix_nonzeros": 113098,
+      "psd_sizes": [
+        33,
+        120,
+        45,
+        45,
+        45,
+        120,
+        120,
+        120,
+        45,
+        45,
+        45
+      ],
+      "peak_sampled_rss_bytes": 146493440,
+      "wall_seconds": 2.670228899922222,
+      "numeric_equality_error": 2.936637599759706e-10,
+      "numeric_minimum_moment_eigenvalue": -1.4910263037987563e-10,
+      "exact_verification": null
+    },
+    "fixed3_negative_dense": {
+      "solver_status": "infeasible",
+      "status_val": -2,
+      "phase_coordinates": 30,
+      "moment_variables": 46376,
+      "rows": 192817,
+      "equality_rows": 69065,
+      "matrix_nonzeros": 711868,
+      "psd_sizes": [
+        31,
+        496
+      ],
+      "peak_sampled_rss_bytes": 350519296,
+      "wall_seconds": 138.64458309998736,
+      "numeric_equality_error": null,
+      "numeric_minimum_moment_eigenvalue": null,
+      "exact_verification": {
+        "exact_proof": true,
+        "residual_upper_bound": "414220049013296592397744354622927415857/777600000000000000000000000000000000000000000",
+        "residual_upper_bound_approx": 5.326903922496098e-07
+      }
+    },
+    "fixed3_negative_sparse": {
+      "solver_status": "solved",
+      "status_val": 1,
+      "phase_coordinates": 30,
+      "moment_variables": 18686,
+      "rows": 69298,
+      "equality_rows": 10867,
+      "matrix_nonzeros": 134116,
+      "psd_sizes": [
+        31,
+        120,
+        153,
+        153,
+        120,
+        120,
+        153,
+        28,
+        28
+      ],
+      "peak_sampled_rss_bytes": 215171072,
+      "wall_seconds": 41.82220260007307,
+      "numeric_equality_error": 2.7935025292968874e-08,
+      "numeric_minimum_moment_eigenvalue": -1.892517554324148e-10,
+      "exact_verification": null
+    },
+    "fixed3_positive_dense": {
+      "solver_status": "infeasible",
+      "status_val": -2,
+      "phase_coordinates": 30,
+      "moment_variables": 46376,
+      "rows": 192817,
+      "equality_rows": 69065,
+      "matrix_nonzeros": 711868,
+      "psd_sizes": [
+        31,
+        496
+      ],
+      "peak_sampled_rss_bytes": 404713472,
+      "wall_seconds": 334.92694359994493,
+      "numeric_equality_error": null,
+      "numeric_minimum_moment_eigenvalue": null,
+      "exact_verification": {
+        "exact_proof": true,
+        "residual_upper_bound": "117823544948222256047655021017435399191/291600000000000000000000000000000000000000000",
+        "residual_upper_bound_approx": 4.04058796118732e-07
+      }
+    },
+    "fixed3_positive_sparse": {
+      "solver_status": "solved",
+      "status_val": 1,
+      "phase_coordinates": 30,
+      "moment_variables": 18686,
+      "rows": 69298,
+      "equality_rows": 10867,
+      "matrix_nonzeros": 134116,
+      "psd_sizes": [
+        31,
+        120,
+        153,
+        153,
+        120,
+        120,
+        153,
+        28,
+        28
+      ],
+      "peak_sampled_rss_bytes": 215244800,
+      "wall_seconds": 46.46632090001367,
+      "numeric_equality_error": 3.058152620027954e-10,
+      "numeric_minimum_moment_eigenvalue": -4.71249244619016e-12,
+      "exact_verification": null
+    }
+  },
+  "single_fixed_exact_analytic_proof": "../identity_fixed1/verification.json"
+}

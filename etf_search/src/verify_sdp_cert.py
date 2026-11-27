@@ -13,6 +13,11 @@ checks are diagnostic. Exact input is verified by field arithmetic throughout.
 Exit codes: 0 for acceptance in the requested mode, 1 for failed checks, 2 for
 invalid input. A matched external constraint file establishes file agreement.
 --fixed1 additionally checks the independently derived ETF(4,9) branch equations.
+
+For search-sdp-certificate-v1, --model supplies the equation file (default
+model.json next to the certificate). The verifier uses exact integer factors
+and rational root intervals to bound the residual on [-1,1]^n. Recognized
+ETF branches also get a coefficient-by-coefficient constraint provenance check.
 """
 
 import argparse
@@ -325,6 +330,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("certificate", type=Path)
     parser.add_argument("--trusted-constraints", type=Path)
+    parser.add_argument("--model", type=Path, help="equations for search-sdp-certificate-v1")
     parser.add_argument("--fixed1", action="store_true", help="verify necessary equations for the single-fixed-line branch")
     parser.add_argument("--digits", type=int, default=50)
     parser.add_argument("--tolerance", default="1e-9")
@@ -334,11 +340,19 @@ def main():
         if args.digits < 20:
             raise ValueError("working precision must be at least 20 digits")
         document, digest = read_object(args.certificate)
-        trusted, trusted_hash = read_object(args.trusted_constraints) if args.trusted_constraints else (None, None)
-        report = verify(document, trusted, args.fixed1, args.digits, args.tolerance)
+        if document.get("schema") == "search-sdp-certificate-v1":
+            from verify_sdp_factor_cert import verify_factor_certificate
+
+            model_path = args.model if args.model is not None else args.certificate.with_name("model.json")
+            model, model_hash = read_object(model_path)
+            report = verify_factor_certificate(document, model)
+            report["model_sha256"] = model_hash
+        else:
+            trusted, trusted_hash = read_object(args.trusted_constraints) if args.trusted_constraints else (None, None)
+            report = verify(document, trusted, args.fixed1, args.digits, args.tolerance)
+            if trusted_hash is not None:
+                report["trusted_constraints_sha256"] = trusted_hash
         report["certificate_sha256"] = digest
-        if trusted_hash is not None:
-            report["trusted_constraints_sha256"] = trusted_hash
         code = 0 if report["passed"] else 1
     except (ArithmeticError, KeyError, OSError, TypeError, ValueError) as exc:
         report = {"passed": False, "error": str(exc)}

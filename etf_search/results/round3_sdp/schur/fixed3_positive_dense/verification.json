@@ -1,0 +1,35 @@
+{
+  "branch": "fixed3_positive",
+  "certificate_sha256": "29a47fd3bd34f2f7249709b1c708ecca92ac7430331e4f8573dbbc4a66249d92",
+  "constraint_provenance": {
+    "equations_checked": 179,
+    "mismatched_equations": [],
+    "scope": "ETF(4,9), antiunitary cycle type 2^3 1^3, positive triangle",
+    "source": "independent_real_gram_and_schur_equations",
+    "status": "matched",
+    "unknown_equations": []
+  },
+  "etf_nonexistence_verified": true,
+  "factor_denominator": 100000000000,
+  "mode": "exact_rational_intervals",
+  "model_sha256": "76e602619152493eee8d47ab5db79b359a7e0c5e6ca42806b79383c8f2e48d25",
+  "passed": true,
+  "polynomial_system_refuted_on_unit_box": true,
+  "producer_bound_matches": true,
+  "psd_blocks": [
+    {
+      "basis_size": 31,
+      "factor_columns": 31
+    },
+    {
+      "basis_size": 496,
+      "factor_columns": 496
+    }
+  ],
+  "psd_by_exact_factorization": true,
+  "radical_interval_denominator": 1000000000000000000000000000000,
+  "residual_bound_approx": 4.04058796118732e-07,
+  "residual_maximum_degree": 4,
+  "residual_terms": 46376,
+  "residual_upper_bound_on_unit_box": "117823544948222256047655021017435399191/291600000000000000000000000000000000000000000"
+}

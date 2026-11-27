@@ -138,5 +138,53 @@ class SDPVerifierTests(unittest.TestCase):
         self.assertEqual(self.run_cli(doc)[0], 2)
 
 
+class RoundedFactorVerifierTests(unittest.TestCase):
+    def run_fixture(self, factor, coefficient="-408", false_etf_model=False):
+        roots = ["1", "sqrt(2)", "sqrt(5)", "sqrt(10)"]
+        model = {"schema": "search-sdp-model-v1", "variables": ["x"], "coefficient_basis": roots,
+                 "equations": {"g": [[[], ["1", "0", "0", "0"]],
+                                      [[0, 0], ["1", "0", "0", "0"]],
+                                      [[0], ["577", coefficient, "0", "0"]]]}}
+        cert = {"schema": "search-sdp-certificate-v1", "coefficient_basis": roots,
+                "factor_denominator": 1, "multipliers": {"g": [[[], "-1"]]},
+                "psd_blocks": [{"basis": [[0]], "factor_integer_rows": [[factor]]}],
+                "exact_proof": True, "residual_upper_bound_on_unit_box": "0"}
+        if false_etf_model:
+            model["branch"] = "fixed3_negative"
+            model["variables"] = [f"x{i}" for i in range(30)]
+            model["equations"]["circle_0"] = model["equations"].pop("g")
+            cert["multipliers"]["circle_0"] = cert["multipliers"].pop("g")
+        with TemporaryDirectory() as folder:
+            base = Path(folder)
+            for name, document in (("model", model), ("cert", cert)):
+                (base / f"{name}.json").write_text(json.dumps(document), encoding="ascii")
+            run = subprocess.run([sys.executable, "-B", str(SCRIPT), str(base / "cert.json"),
+                                  "--model", str(base / "model.json")], capture_output=True, text=True)
+            self.assertEqual(run.stderr, "")
+            return run.returncode, json.loads(run.stdout)
+
+    def test_exact_interval_cancels_biquadratic_components(self):
+        from fractions import Fraction
+
+        code, report = self.run_fixture(1)
+        self.assertEqual(code, 0)
+        self.assertLess(Fraction(report["residual_upper_bound_on_unit_box"]), Fraction(1, 1000))
+        self.assertTrue(report["polynomial_system_refuted_on_unit_box"])
+        self.assertFalse(report["etf_nonexistence_verified"])
+
+    def test_rejects_tampered_factor_and_false_claim(self):
+        code, report = self.run_fixture(2)
+        self.assertEqual(code, 1)
+        self.assertFalse(report["polynomial_system_refuted_on_unit_box"])
+        self.assertTrue(report["psd_by_exact_factorization"])
+
+    def test_refuted_forged_etf_equation_fails_provenance(self):
+        code, report = self.run_fixture(1, false_etf_model=True)
+        self.assertEqual(code, 1)
+        self.assertTrue(report["polynomial_system_refuted_on_unit_box"])
+        self.assertEqual(report["constraint_provenance"]["mismatched_equations"], ["circle_0"])
+        self.assertFalse(report["etf_nonexistence_verified"])
+
+
 if __name__ == "__main__":
     unittest.main()
