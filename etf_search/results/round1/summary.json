@@ -1,0 +1,5015 @@
+{
+  "model": {
+    "d": 4,
+    "n": 9,
+    "lambda": 2.25,
+    "mu": 0.39528470752104744,
+    "symmetry": "free C3",
+    "vertex_order": "zero-based orbit-major 3*a+x",
+    "offset": "(y-x) mod 3",
+    "fourier_forward": "3*ifft(g, axis=2), output moved to [k,a,b]",
+    "sector_ranks": [
+      2,
+      1,
+      1
+    ],
+    "gauge_positions_positive_mu": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ]
+    ],
+    "phase_positions_in_order": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        0,
+        2,
+        2
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        1,
+        2,
+        2
+      ]
+    ],
+    "free_real_phases": 10,
+    "analytic_raw_residual_lower_bound": 0.01,
+    "bound_scope": "free C3, exact unit diagonal and Welch modulus; see ../../ansatz.md"
+  },
+  "settings": {
+    "methods_in_order": [
+      "drs",
+      "ap"
+    ],
+    "seed_start": 0,
+    "seeds_per_method": 48,
+    "steps": 1800,
+    "drs_relaxation": 1.0,
+    "initial_rng": "NumPy Generator(PCG64(seed)), independent phases uniform [-pi, pi)",
+    "refiner": "L-BFGS-B (unbounded) with analytic gradient of half squared raw Gram residual",
+    "refine_maxiter": 750,
+    "refine_ftol": 2.220446049250313e-16,
+    "refine_gtol": 1e-12,
+    "refine_maxls": 40,
+    "numeric_strict_tolerance": 1e-12,
+    "projection_scoring": "measure every modulus shadow, including step 0"
+  },
+  "reproduction": {
+    "argv_from_repo_root": [
+      "python",
+      "-B",
+      "etf_search/src/search_etf.py",
+      "--seeds",
+      "48",
+      "--seed-start",
+      "0",
+      "--steps",
+      "1800",
+      "--relaxation",
+      "1.0",
+      "--refine-maxiter",
+      "750",
+      "--output-dir",
+      "etf_search/results/round1"
+    ],
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "thread_environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "runtime_seconds": 17.60380810010247,
+  "best_gram_file": "best_gram.npy",
+  "best": {
+    "method": "ap",
+    "seed": 34,
+    "stage": "lbfgs",
+    "tightness_frobenius": 0.7168843846433282,
+    "welch_max_error": 5.551115123125783e-17,
+    "hermitian_max_error": 0.0,
+    "diagonal_max_error": 0.0,
+    "numeric_gate_passed": false
+  },
+  "by_method": {
+    "drs": {
+      "initial": {
+        "seed_of_min": 29,
+        "min": 2.1620756635187695,
+        "median": 3.5463004090092523,
+        "max": 4.716308820296463
+      },
+      "best_projected": {
+        "seed_of_min": 36,
+        "min": 0.7354912775975992,
+        "median": 0.7741856015894857,
+        "max": 0.8223869162580906
+      },
+      "last_projected": {
+        "seed_of_min": 30,
+        "min": 0.8971090649131914,
+        "median": 1.6696525668391788,
+        "max": 2.931847954619325
+      },
+      "refined": {
+        "seed_of_min": 40,
+        "min": 0.7168843846433283,
+        "median": 0.7168843846433287,
+        "max": 0.7168843846433304
+      },
+      "best": {
+        "seed_of_min": 40,
+        "min": 0.7168843846433283,
+        "median": 0.7168843846433287,
+        "max": 0.7168843846433304
+      },
+      "numeric_gate_pass_count": 0
+    },
+    "ap": {
+      "initial": {
+        "seed_of_min": 29,
+        "min": 2.1620756635187695,
+        "median": 3.5463004090092523,
+        "max": 4.716308820296463
+      },
+      "best_projected": {
+        "seed_of_min": 30,
+        "min": 0.7200419606440428,
+        "median": 0.7202513422938532,
+        "max": 0.7202536905411714
+      },
+      "last_projected": {
+        "seed_of_min": 44,
+        "min": 0.7202536905209979,
+        "median": 0.7202536905346657,
+        "max": 0.7202536905411714
+      },
+      "refined": {
+        "seed_of_min": 34,
+        "min": 0.7168843846433282,
+        "median": 0.7168843846433287,
+        "max": 0.7168843846433297
+      },
+      "best": {
+        "seed_of_min": 34,
+        "min": 0.7168843846433282,
+        "median": 0.7168843846433287,
+        "max": 0.7168843846433297
+      },
+      "numeric_gate_pass_count": 0
+    }
+  },
+  "symbolic": {
+    "status": "numeric_gate_not_met"
+  },
+  "runs": [
+    {
+      "method": "drs",
+      "seed": 0,
+      "initial": {
+        "tightness_frobenius": 4.007214549674561,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1368,
+        "tightness_frobenius": 0.7644827669485396,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.3126660953165359,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 24,
+        "function_evaluations": 26,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 5.640360908895739e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 0,
+      "initial": {
+        "tightness_frobenius": 4.007214549674561,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 144,
+        "tightness_frobenius": 0.7202356292531039,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346659,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 20,
+        "function_evaluations": 23,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.1397267515117007e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 1,
+      "initial": {
+        "tightness_frobenius": 2.9741391934010513,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 873,
+        "tightness_frobenius": 0.7816098896208038,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.2375215079872202,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 29,
+        "function_evaluations": 32,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 2.391073039353152e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 1,
+      "initial": {
+        "tightness_frobenius": 2.9741391934010513,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905402868,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905402868,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 27,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.1483377436044748e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 2,
+      "initial": {
+        "tightness_frobenius": 4.118607722156766,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 172,
+        "tightness_frobenius": 0.783925177054063,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.4497254214098814,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 27,
+        "function_evaluations": 32,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 7.06619004151479e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 2,
+      "initial": {
+        "tightness_frobenius": 4.118607722156766,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1284,
+        "tightness_frobenius": 0.7202536905346653,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346659,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 22,
+        "function_evaluations": 36,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.1913538260206796e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 3,
+      "initial": {
+        "tightness_frobenius": 3.917945457569743,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1699,
+        "tightness_frobenius": 0.7628706674321739,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.7334260282277651,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 26,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.798608293029604e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 3,
+      "initial": {
+        "tightness_frobenius": 3.917945457569743,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 258,
+        "tightness_frobenius": 0.7202499132335398,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346659,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.2879165322626592e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 4,
+      "initial": {
+        "tightness_frobenius": 4.43272771940757,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 818,
+        "tightness_frobenius": 0.774280839048732,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 2.231409862066928,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 33,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 9.611828242242087e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 4,
+      "initial": {
+        "tightness_frobenius": 4.43272771940757,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 179,
+        "tightness_frobenius": 0.7202414652307063,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346659,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.4852867637907065e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 5,
+      "initial": {
+        "tightness_frobenius": 4.0462331560336695,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 218,
+        "tightness_frobenius": 0.7771465919078104,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.8677088970712683,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433284,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433284,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 27,
+        "function_evaluations": 54,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 8.889595011599278e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 5,
+      "initial": {
+        "tightness_frobenius": 4.0462331560336695,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1228,
+        "tightness_frobenius": 0.7202536905346651,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346659,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433285,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433285,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 23,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 4.828214462839339e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 6,
+      "initial": {
+        "tightness_frobenius": 3.9446666484162463,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 411,
+        "tightness_frobenius": 0.7671317011946762,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.9389648639771668,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 27,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.1777306636891675e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 6,
+      "initial": {
+        "tightness_frobenius": 3.9446666484162463,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1331,
+        "tightness_frobenius": 0.7202536905346651,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346657,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 23,
+        "function_evaluations": 27,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.2451764937024691e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 7,
+      "initial": {
+        "tightness_frobenius": 3.0399458849540113,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1339,
+        "tightness_frobenius": 0.7697962082329403,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.9885563680025337,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 28,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 4.0028703965587355e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 7,
+      "initial": {
+        "tightness_frobenius": 3.0399458849540113,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905366491,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905366491,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 26,
+        "function_evaluations": 83,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.1483487199903535e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 8,
+      "initial": {
+        "tightness_frobenius": 2.5152506082226314,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 262,
+        "tightness_frobenius": 0.7754896607758311,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 2.0491180844418486,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 20,
+        "function_evaluations": 23,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 3.827739457976849e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 8,
+      "initial": {
+        "tightness_frobenius": 2.5152506082226314,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 416,
+        "tightness_frobenius": 0.7202488995057144,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346623,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433285,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433285,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 27,
+        "function_evaluations": 43,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 7.858025908115969e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 9,
+      "initial": {
+        "tightness_frobenius": 3.385632834432768,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 252,
+        "tightness_frobenius": 0.7902023002908368,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.9703221558570377,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433292,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433292,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 27,
+        "function_evaluations": 33,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 2.4078458616102245e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 9,
+      "initial": {
+        "tightness_frobenius": 3.385632834432768,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 168,
+        "tightness_frobenius": 0.7201666651088268,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346657,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.716884384643329,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.716884384643329,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 22,
+        "function_evaluations": 26,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 4.417986726869472e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 10,
+      "initial": {
+        "tightness_frobenius": 3.4909794910675065,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 763,
+        "tightness_frobenius": 0.757844358011885,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.1816601353687355,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433284,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433284,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 23,
+        "function_evaluations": 40,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 9.483923974914513e-10
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 10,
+      "initial": {
+        "tightness_frobenius": 3.4909794910675065,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1342,
+        "tightness_frobenius": 0.720253690534665,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346659,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 22,
+        "function_evaluations": 39,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 2.633664120657295e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 11,
+      "initial": {
+        "tightness_frobenius": 3.9640416195635026,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 975,
+        "tightness_frobenius": 0.7530096911680006,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.676610517960111,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433304,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433304,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 20,
+        "function_evaluations": 24,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 3.131918682494291e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 11,
+      "initial": {
+        "tightness_frobenius": 3.9640416195635026,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1400,
+        "tightness_frobenius": 0.720253690534665,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346658,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 13,
+        "function_evaluations": 18,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 3.058939363805774e-10
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 12,
+      "initial": {
+        "tightness_frobenius": 4.151751791751984,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1053,
+        "tightness_frobenius": 0.8088383070981466,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 2.1524541035313782,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433292,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433292,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 23,
+        "function_evaluations": 26,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.0338102470292438e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 12,
+      "initial": {
+        "tightness_frobenius": 4.151751791751984,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 102,
+        "tightness_frobenius": 0.7201666524223774,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346656,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 22,
+        "function_evaluations": 26,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 4.793096805463136e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 13,
+      "initial": {
+        "tightness_frobenius": 3.161751522627979,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 889,
+        "tightness_frobenius": 0.7689882473695098,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.4081304772920744,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433285,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433285,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 24,
+        "function_evaluations": 39,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.0876604426743403e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 13,
+      "initial": {
+        "tightness_frobenius": 3.161751522627979,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1508,
+        "tightness_frobenius": 0.7202536905346651,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346659,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.716884384643329,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.716884384643329,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 21,
+        "function_evaluations": 24,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 5.099205055432868e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 14,
+      "initial": {
+        "tightness_frobenius": 2.606024708010468,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 108,
+        "tightness_frobenius": 0.7817890961545426,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.6345807095656755,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 24,
+        "function_evaluations": 28,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.3826821434318286e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 14,
+      "initial": {
+        "tightness_frobenius": 2.606024708010468,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1672,
+        "tightness_frobenius": 0.7202536905346653,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346658,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 42,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.0240974947311253e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 15,
+      "initial": {
+        "tightness_frobenius": 3.423776284322289,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 523,
+        "tightness_frobenius": 0.7817490776539623,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.5915950995382158,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 26,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.924310904375088e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 15,
+      "initial": {
+        "tightness_frobenius": 3.423776284322289,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1242,
+        "tightness_frobenius": 0.7202536905346649,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346657,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 23,
+        "function_evaluations": 27,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 5.039878362773158e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 16,
+      "initial": {
+        "tightness_frobenius": 3.2944069255238997,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1506,
+        "tightness_frobenius": 0.7707983801452437,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.4780276117995692,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433296,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433296,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 24,
+        "function_evaluations": 30,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 3.386335578321739e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 16,
+      "initial": {
+        "tightness_frobenius": 3.2944069255238997,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1434,
+        "tightness_frobenius": 0.7202536905346651,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346656,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 21,
+        "function_evaluations": 49,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.606122169402585e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 17,
+      "initial": {
+        "tightness_frobenius": 3.0643160692345073,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1457,
+        "tightness_frobenius": 0.7801751499193271,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.9171607649760466,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.8087461859442228e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 17,
+      "initial": {
+        "tightness_frobenius": 3.0643160692345073,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1155,
+        "tightness_frobenius": 0.7202536905346651,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346657,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433284,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433284,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 13,
+        "function_evaluations": 47,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 6.109314233009663e-10
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 18,
+      "initial": {
+        "tightness_frobenius": 3.0790531218869375,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 423,
+        "tightness_frobenius": 0.797573191307264,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 2.5793071726843704,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 22,
+        "function_evaluations": 27,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.1612934104248433e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 18,
+      "initial": {
+        "tightness_frobenius": 3.0790531218869375,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905411714,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905411714,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 27,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.1483361235050019e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 19,
+      "initial": {
+        "tightness_frobenius": 2.685793156197754,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 595,
+        "tightness_frobenius": 0.8155064017419186,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.9972199608512067,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 28,
+        "function_evaluations": 35,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 4.14028932486705e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 19,
+      "initial": {
+        "tightness_frobenius": 2.685793156197754,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 390,
+        "tightness_frobenius": 0.720240405168844,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905317448,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 28,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 2.1085643447680232e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 20,
+      "initial": {
+        "tightness_frobenius": 3.4043648000888456,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 959,
+        "tightness_frobenius": 0.8015581579558585,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.2343149375261475,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 30,
+        "function_evaluations": 45,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.386242650581209e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 20,
+      "initial": {
+        "tightness_frobenius": 3.4043648000888456,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1300,
+        "tightness_frobenius": 0.7202536905346651,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346659,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 23,
+        "function_evaluations": 28,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 6.5485073235250254e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 21,
+      "initial": {
+        "tightness_frobenius": 4.15167588230803,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 904,
+        "tightness_frobenius": 0.7631182692918898,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.9299586781209754,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 27,
+        "function_evaluations": 34,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 7.922642999607633e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 21,
+      "initial": {
+        "tightness_frobenius": 4.15167588230803,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 131,
+        "tightness_frobenius": 0.7202485733763999,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346659,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 27,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.4446469556310587e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 22,
+      "initial": {
+        "tightness_frobenius": 2.730138638487643,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 815,
+        "tightness_frobenius": 0.7853656819517745,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.3977631280150344,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433284,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433284,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 23,
+        "function_evaluations": 76,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 6.9714487392295045e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 22,
+      "initial": {
+        "tightness_frobenius": 2.730138638487643,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 158,
+        "tightness_frobenius": 0.7202527713541667,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346659,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.716884384643329,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.716884384643329,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 24,
+        "function_evaluations": 28,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 3.1862561594126235e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 23,
+      "initial": {
+        "tightness_frobenius": 4.288959398673669,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1498,
+        "tightness_frobenius": 0.7996733045819719,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.3790276718211625,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 29,
+        "function_evaluations": 36,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.459258087384307e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 23,
+      "initial": {
+        "tightness_frobenius": 4.288959398673669,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 483,
+        "tightness_frobenius": 0.7202404048517254,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905262814,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 28,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 2.15714547556349e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 24,
+      "initial": {
+        "tightness_frobenius": 3.886599909321308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1580,
+        "tightness_frobenius": 0.7741806978137391,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.4051279516617474,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 27,
+        "function_evaluations": 31,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 4.278793723011121e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 24,
+      "initial": {
+        "tightness_frobenius": 3.886599909321308,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 235,
+        "tightness_frobenius": 0.7201938935889804,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346655,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433295,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433295,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 23,
+        "function_evaluations": 26,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.1446363279345294e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 25,
+      "initial": {
+        "tightness_frobenius": 3.5103678307207575,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1397,
+        "tightness_frobenius": 0.7755651848586561,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.9624242791552048,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 27,
+        "function_evaluations": 30,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 7.284889398794247e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 25,
+      "initial": {
+        "tightness_frobenius": 3.5103678307207575,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1049,
+        "tightness_frobenius": 0.7202536905346651,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346658,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433283,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433283,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 14,
+        "function_evaluations": 60,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 6.106577398643803e-10
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 26,
+      "initial": {
+        "tightness_frobenius": 3.109919448945457,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 915,
+        "tightness_frobenius": 0.7500589222766977,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 2.2202893116737195,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 24,
+        "function_evaluations": 27,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 4.68267693653643e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 26,
+      "initial": {
+        "tightness_frobenius": 3.109919448945457,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 221,
+        "tightness_frobenius": 0.7201666620593427,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346656,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433289,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433289,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 22,
+        "function_evaluations": 26,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.399587868238388e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 27,
+      "initial": {
+        "tightness_frobenius": 3.4535254707486174,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 774,
+        "tightness_frobenius": 0.7852870848249149,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.506883886270476,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 28,
+        "function_evaluations": 55,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.8745752773527512e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 27,
+      "initial": {
+        "tightness_frobenius": 3.4535254707486174,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1239,
+        "tightness_frobenius": 0.7202536905346651,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346654,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 22,
+        "function_evaluations": 25,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 3.03053949723455e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 28,
+      "initial": {
+        "tightness_frobenius": 4.685616797495884,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 506,
+        "tightness_frobenius": 0.7544845480974555,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.9215724108913292,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 2.4668354956304452e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 28,
+      "initial": {
+        "tightness_frobenius": 4.685616797495884,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 223,
+        "tightness_frobenius": 0.7202356284604045,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346654,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433292,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433292,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 20,
+        "function_evaluations": 23,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 8.415295898451832e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 29,
+      "initial": {
+        "tightness_frobenius": 2.1620756635187695,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 84,
+        "tightness_frobenius": 0.7531670825234807,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.3995014872333142,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 26,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 2.320328906243389e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 29,
+      "initial": {
+        "tightness_frobenius": 2.1620756635187695,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1111,
+        "tightness_frobenius": 0.7202536905346653,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346659,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 26,
+        "function_evaluations": 30,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.4750797238577744e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 30,
+      "initial": {
+        "tightness_frobenius": 4.126352491419682,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 612,
+        "tightness_frobenius": 0.7711338732876821,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.8971090649131914,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433285,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433285,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 21,
+        "function_evaluations": 38,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.5144778632164693e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 30,
+      "initial": {
+        "tightness_frobenius": 4.126352491419682,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 102,
+        "tightness_frobenius": 0.7200419606440428,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346661,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433289,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433289,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 23,
+        "function_evaluations": 28,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.77101571946297e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 31,
+      "initial": {
+        "tightness_frobenius": 3.660690343770432,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 950,
+        "tightness_frobenius": 0.8223869162580906,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.1421807398447514,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 26,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 4.1851415017428476e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 31,
+      "initial": {
+        "tightness_frobenius": 3.660690343770432,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 334,
+        "tightness_frobenius": 0.7202488996929564,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346646,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 27,
+        "function_evaluations": 30,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 8.982382816183118e-10
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 32,
+      "initial": {
+        "tightness_frobenius": 3.5538495934931325,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1209,
+        "tightness_frobenius": 0.7955036403672422,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.9483130183448918,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 24,
+        "function_evaluations": 27,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 2.4584464864485e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 32,
+      "initial": {
+        "tightness_frobenius": 3.5538495934931325,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 407,
+        "tightness_frobenius": 0.720240405008045,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905311563,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 28,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.9224037744375807e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 33,
+      "initial": {
+        "tightness_frobenius": 2.5535126774937584,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1644,
+        "tightness_frobenius": 0.7721445535905395,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 2.1295757174262304,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433289,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433289,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 28,
+        "function_evaluations": 32,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.2870101398123815e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 33,
+      "initial": {
+        "tightness_frobenius": 2.5535126774937584,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 403,
+        "tightness_frobenius": 0.720240404782357,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905313018,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 28,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 2.1021479958869184e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 34,
+      "initial": {
+        "tightness_frobenius": 3.530657901094707,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1204,
+        "tightness_frobenius": 0.7774963809147982,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.639250073625379,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 26,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 3.863560741303889e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 34,
+      "initial": {
+        "tightness_frobenius": 3.530657901094707,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 128,
+        "tightness_frobenius": 0.7200879877558731,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346657,
+        "welch_max_error": 0.0,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433282,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433282,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 24,
+        "function_evaluations": 66,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 4.255534645476126e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 35,
+      "initial": {
+        "tightness_frobenius": 4.092542710177292,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 707,
+        "tightness_frobenius": 0.7897463097505877,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.6987479878647744,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.1074683496215928e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 35,
+      "initial": {
+        "tightness_frobenius": 4.092542710177292,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 231,
+        "tightness_frobenius": 0.7202356278867524,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346654,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 21,
+        "function_evaluations": 51,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.1017594803405876e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 36,
+      "initial": {
+        "tightness_frobenius": 4.1588058217334485,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1559,
+        "tightness_frobenius": 0.7354912775975992,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 2.3998968136633487,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 23,
+        "function_evaluations": 35,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 9.394953161790225e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 36,
+      "initial": {
+        "tightness_frobenius": 4.1588058217334485,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 131,
+        "tightness_frobenius": 0.7202428191755709,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.720253690534666,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 23,
+        "function_evaluations": 26,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 7.11744845991612e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 37,
+      "initial": {
+        "tightness_frobenius": 3.0795214807123084,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 715,
+        "tightness_frobenius": 0.7383497658191358,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.7467108457681475,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 22,
+        "function_evaluations": 25,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 2.5894512109733778e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 37,
+      "initial": {
+        "tightness_frobenius": 3.0795214807123084,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 100,
+        "tightness_frobenius": 0.7202409060500535,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346656,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 26,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 4.165989660858282e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 38,
+      "initial": {
+        "tightness_frobenius": 3.538751224525372,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1003,
+        "tightness_frobenius": 0.765197705240485,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.9125117697327965,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 22,
+        "function_evaluations": 24,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 3.320710439995715e-10
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 38,
+      "initial": {
+        "tightness_frobenius": 3.538751224525372,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 258,
+        "tightness_frobenius": 0.7202489003095601,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346653,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 26,
+        "function_evaluations": 43,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 3.201359824258578e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 39,
+      "initial": {
+        "tightness_frobenius": 3.3028919244046353,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 773,
+        "tightness_frobenius": 0.7939292776424686,
+        "welch_max_error": 1.1102230246251565e-16,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 2.688195929528049,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 23,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 6.7386503104930965e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 39,
+      "initial": {
+        "tightness_frobenius": 3.3028919244046353,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 709,
+        "tightness_frobenius": 0.7202536905346651,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346659,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433284,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433284,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 24,
+        "function_evaluations": 48,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.0508749954301517e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 40,
+      "initial": {
+        "tightness_frobenius": 4.071757994402533,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 782,
+        "tightness_frobenius": 0.7413558579971726,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 2.931847954619325,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433283,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433283,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 28,
+        "function_evaluations": 64,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.3695868812679672e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 40,
+      "initial": {
+        "tightness_frobenius": 4.071757994402533,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 365,
+        "tightness_frobenius": 0.7202488997177133,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346641,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 28,
+        "function_evaluations": 33,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 6.523787561199588e-10
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 41,
+      "initial": {
+        "tightness_frobenius": 4.716308820296463,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1531,
+        "tightness_frobenius": 0.7741905053652322,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 2.250910328911196,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 26,
+        "function_evaluations": 30,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 4.902985426335752e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 41,
+      "initial": {
+        "tightness_frobenius": 4.716308820296463,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1797,
+        "tightness_frobenius": 0.7202536905346661,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346664,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433296,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433296,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 23,
+        "function_evaluations": 26,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 3.698480449841732e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 42,
+      "initial": {
+        "tightness_frobenius": 4.115328720491375,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 893,
+        "tightness_frobenius": 0.7684278622815297,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.76573405185375,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.716884384643329,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.716884384643329,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 24,
+        "function_evaluations": 27,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 9.099483029793961e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 42,
+      "initial": {
+        "tightness_frobenius": 4.115328720491375,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1352,
+        "tightness_frobenius": 0.7202536905346651,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.720253690534666,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.716884384643329,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.716884384643329,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 22,
+        "function_evaluations": 25,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 4.838732698993164e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 43,
+      "initial": {
+        "tightness_frobenius": 4.050104693599325,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1571,
+        "tightness_frobenius": 0.7642668940253421,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 2.5473804749016287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.716884384643329,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.716884384643329,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 24,
+        "function_evaluations": 26,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 2.21379658036014e-08
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 43,
+      "initial": {
+        "tightness_frobenius": 4.050104693599325,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1747,
+        "tightness_frobenius": 0.720253690534665,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346656,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 44,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.0768954304952367e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 44,
+      "initial": {
+        "tightness_frobenius": 4.148055709454524,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 642,
+        "tightness_frobenius": 0.7736447549289152,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.9466715901076113,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433289,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433289,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 22,
+        "function_evaluations": 26,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 4.284182381672497e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 44,
+      "initial": {
+        "tightness_frobenius": 4.148055709454524,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 526,
+        "tightness_frobenius": 0.7202404048413495,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905209979,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433284,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433284,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 26,
+        "function_evaluations": 47,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 2.1575557003017704e-09
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 45,
+      "initial": {
+        "tightness_frobenius": 3.6808825480040435,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 114,
+        "tightness_frobenius": 0.7802645440882917,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 2.855244286396894,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433284,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433284,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 27,
+        "function_evaluations": 39,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 7.4110050175069204e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 45,
+      "initial": {
+        "tightness_frobenius": 3.6808825480040435,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1786,
+        "tightness_frobenius": 0.7202536905346677,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.720253690534668,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433287,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 28,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 2.698678008627567e-10
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 46,
+      "initial": {
+        "tightness_frobenius": 2.6431754629858744,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1670,
+        "tightness_frobenius": 0.7667576657019124,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.6626946157182465,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 8.8641274499853e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 46,
+      "initial": {
+        "tightness_frobenius": 2.6431754629858744,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 1798,
+        "tightness_frobenius": 0.7202536905346666,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905346671,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433297,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433297,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 23,
+        "function_evaluations": 26,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 3.69821672404773e-08
+      }
+    },
+    {
+      "method": "drs",
+      "seed": 47,
+      "initial": {
+        "tightness_frobenius": 4.641734015133351,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 674,
+        "tightness_frobenius": 0.756803681278917,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 1.1794136749348756,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433286,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 24,
+        "function_evaluations": 29,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 7.278571003209819e-09
+      }
+    },
+    {
+      "method": "ap",
+      "seed": 47,
+      "initial": {
+        "tightness_frobenius": 4.641734015133351,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best_projected": {
+        "step": 345,
+        "tightness_frobenius": 0.7202404051694742,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "last_projected": {
+        "step": 1800,
+        "tightness_frobenius": 0.7202536905329338,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "refined": {
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "best": {
+        "stage": "lbfgs",
+        "tightness_frobenius": 0.7168843846433288,
+        "welch_max_error": 5.551115123125783e-17,
+        "hermitian_max_error": 0.0,
+        "diagonal_max_error": 0.0,
+        "numeric_gate_passed": false
+      },
+      "lbfgs": {
+        "iterations": 25,
+        "function_evaluations": 28,
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "gradient_inf_norm": 1.7971549169793698e-09
+      }
+    }
+  ]
+}
