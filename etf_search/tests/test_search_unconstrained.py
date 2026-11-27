@@ -6,6 +6,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import numpy as np
 
@@ -82,6 +83,72 @@ class UnconstrainedSearchTests(unittest.TestCase):
             best = result['top10'][0]['matrix_index']
             np.testing.assert_array_equal(np.load(out / 'best_gram.npy', allow_pickle=False), matrices[best])
             self.assertEqual(result['double_gate_hits'], [])
+
+
+class FourTenRegressionTests(unittest.TestCase):
+    def test_36_phase_objective_and_rank_four_projection_use_new_parameters(self):
+        model = search.GramModel(4, 10)
+        angles = np.random.default_rng(61).uniform(-np.pi, np.pi, 36)
+        gram = search.phase_gram(angles, model=model)
+        self.assertEqual(gram.shape, (10, 10))
+        np.testing.assert_array_equal(gram[0, 1:], np.sqrt(1/6))
+        np.testing.assert_allclose(gram, search.project_modulus(gram, model=model), atol=1e-15)
+        loss, gradient = search.phase_objective(angles, model=model)
+        self.assertAlmostEqual(loss, 0.5 * np.linalg.norm(gram @ gram - 2.5 * gram, 'fro') ** 2)
+        direction = np.random.default_rng(8).normal(size=36)
+        step = 1e-6 * direction
+        finite_difference = (search.phase_objective(angles + step, model=model)[0]
+                             - search.phase_objective(angles - step, model=model)[0]) / 2e-6
+        self.assertAlmostEqual(gradient @ direction, finite_difference, places=7)
+        projected = search.project_spectrum(gram, model=model)
+        np.testing.assert_allclose(np.linalg.eigvalsh(projected), [0] * 6 + [2.5] * 4, atol=1e-14)
+
+    def test_four_ten_cli_and_saved_verifier_metadata(self):
+        with tempfile.TemporaryDirectory() as directory:
+            out = Path(directory)
+            subprocess.run([sys.executable, '-B', str(SOURCE / 'search_unconstrained.py'),
+                            '--d', '4', '--n', '10', '--seeds', '2', '--steps', '4',
+                            '--workers', '1', '--output-dir', str(out)],
+                           capture_output=True, text=True, timeout=60, check=True)
+            result = json.loads((out / 'summary.json').read_text(encoding='utf-8'))
+            matrices = np.load(out / 'all_final_grams.npy', allow_pickle=False)
+            self.assertEqual(matrices.shape, (2, 10, 10))
+            self.assertEqual(result['model']['free_real_phases'], 36)
+            self.assertEqual(result['model']['mu'], np.sqrt(1/6))
+            self.assertEqual(result['model']['lambda'], 2.5)
+            for row, gram in zip(result['runs'], matrices, strict=True):
+                verifier = row['independent_verification']
+                self.assertEqual(verifier['mu'], np.sqrt(1/6))
+                expected = np.linalg.norm(gram @ gram - 2.5 * gram, 'fro')
+                self.assertAlmostEqual(verifier['metrics']['tightness_frobenius'], expected)
+
+    def test_tightness_crossing_invokes_independent_verifier_before_recovery(self):
+        model = search.GramModel(4, 10)
+        spectral_gram = np.diag([2.5] * 4 + [0.] * 6).astype(complex)
+        tightness_hits = []
+        with patch.object(search, 'project_modulus', return_value=spectral_gram[None, ...]):
+            search.drs_batch([43], steps=1, relaxation=1.0, model=model,
+                             on_hit=lambda seed, stage, gram: tightness_hits.append((seed, stage, gram)))
+        self.assertEqual([(s, p) for s, p, _ in tightness_hits], [(43, 'drs_step_1')])
+        with tempfile.TemporaryDirectory() as directory, patch.object(search, 'recover_exact') as recovery:
+            report = search.record_hit(*tightness_hits[0], Path(directory), model=model)
+            recovery.assert_not_called()
+            self.assertFalse(report['independent_pass'])
+            self.assertEqual(report['recovery_status'], 'independent_gate_failed')
+
+    def test_high_precision_recovery_uses_the_selected_parameters(self):
+        # Known (4,5) simplex with first row rephased to +mu.
+        model = search.GramModel(4, 5)
+        gram = np.full((5, 5), -0.25, dtype=complex)
+        np.fill_diagonal(gram, 1)
+        gram[0, 1:] = gram[1:, 0] = 0.25
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)
+            report = search.record_hit(7, 'test_simplex', gram, path, model=model)
+            self.assertTrue(report['independent_pass'])
+            self.assertEqual(report['recovery_status'], 'exact_verified')
+            exact = json.loads((path / 'double_gate_hits/seed_7_test_simplex/candidate_exact.json').read_text())
+            self.assertEqual(exact['gram'][0][1], 'sqrt(1/16)')
 
 
 if __name__ == '__main__':

@@ -1,0 +1,44 @@
+{
+  "gram_file": "best_gram.npy",
+  "seed": 388,
+  "matrix_index": 388,
+  "final": {
+    "tightness_frobenius": 0.12771512284654224,
+    "welch_max_error": 5.551115123125783e-17,
+    "hermitian_max_error": 0.0,
+    "diagonal_max_error": 0.0,
+    "double_gate_passed": false
+  },
+  "best_projected": {
+    "step": 1199,
+    "tightness_frobenius": 0.24197637912292363,
+    "welch_max_error": 5.551115123125783e-17,
+    "hermitian_max_error": 0.0,
+    "diagonal_max_error": 0.0
+  },
+  "last_projected": {
+    "step": 1800,
+    "tightness_frobenius": 0.9349039930112136,
+    "welch_max_error": 5.551115123125783e-17,
+    "hermitian_max_error": 0.0,
+    "diagonal_max_error": 0.0
+  },
+  "independent_pass": false,
+  "independent_verification": {
+    "passed": false,
+    "mu": 0.408248290463863,
+    "tolerance": 1e-12,
+    "checks": {
+      "hermitian": true,
+      "unit_diagonal": true,
+      "welch_modulus": true,
+      "tightness": false
+    },
+    "metrics": {
+      "hermitian_max_error": 0.0,
+      "diagonal_max_error": 0.0,
+      "welch_max_error": 5.551115123125783e-17,
+      "tightness_frobenius": 0.12771512284654224
+    }
+  }
+}
