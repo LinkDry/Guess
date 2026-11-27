@@ -32,3 +32,10 @@ All Round 1 phases executed on 2026-11-27. See [progress.md](progress.md) for ev
 2. Implement moment constraints for the three Schur-complement models, bound solver execution by 900 seconds and 2 GiB per branch, and preserve observed statuses and any numerical dual candidates.
 3. Run the numerical Gram verifier on the best `(4,10)` input. Check any SDP certificate independently for constraint provenance, sign and coefficient identity. Record the arithmetic guarantees of each artifact.
 4. Verify the test suite, commit the experimental artifacts, and confirm that remote `main` matches the local commit.
+
+## Round 4
+
+1. Anchor one line and average the moment functional over the remaining $S_8$ action and conjugation. Record the representation, degree, compressed sizes, and any additional validated equations.
+2. Run the resulting SDP with guarded solver processes. Preserve primal moments and dual diagnostics. Investigate the full-label gauge-invariant Bargmann hierarchy in parallel.
+3. Verify constraint provenance and PSD independently. A refutation requires an exact positive margin. If the relaxation is feasible, report which constraints and PSD blocks were tested and whether feasibility is exact or numerical.
+4. Commit code, evidence, and progress. Verify the remote head.

@@ -1,0 +1,29 @@
+{
+  "scope": "S9-invariant first and second moments of all triangles with four-cycle first moments",
+  "psd_block_sizes": [
+    85,
+    84
+  ],
+  "triangle_mean": "sqrt(2/5)/7",
+  "centered_covariance_ranks": {
+    "real": 48,
+    "imaginary": 56
+  },
+  "centered_covariance_weights": {
+    "real": "243/280",
+    "imaginary": "729/980"
+  },
+  "four_cycle_mean": "-11/70",
+  "trace_signature_fourth_power": "3024/5",
+  "four_cycle_triangulations_tested": 252,
+  "exact_checks": {
+    "unsigned_edge_gram_inverse": true,
+    "real_covariance_projection": true,
+    "imaginary_covariance_projection": true,
+    "real_linear_constraints": true,
+    "imaginary_linear_constraints": true,
+    "unit_modulus_moments": true,
+    "four_cycle_means": true,
+    "fourth_trace": true
+  }
+}

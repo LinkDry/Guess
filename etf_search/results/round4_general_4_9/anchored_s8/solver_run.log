@@ -1,0 +1,14 @@
+A shape (7144, 107), nnz=21716, cone={'z': 184, 's': [72, 45, 34, 38, 34, 38, 25, 24]}
+Traceback (most recent call last):
+  File "E:\Research\Guess\etf_search\src\solve_general_4_9.py", line 382, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "E:\Research\Guess\etf_search\src\solve_general_4_9.py", line 378, in main
+    return worker(args) if args.worker else supervise(args)
+           ^^^^^^^^^^^^
+  File "E:\Research\Guess\etf_search\src\solve_general_4_9.py", line 224, in worker
+    backend = scs.LinearSolver.CPU_INDIRECT if args.indirect else scs.LinearSolver.CPU_DIRECT
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\A\AppData\Local\Programs\Python\Python311\Lib\enum.py", line 786, in __getattr__
+    raise AttributeError(name) from None
+AttributeError: CPU_DIRECT. Did you mean: 'CPU_INDIRECT'?

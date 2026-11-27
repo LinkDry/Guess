@@ -1,0 +1,26 @@
+{
+  "command": [
+    "E:\\Research\\Guess\\.venv\\Scripts\\python.exe",
+    "-B",
+    "E:\\Research\\Guess\\etf_search\\src\\solve_general_4_9.py",
+    "--output",
+    "etf_search/results/round4_general_4_9/anchored_s8_qdldl",
+    "--seconds",
+    "1790",
+    "--memory-mib",
+    "2048",
+    "--eps",
+    "1e-8",
+    "--verbose",
+    "--worker"
+  ],
+  "exit_code": 0,
+  "kill_reason": null,
+  "wall_seconds": 3.575704799965024,
+  "peak_sampled_rss_bytes": 301834240,
+  "wall_limit_seconds": 1790.0,
+  "memory_limit_bytes": 2147483648,
+  "windows_job_commit_limit_enforced": true,
+  "windows_job_error": null,
+  "rss_poll_max_seconds": 0.05
+}

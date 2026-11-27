@@ -1,0 +1,10 @@
+{
+  "base_homogeneous_rank": 98,
+  "rank_with_reanchoring": 98,
+  "rows_checked": 48,
+  "all_reanchoring_rows_redundant": true,
+  "exact_witnesses_pass_reanchoring": {
+    "anchored_s8_qdldl": true,
+    "anchored_s8_reanchored": true
+  }
+}

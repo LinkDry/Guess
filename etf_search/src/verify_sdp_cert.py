@@ -18,6 +18,9 @@ For search-sdp-certificate-v1, --model supplies the equation file (default
 model.json next to the certificate). The verifier uses exact integer factors
 and rational root intervals to bound the residual on [-1,1]^n. Recognized
 ETF branches also get a coefficient-by-coefficient constraint provenance check.
+An anchored-exact-primal-v1 candidate uses --model (default anchored_model.json
+next to the candidate) for moment order. The audit derives equations and PSD
+blocks independently and checks any included reanchoring witnesses.
 """
 
 import argparse
@@ -346,6 +349,13 @@ def main():
             model_path = args.model if args.model is not None else args.certificate.with_name("model.json")
             model, model_hash = read_object(model_path)
             report = verify_factor_certificate(document, model)
+            report["model_sha256"] = model_hash
+        elif document.get("schema") == "anchored-exact-primal-v1":
+            from verify_sdp_anchored import audit_anchored_primal
+
+            model_path = args.model or args.certificate.with_name("anchored_model.json")
+            model, model_hash = read_object(model_path)
+            report = audit_anchored_primal(document, model, exact_psd, RealField(10))
             report["model_sha256"] = model_hash
         else:
             trusted, trusted_hash = read_object(args.trusted_constraints) if args.trusted_constraints else (None, None)

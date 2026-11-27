@@ -1,0 +1,104 @@
+{
+  "certificate_sha256": "6b0ac02814caa4044ac5d90196e47d60a99b576c867f670b59ec0898c1430ee1",
+  "equalities": {
+    "base_rows": 183,
+    "degrees_of_freedom": 8,
+    "distinct_rows": 183,
+    "failed_rows": 0,
+    "rank": 98,
+    "rank_with_normalization": 99,
+    "reanchor_witnesses_checked": 0
+  },
+  "mode": "exact_anchored_primal",
+  "model_sha256": "bec682ecb65925d9973e036bd471a7551dfb1fd98c34ac672f52e73f29bc6b54",
+  "moment_coordinates": 107,
+  "normalization_holds": true,
+  "passed": true,
+  "psd": {
+    "blocks": [
+      {
+        "character": [
+          1,
+          1,
+          1
+        ],
+        "holds": true,
+        "rank": 24,
+        "size": 72
+      },
+      {
+        "character": [
+          1,
+          1,
+          -1
+        ],
+        "holds": true,
+        "rank": 14,
+        "size": 45
+      },
+      {
+        "character": [
+          1,
+          -1,
+          1
+        ],
+        "holds": true,
+        "rank": 10,
+        "size": 34
+      },
+      {
+        "character": [
+          1,
+          -1,
+          -1
+        ],
+        "holds": true,
+        "rank": 14,
+        "size": 38
+      },
+      {
+        "character": [
+          -1,
+          1,
+          1
+        ],
+        "holds": true,
+        "rank": 10,
+        "size": 34
+      },
+      {
+        "character": [
+          -1,
+          1,
+          -1
+        ],
+        "holds": true,
+        "rank": 14,
+        "size": 38
+      },
+      {
+        "character": [
+          -1,
+          -1,
+          1
+        ],
+        "holds": true,
+        "rank": 10,
+        "size": 25
+      },
+      {
+        "character": [
+          -1,
+          -1,
+          -1
+        ],
+        "holds": true,
+        "rank": 10,
+        "size": 24
+      }
+    ],
+    "holds": true
+  },
+  "relaxation_feasibility_verified": true,
+  "scope": "complete S8 and conjugation invariant order-two anchored ETF(4,9) moment relaxation"
+}

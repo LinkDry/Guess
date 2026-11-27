@@ -1,0 +1,28 @@
+A shape (7192, 107), nnz=21997, cone={'z': 232, 's': [72, 45, 34, 38, 34, 38, 25, 24]}
+------------------------------------------------------------------
+	       SCS v3.3.2 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+------------------------------------------------------------------
+problem:  variables n: 107, constraints m: 7192
+cones: 	  z: primal zero / dual free vars: 232
+	  s: psd vars: 6960, ssize: 8
+settings: eps_abs: 1.0e-08, eps_rel: 1.0e-08, eps_infeas: 1.0e-09
+	  alpha: 1.50, scale: 1.00e-01, adaptive_scale: 1
+	  max_iters: 50000, normalize: 1, rho_x: 1.00e-06
+	  acceleration_lookback: 10, acceleration_interval: 5
+	  time_limit_secs: 1.77e+03
+lin-sys:  sparse-direct-amd-qdldl
+	  nnz(A): 21997, nnz(P): 0
+------------------------------------------------------------------
+ iter | pri res | dua res |   gap   |   obj   |  scale  | time (s)
+------------------------------------------------------------------
+     0| 6.13e-01  5.33e+01  3.87e+01  1.93e+01  1.00e-01  9.23e-03
+    50| 1.79e-13  1.48e-12  7.40e-14 -3.70e-14  1.00e-01  6.17e-02
+------------------------------------------------------------------
+status:  solved
+timings: total: 6.18e-02s = setup: 7.63e-03s + solve: 5.41e-02s
+	 lin-sys: 3.14e-03s, cones: 4.98e-02s, accel: 2.13e-04s
+------------------------------------------------------------------
+objective = -0.000000
+------------------------------------------------------------------
+SCS returned solved, iter=50

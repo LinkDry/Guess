@@ -53,10 +53,26 @@ def integer_polynomial(poly, denominator):
     return {mon: val.numerator * (denominator // val.denominator) for mon, val in poly.items() if val}
 
 
+def basis_integer(value):
+    if type(value) is not int:
+        raise ValueError("polynomial basis coefficients must be integers")
+    return value
+
+
 def add_psd_block(residual, block, size, scale):
-    basis = [monomial(indices, size) for indices in block["basis"]]
+    if ("basis" in block) == ("polynomial_basis" in block):
+        raise ValueError("provide exactly one monomial or polynomial basis")
+    if "basis" in block:
+        monomials = [monomial(indices, size) for indices in block["basis"]]
+        if len(set(monomials)) != len(monomials):
+            raise ValueError("monomial basis rows must be distinct")
+        basis = [{power: 1} for power in monomials]
+    else:
+        basis = [polynomial(terms, size, basis_integer) for terms in block["polynomial_basis"]]
+        if any(not any(row.values()) for row in basis):
+            raise ValueError("polynomial basis rows must be nonzero")
     rows = block["factor_integer_rows"]
-    if not basis or len(set(basis)) != len(basis) or not isinstance(rows, list) or len(rows) != len(basis):
+    if not basis or not isinstance(rows, list) or len(rows) != len(basis):
         raise ValueError("factor must have one row per distinct basis monomial")
     if not isinstance(rows[0], list) or not rows[0]:
         raise ValueError("factor must have at least one column")
@@ -67,12 +83,14 @@ def add_psd_block(residual, block, size, scale):
     # The object dtype uses Python integers, so both multiplication and addition are exact.
     factor = np.array(rows, dtype=object)
     gram = factor @ factor.T
-    for i, m_i in enumerate(basis):
-        for j, m_j in enumerate(basis[:i+1]):
-            entry = gram[i, j]
+    for i, p_i in enumerate(basis):
+        for j, p_j in enumerate(basis[:i+1]):
+            entry = scale * gram[i, j] * (1 if i == j else 2)
             if entry:
-                power = tuple(sorted(m_i + m_j))
-                residual[power][0] -= scale * entry * (1 if i == j else 2)
+                for m_i, c_i in p_i.items():
+                    for m_j, c_j in p_j.items():
+                        power = tuple(sorted(m_i + m_j))
+                        residual[power][0] -= entry * c_i * c_j
     return {"basis_size": len(basis), "factor_columns": width}
 
 
@@ -154,9 +172,16 @@ def combinations_with_diagonal(items):
 
 
 def check_provenance(variables, branch, used_equations):
-    if branch not in {"fixed1", "fixed3_negative", "fixed3_positive"}:
+    from verify_sdp_anchored import BRANCH, anchored_variable_order, canonical_anchored_equations
+
+    if branch == BRANCH:
+        if not anchored_variable_order(variables):
+            raise ValueError("unexpected anchored ETF variable order")
+        symbols, canonical = canonical_anchored_equations()
+    elif branch in {"fixed1", "fixed3_negative", "fixed3_positive"}:
+        symbols, canonical = canonical_equations(variables, branch)
+    else:
         return {"status": "unchecked", "equations_checked": 0}
-    symbols, canonical = canonical_equations(variables, branch)
     radicals = [sp.sqrt(r) for r in (2, 5, 10)]
     field = sp.QQ.algebraic_field(sum(radicals[:2]))
     roots = [field.one] + [field.from_sympy(root) for root in radicals]
@@ -188,8 +213,12 @@ def check_provenance(variables, branch, used_equations):
             mismatched.append(name)
     scope = ("ETF(4,9), antiunitary cycle type 2^4 1" if branch == "fixed1"
              else f"ETF(4,9), antiunitary cycle type 2^3 1^3, {'negative' if branch.endswith('negative') else 'positive'} triangle")
+    source = "independent_real_gram_and_schur_equations"
+    if branch == BRANCH:
+        scope = "general complex ETF(4,9), first line dephased"
+        source = "independent_anchored_signature_equations"
     return {"status": "mismatch" if missing or mismatched else "matched", "scope": scope,
-            "source": "independent_real_gram_and_schur_equations", "equations_checked": len(used_equations),
+            "source": source, "equations_checked": len(used_equations),
             "unknown_equations": missing, "mismatched_equations": mismatched}
 
 
@@ -199,9 +228,18 @@ def verify_factor_certificate(cert, model):
     if cert.get("coefficient_basis") != COEFFICIENT_BASIS or model.get("coefficient_basis") != COEFFICIENT_BASIS:
         raise ValueError("unexpected biquadratic coefficient basis")
     variables = model["variables"]
-    if (not isinstance(variables, list) or not variables or
-        any(not isinstance(v, str) or not v for v in variables) or len(set(variables)) != len(variables)):
+    from verify_sdp_anchored import BRANCH, SignedAverage, anchored_variable_order
+
+    anchored = model.get("branch") == BRANCH
+    if anchored:
+        if not anchored_variable_order(variables):
+            raise ValueError("unexpected anchored ETF variable order")
+    elif (not isinstance(variables, list) or not variables or
+          any(not isinstance(v, str) or not v for v in variables) or len(set(variables)) != len(variables)):
         raise ValueError("variables must be distinct nonempty strings")
+    average = cert.get("reynolds")
+    if average is not None and (average != "s8_conjugation" or not anchored):
+        raise ValueError("unsupported Reynolds average for this model")
     size = len(variables)
     factor_denominator = cert["factor_denominator"]
     if type(factor_denominator) is not int or factor_denominator < 1:
@@ -233,6 +271,20 @@ def verify_factor_certificate(cert, model):
     if not isinstance(blocks, list) or any(not isinstance(block, dict) for block in blocks):
         raise ValueError("PSD blocks must be an array of factor objects")
     psd = [add_psd_block(residual, block, size, scale // factor_denominator**2) for block in blocks]
+    if average is not None:
+        # Every signed permutation preserves the ETF solutions and the box.
+        # Average the identity, preserving both the vanishing multipliers and
+        # the nonnegative sums of squares at any hypothetical ETF solution.
+        signed_average = SignedAverage()
+        reduced = defaultdict(lambda: [0, 0, 0, 0])
+        for power, coefficients in residual.items():
+            if any(coefficients):
+                representative, sign = signed_average.representative(power)
+                if sign:
+                    target = reduced[representative]
+                    for k, value in enumerate(coefficients):
+                        target[k] += sign * value
+        residual = reduced
     # Each root lies between floor/d and (floor+1)/d by integer square root.
     # Bound each residual coefficient after combining all four exact coordinates.
     root_floors = [isqrt(r * ROOT_DENOMINATOR**2) for r in (2, 5, 10)]
@@ -264,6 +316,8 @@ def verify_factor_certificate(cert, model):
               "residual_upper_bound_on_unit_box": str(bound), "residual_bound_approx": float(bound),
               "residual_terms": nonzero_terms, "residual_maximum_degree": maximum_degree,
               "radical_interval_denominator": ROOT_DENOMINATOR}
+    if average is not None:
+        report["reynolds_average"] = average
     if "residual_upper_bound_on_unit_box" in cert:
         try:
             report["producer_bound_matches"] = rational(cert["residual_upper_bound_on_unit_box"]) == bound

@@ -58,3 +58,23 @@ foreach ($branch in @('fixed3_positive_dense', 'fixed3_negative_dense')) {
     python -B etf_search/src/verify_sdp_cert.py "$dir/certificate.json" --model "$dir/model.json"
 }
 ```
+
+## 复现第四轮
+
+从仓库根目录运行。求解器环境沿用第三轮的 SCS 3.3.2、NumPy、SciPy、SymPy 与 psutil。
+
+```powershell
+$src = 'etf_search/src'
+$res = 'etf_search/results/round4_general_4_9'
+.venv/Scripts/python.exe -B "$src/solve_general_4_9.py" --output "$res/anchored_s8_qdldl" --seconds 1800 --memory-mib 2048 --eps 1e-8 --verbose
+python -B "$src/reanchor_general_4_9.py" "$res/anchored_s8_qdldl/anchored_model.json" "$res/reanchor_equalities.json"
+.venv/Scripts/python.exe -B "$src/solve_general_4_9.py" --output "$res/anchored_s8_reanchored" --extra-equalities "$res/reanchor_equalities.json" --seconds 1800 --memory-mib 2048 --eps 1e-8 --verbose
+foreach ($mode in @('anchored_s8_qdldl', 'anchored_s8_reanchored')) {
+    $dir = Join-Path $res $mode
+    python -B "$src/verify_sdp_cert.py" "$dir/anchored_exact_primal_candidate.json" --model "$dir/anchored_model.json"
+}
+python -B "$src/reanchor_general_4_9.py" "$res/anchored_s8_qdldl/anchored_model.json" "$res/reanchor_equalities.json" --rank-output "$res/reanchor_exact_rank.json" --candidate "$res/anchored_s8_qdldl/anchored_exact_primal_candidate.json" --candidate "$res/anchored_s8_reanchored/anchored_exact_primal_candidate.json"
+python -B "$src/bargmann_4_9.py" --output "$res/bargmann_exact_moments.json"
+```
+
+[第四轮模型推导](general_4_9_sdp_plan.md) · [第四轮日志](logs/progress.md)

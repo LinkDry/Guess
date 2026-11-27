@@ -1,0 +1,11 @@
+{
+  "coefficient_field": "Q(sqrt(10))",
+  "base_exact_rank": 98,
+  "overlaid_exact_rank": 98,
+  "same_moment_order": true,
+  "base_rows_are_prefix": true,
+  "psd_blocks_identical": true,
+  "extra_rows": 48,
+  "same_row_span": true,
+  "same_relaxation_feasible_set": true
+}

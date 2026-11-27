@@ -1,0 +1,134 @@
+{
+  "scope": "Necessary order-four conditions for an arbitrary ETF(4,9), after anchoring one line and averaging moments over the S8 action on the other eight lines and over conjugation. PSD is imposed on the retained tail-S4 invariant test subspace of polynomials of degree <=2, split into eight characters. Feasibility establishes feasibility of this relaxation only.",
+  "status": "solved",
+  "raw_scs_info": {
+    "status_val": 1,
+    "iter": 50,
+    "scale_updates": 0,
+    "scale": 0.1,
+    "pobj": 0.0,
+    "dobj": -7.396971901357527e-14,
+    "res_pri": 1.7934021127803107e-13,
+    "res_dual": 1.4841537068423211e-12,
+    "gap": 7.396971901357527e-14,
+    "res_infeas": null,
+    "res_unbdd_a": null,
+    "res_unbdd_p": null,
+    "comp_slack": 2.7314088490992816e-13,
+    "solve_time": 54.1208,
+    "setup_time": 7.6335,
+    "lin_sys_time": 3.1388000000000007,
+    "cone_time": 49.763200000000005,
+    "accel_time": 0.2135,
+    "rejected_accel_steps": 0,
+    "accepted_accel_steps": 0,
+    "status": "solved",
+    "lin_sys_solver": "sparse-direct-amd-qdldl",
+    "aa_stats": {
+      "iter": 10,
+      "n_accept": 0,
+      "n_reject_lapack": 0,
+      "n_reject_rank0": 0,
+      "n_reject_nonfinite": 0,
+      "n_reject_weight_cap": 0,
+      "n_safeguard_reject": 0,
+      "last_rank": 0,
+      "last_aa_norm": null,
+      "last_regularization": 0.0
+    }
+  },
+  "diagnostics": {
+    "primal": {
+      "linear_residual_inf": 1.7985612998927536e-13,
+      "equality_residual_inf": 1.6431300764452317e-14,
+      "slack_psd_min_eigenvalues": [
+        -1.8360628896369006e-14,
+        -3.754534862969945e-15,
+        -4.328625835310997e-15,
+        -3.481540452428458e-15,
+        -3.2590758015901307e-15,
+        -3.2304806589111206e-15,
+        -1.7587397593153018e-15,
+        -1.8050912377469206e-15
+      ],
+      "moment_psd_min_eigenvalues": [
+        -2.0312592958396774e-13,
+        -1.3316976480600453e-13,
+        -1.8605092633170313e-13,
+        -1.0851533087308978e-13,
+        -1.861586648869883e-13,
+        -1.0856705274797177e-13,
+        -1.0814347294452322e-13,
+        -6.372650977819663e-14
+      ],
+      "objective": 0.0
+    },
+    "dual": {
+      "stationarity_inf": 1.4841574150215031e-12,
+      "psd_min_eigenvalues": [
+        -1.7289175550078096e-17,
+        -1.8092254294681716e-17,
+        -9.335063247816392e-17,
+        -5.642140238093864e-17,
+        -2.96203235320084e-17,
+        -3.5689982148239943e-17,
+        -2.4327189666858203e-17,
+        -6.526424363117923e-17
+      ],
+      "b_dot_y": 7.396971901357525e-14,
+      "objective": -7.396971901357525e-14
+    },
+    "dual_infeasibility_ray": null
+  },
+  "sizes": {
+    "rows": 7192,
+    "moments": 107,
+    "nnz": 21997,
+    "z": 232,
+    "s": [
+      72,
+      45,
+      34,
+      38,
+      34,
+      38,
+      25,
+      24
+    ]
+  },
+  "extra_equality_count": 48,
+  "scs_version": "3.3.2",
+  "backend": "direct",
+  "settings": {
+    "eps_abs": 1e-08,
+    "eps_rel": 1e-08,
+    "eps_infeas": 1e-09,
+    "max_iters": 50000,
+    "time_limit_secs": 1774.4320584000088,
+    "verbose": true,
+    "normalize": true
+  },
+  "threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "wall_seconds_worker": 3.170358399860561,
+  "reconstruction": {
+    "status": "exact_equality_candidate_saved",
+    "free_moments": 8,
+    "max_coordinate_change": 1.107502978214825e-12,
+    "psd_min_eigenvalues_numeric": [
+      -2.2057037684684256e-14,
+      -3.627296281884994e-15,
+      -3.1718177603535102e-15,
+      -4.388389783166361e-15,
+      -3.964868971471803e-15,
+      -3.1812647016948127e-15,
+      -1.2857714905398202e-15,
+      -1.8093429687679115e-15
+    ]
+  }
+}

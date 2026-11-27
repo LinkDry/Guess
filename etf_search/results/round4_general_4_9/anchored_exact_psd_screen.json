@@ -1,0 +1,86 @@
+[
+  {
+    "run": "anchored_s8_qdldl",
+    "method": "verify_sdp_cert.exact_psd using Q(sqrt(10)) Schur congruences on the saved block coefficients",
+    "model_sha256": "bec682ecb65925d9973e036bd471a7551dfb1fd98c34ac672f52e73f29bc6b54",
+    "candidate_sha256": "6b0ac02814caa4044ac5d90196e47d60a99b576c867f670b59ec0898c1430ee1",
+    "exact_equalities_passed": true,
+    "psd_checks": [
+      {
+        "holds": true,
+        "rank": 24
+      },
+      {
+        "holds": true,
+        "rank": 14
+      },
+      {
+        "holds": true,
+        "rank": 10
+      },
+      {
+        "holds": true,
+        "rank": 14
+      },
+      {
+        "holds": true,
+        "rank": 10
+      },
+      {
+        "holds": true,
+        "rank": 14
+      },
+      {
+        "holds": true,
+        "rank": 10
+      },
+      {
+        "holds": true,
+        "rank": 10
+      }
+    ],
+    "all_saved_constraints_passed": true
+  },
+  {
+    "run": "anchored_s8_reanchored",
+    "method": "verify_sdp_cert.exact_psd using Q(sqrt(10)) Schur congruences on the saved block coefficients",
+    "model_sha256": "db8095da341d6936486344a0f656497ad2fc88113a6994914961940fc8744197",
+    "candidate_sha256": "e13f9a811486ef10e8a8781eb952cba4068c7dbcfe628e88c06ffed374673ef6",
+    "exact_equalities_passed": true,
+    "psd_checks": [
+      {
+        "holds": true,
+        "rank": 24
+      },
+      {
+        "holds": true,
+        "rank": 14
+      },
+      {
+        "holds": true,
+        "rank": 10
+      },
+      {
+        "holds": true,
+        "rank": 14
+      },
+      {
+        "holds": true,
+        "rank": 10
+      },
+      {
+        "holds": true,
+        "rank": 14
+      },
+      {
+        "holds": true,
+        "rank": 10
+      },
+      {
+        "holds": true,
+        "rank": 10
+      }
+    ],
+    "all_saved_constraints_passed": true
+  }
+]

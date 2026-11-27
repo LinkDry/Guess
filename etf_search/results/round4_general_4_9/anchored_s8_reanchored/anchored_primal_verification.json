@@ -1,0 +1,104 @@
+{
+  "certificate_sha256": "e13f9a811486ef10e8a8781eb952cba4068c7dbcfe628e88c06ffed374673ef6",
+  "equalities": {
+    "base_rows": 183,
+    "degrees_of_freedom": 8,
+    "distinct_rows": 227,
+    "failed_rows": 0,
+    "rank": 98,
+    "rank_with_normalization": 99,
+    "reanchor_witnesses_checked": 48
+  },
+  "mode": "exact_anchored_primal",
+  "model_sha256": "db8095da341d6936486344a0f656497ad2fc88113a6994914961940fc8744197",
+  "moment_coordinates": 107,
+  "normalization_holds": true,
+  "passed": true,
+  "psd": {
+    "blocks": [
+      {
+        "character": [
+          1,
+          1,
+          1
+        ],
+        "holds": true,
+        "rank": 24,
+        "size": 72
+      },
+      {
+        "character": [
+          1,
+          1,
+          -1
+        ],
+        "holds": true,
+        "rank": 14,
+        "size": 45
+      },
+      {
+        "character": [
+          1,
+          -1,
+          1
+        ],
+        "holds": true,
+        "rank": 10,
+        "size": 34
+      },
+      {
+        "character": [
+          1,
+          -1,
+          -1
+        ],
+        "holds": true,
+        "rank": 14,
+        "size": 38
+      },
+      {
+        "character": [
+          -1,
+          1,
+          1
+        ],
+        "holds": true,
+        "rank": 10,
+        "size": 34
+      },
+      {
+        "character": [
+          -1,
+          1,
+          -1
+        ],
+        "holds": true,
+        "rank": 14,
+        "size": 38
+      },
+      {
+        "character": [
+          -1,
+          -1,
+          1
+        ],
+        "holds": true,
+        "rank": 10,
+        "size": 25
+      },
+      {
+        "character": [
+          -1,
+          -1,
+          -1
+        ],
+        "holds": true,
+        "rank": 10,
+        "size": 24
+      }
+    ],
+    "holds": true
+  },
+  "relaxation_feasibility_verified": true,
+  "scope": "complete S8 and conjugation invariant order-two anchored ETF(4,9) moment relaxation with checked reanchor identities"
+}

@@ -186,5 +186,67 @@ class RoundedFactorVerifierTests(unittest.TestCase):
         self.assertFalse(report["etf_nonexistence_verified"])
 
 
+class AnchoredVerifierTests(unittest.TestCase):
+    def test_anchored_reynolds_residual_and_provenance(self):
+        roots = ["1", "sqrt(2)", "sqrt(5)", "sqrt(10)"]
+        variables = [[kind, i, j] for i in range(8) for j in range(i+1, 8) for kind in ("x", "y")]
+        model = {"schema": "search-sdp-model-v1", "branch": "anchored_general_4_9",
+                 "coefficient_basis": roots, "variables": variables,
+                 "equations": {"row_imag": [[[i], [1, 0, 0, 0]] for i in range(1, 14, 2)]}}
+        cert = {"schema": "search-sdp-certificate-v1", "coefficient_basis": roots,
+                "factor_denominator": 1, "multipliers": {"row_imag": [[[], 1]]},
+                "psd_blocks": [], "reynolds": "s8_conjugation"}
+        with TemporaryDirectory() as folder:
+            base = Path(folder)
+            (base / "cert.json").write_text(json.dumps(cert), encoding="ascii")
+            for bound, status in (("1", "matched"), ("2", "mismatch")):
+                (base / "model.json").write_text(json.dumps(model), encoding="ascii")
+                run = subprocess.run([sys.executable, "-B", str(SCRIPT), str(base / "cert.json")],
+                                     capture_output=True, text=True)
+                self.assertEqual(run.stderr, "")
+                self.assertEqual(run.returncode, 1, run.stdout)
+                report = json.loads(run.stdout)
+                self.assertEqual(report["constraint_provenance"]["status"], status)
+                self.assertEqual(report["residual_upper_bound_on_unit_box"], bound)
+                self.assertFalse(report["etf_nonexistence_verified"])
+                model["equations"]["row_imag"].append([[], [1, 0, 0, 0]])
+
+    def test_anchored_primal_rejects_wrong_constant_moment(self):
+        with TemporaryDirectory() as folder:
+            base = Path(folder)
+            model = {"variables": [[kind, i, j] for i in range(8) for j in range(i+1, 8) for kind in ("x", "y")],
+                     "coefficient_basis": ["1", "sqrt(10)/5"], "moments": [[]]}
+            candidate = {"schema": "anchored-exact-primal-v1", "coefficient_basis": model["coefficient_basis"],
+                         "moments": [["2", "0"]]}
+            (base / "anchored_model.json").write_text(json.dumps(model), encoding="ascii")
+            (base / "candidate.json").write_text(json.dumps(candidate), encoding="ascii")
+            run = subprocess.run([sys.executable, "-B", str(SCRIPT), str(base / "candidate.json")],
+                                 capture_output=True, text=True)
+            self.assertEqual(run.stderr, "")
+            self.assertEqual(run.returncode, 2)
+            self.assertIn("constant moment must equal 1", json.loads(run.stdout)["error"])
+
+    def test_factor_for_nonmonomial_basis_and_tamper(self):
+        roots = ["1", "sqrt(2)", "sqrt(5)", "sqrt(10)"]
+        model = {"schema": "search-sdp-model-v1", "variables": ["x", "y"], "coefficient_basis": roots,
+                 "equations": {"g": [[[], [1, 0, 0, 0]], [[0, 0], [1, 0, 0, 0]],
+                                      [[0, 1], [-2, 0, 0, 0]], [[1, 1], [1, 0, 0, 0]]]}}
+        cert = {"schema": "search-sdp-certificate-v1", "coefficient_basis": roots,
+                "factor_denominator": 1, "multipliers": {"g": [[[], -1]]},
+                "psd_blocks": [{"polynomial_basis": [[[[0], 1], [[1], -1]]],
+                                "factor_integer_rows": [[1]]}]}
+        with TemporaryDirectory() as folder:
+            base = Path(folder)
+            (base / "model.json").write_text(json.dumps(model), encoding="ascii")
+            for factor, status, bound in ((1, 0, "0"), (2, 1, "12")):
+                cert["psd_blocks"][0]["factor_integer_rows"] = [[factor]]
+                (base / "cert.json").write_text(json.dumps(cert), encoding="ascii")
+                run = subprocess.run([sys.executable, "-B", str(SCRIPT), str(base / "cert.json")],
+                                     capture_output=True, text=True)
+                self.assertEqual(run.stderr, "")
+                self.assertEqual(run.returncode, status, run.stdout)
+                self.assertEqual(json.loads(run.stdout)["residual_upper_bound_on_unit_box"], bound)
+
+
 if __name__ == "__main__":
     unittest.main()
