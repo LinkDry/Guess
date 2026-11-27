@@ -1,0 +1,53 @@
+{
+  "c3_residual_bound": {
+    "distance_to_radial_projection_upper_bound_exact": "1750332981789595791/1298074214633706907132624082305024",
+    "exact_modulus_lower_bound_approx": "0.019470740331728404900270280735259556",
+    "exact_modulus_lower_bound_formula": "(9/4)^2*(7-2*sqrt(10))/(36*(2*sqrt(3)+sqrt(2)))",
+    "projected_candidate_above_lower_bound": true,
+    "residual_change_upper_bound_approx": "1.5843787900702750356329294678317422e-14",
+    "residual_change_upper_bound_exact": "82265650144111002177/5192296858534827628530496329220096"
+  },
+  "checks": {
+    "hermitian": true,
+    "tightness": false,
+    "unit_diagonal": true,
+    "welch_modulus": true
+  },
+  "d": 4,
+  "exact_arithmetic_on_stored_entries": {
+    "c3_invariant": true,
+    "c3_permutation_zero_based": [
+      1,
+      2,
+      0,
+      4,
+      5,
+      3,
+      7,
+      8,
+      6
+    ],
+    "hermitian": true,
+    "max_squared_modulus_error_approx": "4.9941017811513791509312197567588405e-17",
+    "max_squared_modulus_error_exact": "64827147473688733/1298074214633706907132624082305024",
+    "method": "Treat real and imaginary binary64 components as exact dyadic rationals.",
+    "tightness_residual_frobenius_approx": "0.716884384643328571897079796761979475051496757",
+    "tightness_residual_squared_exact": "116227038009460555304795031736011487584181495555314868758450221366172930537/226156424291633194186662080095093570025917938800079226639565593765455331328",
+    "unit_diagonal": true
+  },
+  "gram_file": "best_gram.npy",
+  "gram_sha256": "21c4f3f5d2ccc46dd08521bbcabf8c9ae3d2cd81e2efd13989b09ac995b6291f",
+  "metrics": {
+    "diagonal_max_error": 0.0,
+    "hermitian_max_error": 0.0,
+    "tightness_frobenius": 0.7168843846433282,
+    "welch_max_error": 5.551115123125783e-17
+  },
+  "mode": "numeric",
+  "mu": 0.39528470752104744,
+  "n": 9,
+  "passed": false,
+  "stored_dtype": "complex128",
+  "tolerance": 1e-12,
+  "verifier_exit_code": 1
+}
