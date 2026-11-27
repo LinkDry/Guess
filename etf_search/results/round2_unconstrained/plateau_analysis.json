@@ -1,0 +1,55 @@
+{
+  "round1_best_vs_round2_best": {
+    "max_entry_error": 5.759754493821145e-09,
+    "permutation_zero_based": [
+      5,
+      2,
+      6,
+      3,
+      1,
+      4,
+      8,
+      7,
+      0
+    ],
+    "conjugation": false
+  },
+  "round2_endpoints_vs_round1_best": {
+    "tolerance": 1e-06,
+    "tested": 1000,
+    "matched": 1000,
+    "max_error_among_matches": 6.863406970416152e-08
+  },
+  "round2_best_gram_eigenvalues": [
+    -0.09553061850858911,
+    -0.09551569378582486,
+    0.04317743734660515,
+    0.07109398304436114,
+    0.10173965498277307,
+    2.00519218973127,
+    2.3033720147519343,
+    2.3235725492740524,
+    2.3428984831634154
+  ],
+  "round2_best_gradient_max_absolute": 1.7409586623575627e-09,
+  "round2_best_phase_hessian": [
+    {
+      "finite_difference_step": 0.0001,
+      "min_eigenvalue": 0.011820921059833215,
+      "max_eigenvalue": 1.8834483350328382,
+      "max_asymmetry": 1.0410561301910093e-12
+    },
+    {
+      "finite_difference_step": 1e-05,
+      "min_eigenvalue": 0.011820921078337703,
+      "max_eigenvalue": 1.883448338146622,
+      "max_asymmetry": 1.4454365438940076e-11
+    },
+    {
+      "finite_difference_step": 1e-06,
+      "min_eigenvalue": 0.011820921071102724,
+      "max_eigenvalue": 1.8834483383115477,
+      "max_asymmetry": 1.3566150980359737e-10
+    }
+  ]
+}
