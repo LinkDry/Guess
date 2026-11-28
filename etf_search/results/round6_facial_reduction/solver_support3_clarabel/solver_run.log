@@ -1,0 +1,21 @@
+Loaded support3 with blocks [183, 136, 104, 110, 104, 110, 69, 72]
+Traceback (most recent call last):
+  File "E:\Research\Guess\etf_search\src\solve_level3_face_4_9.py", line 246, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "E:\Research\Guess\etf_search\src\solve_level3_face_4_9.py", line 242, in main
+    return worker(args) if args.worker else supervise(args)
+           ^^^^^^^^^^^^
+  File "E:\Research\Guess\etf_search\src\solve_level3_face_4_9.py", line 103, in worker
+    reduced = reduce_model(model)
+              ^^^^^^^^^^^^^^^^^^^
+  File "E:\Research\Guess\etf_search\src\level3_face_model.py", line 212, in reduce_model
+    directions, echelon = kernel_directions(model, blocks)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Research\Guess\etf_search\src\level3_face_model.py", line 113, in kernel_directions
+    maps = monomial_projection_maps(blocks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Research\Guess\etf_search\src\level3_face_model.py", line 62, in monomial_projection_maps
+    if term in mapping:
+       ^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'list'

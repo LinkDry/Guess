@@ -1,0 +1,21 @@
+Loaded support4 with blocks [437, 357, 281, 299, 281, 299, 210, 208]
+Exact face blocks [128, 99, 86, 98, 86, 98, 77, 75], 199974 new equalities, A(238381, 2716)
+Solver A(238381, 2716) nnz=4595165, rank compression {'old_rows': 202138, 'retained_rows': 202138}
+------------------------------------------------------------------
+	       SCS v3.3.2 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+------------------------------------------------------------------
+problem:  variables n: 2716, constraints m: 238381
+cones: 	  z: primal zero / dual free vars: 202138
+	  s: psd vars: 36243, ssize: 8
+settings: eps_abs: 1.0e-09, eps_rel: 1.0e-09, eps_infeas: 1.0e-10
+	  alpha: 1.50, scale: 1.00e-01, adaptive_scale: 1
+	  max_iters: 3000, normalize: 1, rho_x: 1.00e-06
+	  acceleration_lookback: 10, acceleration_interval: 5
+	  time_limit_secs: 5.14e+02
+lin-sys:  sparse-indirect-scs
+	  nnz(A): 4595165, nnz(P): 0
+------------------------------------------------------------------
+ iter | pri res | dua res |   gap   |   obj   |  scale  | time (s)
+------------------------------------------------------------------
+     0| 9.69e-01  1.92e+00  3.07e+00  1.54e+00  1.00e-01  1.60e+02

@@ -12,7 +12,7 @@ from general_4_9_model import (
 
 
 EDGE_MASKS = tuple((1 << a) | (1 << b) for _, a, b in VARIABLES)
-STAGES = {'support3': 3, 'support4': 4}
+STAGES = {'support3': 3, 'support4': 4, 'support5': 5, 'support6': 6}
 
 
 def odd(word):
@@ -122,10 +122,10 @@ def cubic_basis(stage):
             if (EDGE_MASKS[word[0]] | EDGE_MASKS[word[1]] | EDGE_MASKS[word[2]]).bit_count() <= cutoff]
 
 
-def reduced_psd(orbits, monomials):
+def reduced_psd(orbits, monomials, *, fixed_vertices=4):
     """Form PSD blocks using one representative per row basis orbit."""
     result = []
-    for char, basis in basis_blocks(monomials, split=True):
+    for char, basis in basis_blocks(monomials, split=True, fixed_vertices=fixed_vertices):
         entries = []
         for row, polynomial in enumerate(basis):
             representative, sign = polynomial[0]
@@ -224,10 +224,13 @@ def build_model(*, stage='support4', extra_equations=None):
     rows, witnesses, equations = build_equalities(orbits, cumulative)
     seen = {tuple((i, *coefficient) for i, coefficient in row.items()) for row in rows}
     cubics = cubic_basis(stage)
-    blocks = reduced_psd(orbits, (*cumulative[2], *cubics))
+    fixed_vertices = max(4, STAGES[stage])
+    blocks = reduced_psd(orbits, (*cumulative[2], *cubics), fixed_vertices=fixed_vertices)
     psd_moment_count = len(orbits.representatives)
 
-    cutoff = STAGES[stage]
+    # The 5/6-vertex stages add cubic PSD directions and keep the
+    # support4 equality selection as a common baseline.
+    cutoff = min(4, STAGES[stage])
     local_variables = [i for i, (_, _, b) in enumerate(VARIABLES) if b < cutoff]
     for name, equation in equations.items():
         degree = max(map(len, equation))
@@ -273,6 +276,8 @@ def build_model(*, stage='support4', extra_equations=None):
         'maximum_monomial_degree': 6,
         'stage': stage,
         'quartic_moment_count': 107,
+        'fixed_vertices_for_psd': fixed_vertices,
+        'base_multiplier_support': cutoff,
         'core_equality_count': core_equalities,
         'extra_equality_count': len(rows) - core_equalities,
         'psd_moment_count': psd_moment_count,

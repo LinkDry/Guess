@@ -187,6 +187,31 @@ class RoundedFactorVerifierTests(unittest.TestCase):
 
 
 class AnchoredVerifierTests(unittest.TestCase):
+    def test_face_kernel_and_retained_coordinates_span(self):
+        sys.path.insert(0, str(SCRIPT.parent))
+        self.addCleanup(sys.path.pop, 0)
+        from verify_sdp_face import validate_complement
+
+        vectors = [{0: (1, 0), 2: (3, 0)}, {1: (1, 0), 2: (0, 1)}]
+        validate_complement(3, vectors, [0, 1], [2])
+        with self.assertRaisesRegex(ValueError, "independent"):
+            validate_complement(3, [vectors[0], vectors[0]], [0, 1], [2])
+
+    def test_level3_support_five_and_six(self):
+        sys.path.insert(0, str(SCRIPT.parent))
+        self.addCleanup(sys.path.pop, 0)
+        from verify_sdp_level3 import canonical_psd_bases, selected_monomials
+
+        six = selected_monomials("support6")
+        five = selected_monomials("support5")
+        self.assertEqual(len(six), 32509)
+        self.assertLess(len(five), len(six))
+        self.assertGreater(len(five), 15709)
+        self.assertEqual([len(b) for b in canonical_psd_bases("support5").values()],
+                         [1452, 1342, 1007, 1035, 1007, 1035, 722, 722])
+        self.assertEqual([len(b) for b in canonical_psd_bases("support6").values()],
+                         [3341, 3209, 2327, 2365, 2327, 2365, 1627, 1623])
+
     def test_anchored_reynolds_residual_and_provenance(self):
         roots = ["1", "sqrt(2)", "sqrt(5)", "sqrt(10)"]
         variables = [[kind, i, j] for i in range(8) for j in range(i+1, 8) for kind in ("x", "y")]

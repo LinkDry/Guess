@@ -1,0 +1,144 @@
+{
+  "scope": "S8 and conjugation invariant partial order-three relaxation (support3) with exact structural facial restriction",
+  "stage": "support3",
+  "backend": "scs",
+  "raw_info": {
+    "status_val": 1,
+    "iter": 175,
+    "scale_updates": 1,
+    "scale": 0.1,
+    "pobj": 0.0,
+    "dobj": 3.2444741766478283e-13,
+    "res_pri": 8.181649090095596e-11,
+    "res_dual": 3.49300445363852e-11,
+    "gap": 3.2444741766478283e-13,
+    "res_infeas": null,
+    "res_unbdd_a": null,
+    "res_unbdd_p": null,
+    "comp_slack": 4.044763563990467e-14,
+    "solve_time": 487.0606,
+    "setup_time": 37.6313,
+    "lin_sys_time": 97.16909999999996,
+    "cone_time": 357.78010000000023,
+    "accel_time": 10.516699999999997,
+    "rejected_accel_steps": 2,
+    "accepted_accel_steps": 2,
+    "status": "solved",
+    "lin_sys_solver": "sparse-direct-amd-qdldl",
+    "aa_stats": {
+      "iter": 2,
+      "n_accept": 4,
+      "n_reject_lapack": 0,
+      "n_reject_rank0": 0,
+      "n_reject_nonfinite": 0,
+      "n_reject_weight_cap": 0,
+      "n_safeguard_reject": 2,
+      "last_rank": 10,
+      "last_aa_norm": 0.01053330627709481,
+      "last_regularization": 7.849657507482685e-13
+    }
+  },
+  "settings": {
+    "eps_abs": 1e-09,
+    "eps_rel": 1e-09,
+    "eps_infeas": 1e-10,
+    "max_iters": 12000,
+    "time_limit_secs": 345.1158121000044,
+    "verbose": true
+  },
+  "equality_compression": {
+    "old_rows": 20620,
+    "retained_rows": 887,
+    "sparse_gram_rank": 887,
+    "selection_attempts": 1,
+    "max_dropped_row_error": 2.7755575615628914e-15,
+    "max_dropped_rhs_error": 5.619512141332102e-16,
+    "smallest_retained_qr_pivot": 0.032386101219410414,
+    "smallest_positive_gram_eigenvalue": 0.0006473068243008581,
+    "largest_discarded_gram_eigenvalue": 3.2644834146669204e-14
+  },
+  "psd_blocks": [
+    74,
+    55,
+    46,
+    50,
+    46,
+    50,
+    35,
+    39
+  ],
+  "equality_row_count_full": 20620,
+  "moments": 2547,
+  "solver_nnz": 61929,
+  "reduced_unscaled_diagnostics": {
+    "primal": {
+      "linear_residual_inf": 1.5672402264854668e-10,
+      "equality_residual_inf": 1.5672402264854668e-10,
+      "slack_psd_min_eigenvalues": [
+        0.0001830413581167958,
+        0.0031170045930112127,
+        0.00454291738336013,
+        0.0030667916840105016,
+        0.007389683689992497,
+        0.0006296785240978969,
+        0.004487214719216647,
+        0.0037438342742014638
+      ],
+      "moment_psd_min_eigenvalues": [
+        0.00018304135814319742,
+        0.003117004593011275,
+        0.004542917383359692,
+        0.0030667916840108355,
+        0.007389683689993066,
+        0.0006296785240984819,
+        0.004487214719215923,
+        0.0037438342742018003
+      ],
+      "objective": 0.0
+    },
+    "dual": {
+      "stationarity_inf": 3.4930044536385173e-11,
+      "psd_min_eigenvalues": [
+        -1.0424163124085967e-16,
+        -2.991840828078118e-19,
+        -1.0534192390612177e-18,
+        -1.6266702013577934e-18,
+        -2.324731795370902e-19,
+        -6.392023905068106e-17,
+        -7.03401641999862e-19,
+        -3.011122226285225e-19
+      ],
+      "b_dot_y": -3.2444741766478293e-13,
+      "objective": 3.2444741766478293e-13
+    },
+    "dual_infeasibility_ray": {
+      "b_dot_y": -1.0,
+      "stationarity_inf": 107.66010957274631,
+      "psd_min_eigenvalues": [
+        -0.00032128975471939646,
+        -9.221342705119864e-07,
+        -3.2468103665093845e-06,
+        -5.013663579342952e-06,
+        -7.165203570129188e-07,
+        -0.00019701262999948736,
+        -2.1679988919702624e-06,
+        -9.2807711275924e-07
+      ]
+    }
+  },
+  "original_model_diagnostics": {
+    "equality_inf": 4.1920800164518823e-11,
+    "moment_psd_min_eigenvalues": [
+      -1.512637851676128e-09,
+      -1.2638102396663216e-08,
+      -3.094671512827743e-10,
+      -9.42686094174209e-09,
+      -3.094666255921561e-10,
+      -9.42685981238521e-09,
+      -1.605550658951334e-10,
+      -2.4116913352319863e-09
+    ]
+  },
+  "numeric_only": true,
+  "worker_seconds": 15.51136130001396
+}

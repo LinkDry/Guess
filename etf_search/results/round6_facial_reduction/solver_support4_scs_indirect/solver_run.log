@@ -1,0 +1,20 @@
+Loaded support4 with blocks [437, 357, 281, 299, 281, 299, 210, 208]
+Traceback (most recent call last):
+  File "E:\Research\Guess\etf_search\src\solve_level3_face_4_9.py", line 272, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "E:\Research\Guess\etf_search\src\solve_level3_face_4_9.py", line 268, in main
+    return worker(args) if args.worker else supervise(args)
+           ^^^^^^^^^^^^
+  File "E:\Research\Guess\etf_search\src\solve_level3_face_4_9.py", line 138, in worker
+    write_json(out/'solver_face_model.json', manifest)
+  File "E:\Research\Guess\etf_search\src\solve_general_4_9.py", line 41, in write_json
+    tmp.write_text(json.dumps(clean(value), indent=2, allow_nan=False) + '\n', encoding='utf-8')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\A\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Users\A\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+MemoryError

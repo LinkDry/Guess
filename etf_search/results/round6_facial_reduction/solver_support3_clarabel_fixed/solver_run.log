@@ -1,0 +1,37 @@
+Loaded support3 with blocks [183, 136, 104, 110, 104, 110, 69, 72]
+Exact face blocks [74, 55, 46, 50, 46, 50, 35, 39], 19856 new equalities, A(31057, 2547)
+Solver A(11324, 2547) nnz=61521, rank compression {'old_rows': 20620, 'retained_rows': 887, 'max_dropped_row_error': 2.886579864025407e-15, 'max_dropped_rhs_error': 8.8003810410272135e-16, 'smallest_retained_qr_pivot': 0.0323861012194104, 'largest_dropped_qr_pivot': 2.554486852041093e-15}
+-------------------------------------------------------------
+           Clarabel.rs v0.11.1  -  Clever Acronym
+
+                   (c) Paul Goulart
+                University of Oxford, 2022
+-------------------------------------------------------------
+
+problem:
+  variables     = 2547
+  constraints   = 11324
+  nnz(P)        = 0
+  nnz(A)        = 61521
+  cones (total) = 9
+    :        Zero = 1,  numel = 887
+    : PSDTriangle = 8,  numel = (2775,1540,1081,1275,...,780)
+
+settings:
+  linear algebra: direct / qdldl, precision: 64 bit (1 thread)
+  max iter = 200, time limit = 403.678004699992,  max step = 0.990
+  tol_feas = 1.0e-9, tol_gap_abs = 1.0e-9, tol_gap_rel = 1.0e-9,
+  static reg : on, ϵ1 = 1.0e-8, ϵ2 = 4.9e-32
+  dynamic reg: on, ϵ = 1.0e-13, δ = 2.0e-7
+  iter refine: on, reltol = 1.0e-13, abstol = 1.0e-12,
+               max iter = 10, stop ratio = 5.0
+  equilibrate: on, min_scale = 1.0e-4, max_scale = 1.0e4
+               max iter = 10
+
+iter    pcost        dcost       gap       pres      dres      k/t        ��       step
+---------------------------------------------------------------------------------------------
+  0  +0.0000e+00  -0.0000e+00  0.00e+00  8.56e-01  1.03e+01  1.00e+00  1.10e+00   ------
+  1  +0.0000e+00  +4.8770e-02  4.88e-02  4.46e-01  6.19e-01  2.31e-01  5.05e-01  7.81e-01
+  2  +0.0000e+00  +1.5803e-01  1.58e-01  1.00e-01  2.91e-01  1.89e-01  2.58e-01  6.92e-01
+  3  +0.0000e+00  +1.4445e-02  1.44e-02  1.30e-02  5.19e-02  1.83e-02  4.61e-02  8.36e-01
+  4  +0.0000e+00  +7.9019e-04  7.90e-04  1.05e-03  7.46e-03  1.11e-03  4.40e-03  9.16e-01

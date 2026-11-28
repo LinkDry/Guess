@@ -1,0 +1,29 @@
+{
+  "status": 0,
+  "stop_reason": null,
+  "peak_sampled_rss_bytes": 135426048,
+  "wall_seconds": 130.68116300017573,
+  "rss_and_commit_limit_bytes": 1572864000,
+  "windows_job_commit_limit_enforced": true,
+  "windows_job_error": null,
+  "wall_limit_seconds": 300.0,
+  "command": [
+    "E:\\Research\\Guess\\.venv\\Scripts\\python.exe",
+    "-B",
+    "E:\\Research\\Guess\\etf_search\\src\\solve_level3_face_4_9.py",
+    "--cached",
+    "etf_search/results/round6_facial_reduction/solver_support4_clarabel_streamed",
+    "--output",
+    "etf_search/results/round6_facial_reduction/solver_support4_scs_compressed",
+    "--backend",
+    "scs",
+    "--seconds",
+    "300",
+    "--memory-mib",
+    "1500",
+    "--iterations",
+    "6000",
+    "--verbose",
+    "--worker"
+  ]
+}

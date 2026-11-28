@@ -95,3 +95,17 @@ python -B "$src/verify_sdp_cert.py" "$res/solver_free_support3_scaled/exact_prim
 ```
 
 固定旧矩的探针额外传入 `--fixed-candidate` 和 `--fixed-model`，指向第四轮的 `anchored_exact_primal_candidate.json` 和 `anchored_model.json`。精确线性重建使用 `python-flint` 0.9.0 加速。精确验收为测试对象重新构造子式、乘子及矩块。[第五轮模型推导](level3_4_9_sdp_plan.md)
+
+## 复现第六轮
+
+```powershell
+$src = 'etf_search/src'
+$r5 = 'etf_search/results/round5_level3_4_9'
+$r6 = 'etf_search/results/round6_facial_reduction'
+.venv/Scripts/python.exe -B "$src/solve_level3_face_4_9.py" --input "$r5/solver_free_support3_scs" --output "$r6/reproduction_support3" --backend scs --seconds 400 --memory-mib 1400 --iterations 12000
+.venv/Scripts/python.exe -B "$src/solve_level3_face_4_9.py" --reconstruct "$r6/reproduction_support3" --output "$r6/reproduction_support3_exact" --seconds 400 --memory-mib 1400
+python -B "$src/verify_sdp_cert.py" "$r6/reproduction_support3_exact/solver_exact_primal_candidate.json" --model "$r5/solver_free_support3_scs/solver_model.json"
+python -B "$src/verify_sdp_cert.py" "$r6/solver_support4_clarabel/solver_face_model.json.gz" --audit-face --model "$r5/solver_free_support4_minors/solver_model.json"
+```
+
+较大的模型使用无损 gzip 归档。`compressed_manifests.json` 记录原始字节数与未压缩数据的 SHA-256。验收入口支持直接读 gzip，重建入口可自动从同一目录载入 `solver_face_model.json.gz`。完整参数与实测资源见每次运行的 `solver_guard.json`。[第六轮计划与块尺寸](/E:/Research/Guess/etf_search/level3_facial_reduction_plan.md)

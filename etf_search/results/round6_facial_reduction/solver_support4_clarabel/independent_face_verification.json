@@ -1,0 +1,94 @@
+{
+  "blocks": [
+    {
+      "character": [
+        1,
+        1,
+        1
+      ],
+      "kernel_dimension": 309,
+      "original_size": 437,
+      "quotient_size": 128
+    },
+    {
+      "character": [
+        1,
+        1,
+        -1
+      ],
+      "kernel_dimension": 258,
+      "original_size": 357,
+      "quotient_size": 99
+    },
+    {
+      "character": [
+        1,
+        -1,
+        1
+      ],
+      "kernel_dimension": 195,
+      "original_size": 281,
+      "quotient_size": 86
+    },
+    {
+      "character": [
+        1,
+        -1,
+        -1
+      ],
+      "kernel_dimension": 201,
+      "original_size": 299,
+      "quotient_size": 98
+    },
+    {
+      "character": [
+        -1,
+        1,
+        1
+      ],
+      "kernel_dimension": 195,
+      "original_size": 281,
+      "quotient_size": 86
+    },
+    {
+      "character": [
+        -1,
+        1,
+        -1
+      ],
+      "kernel_dimension": 201,
+      "original_size": 299,
+      "quotient_size": 98
+    },
+    {
+      "character": [
+        -1,
+        -1,
+        1
+      ],
+      "kernel_dimension": 133,
+      "original_size": 210,
+      "quotient_size": 77
+    },
+    {
+      "character": [
+        -1,
+        -1,
+        -1
+      ],
+      "kernel_dimension": 133,
+      "original_size": 208,
+      "quotient_size": 75
+    }
+  ],
+  "certificate_sha256": "407a87700111076f3b75853eff142333c230189f9085dcf9e43c2264278b1bd1",
+  "cross_rows_checked": 199974,
+  "declared_polynomials_verified": 38,
+  "equivalence_to_original_relaxation_verified": true,
+  "etf_preserving_face_verified": true,
+  "mode": "exact_structural_face_audit",
+  "norm_witnesses_outside_direct_original_row_span": [],
+  "original_equalities_checked": 2163,
+  "passed": true,
+  "stage": "support4"
+}

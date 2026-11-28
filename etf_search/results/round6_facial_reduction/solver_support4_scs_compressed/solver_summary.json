@@ -1,0 +1,105 @@
+{
+  "backend": "scs",
+  "raw_info": {
+    "status_val": 2,
+    "iter": 6000,
+    "scale_updates": 54,
+    "scale": 2.5773313732166503e-05,
+    "pobj": 0.0,
+    "dobj": -6.515270868385489e-09,
+    "res_pri": 3.5946326120541402e-06,
+    "res_dual": 7.572371761520976e-07,
+    "gap": 6.515270868385489e-09,
+    "res_infeas": null,
+    "res_unbdd_a": null,
+    "res_unbdd_p": null,
+    "comp_slack": 2.208649930410338e-14,
+    "solve_time": 129313.2634,
+    "setup_time": 817.3545,
+    "lin_sys_time": 32724.222200000037,
+    "cone_time": 47959.53730000003,
+    "accel_time": 710.3073999999639,
+    "rejected_accel_steps": 66,
+    "accepted_accel_steps": 3,
+    "status": "solved (inaccurate - reached max_iters)",
+    "lin_sys_solver": "sparse-direct-amd-qdldl",
+    "aa_stats": {
+      "iter": 3,
+      "n_accept": 69,
+      "n_reject_lapack": 0,
+      "n_reject_rank0": 0,
+      "n_reject_nonfinite": 0,
+      "n_reject_weight_cap": 0,
+      "n_safeguard_reject": 66,
+      "last_rank": 10,
+      "last_aa_norm": 8607.096227441063,
+      "last_regularization": 9.33853903793709e-15
+    }
+  },
+  "settings": {
+    "eps_abs": 1e-09,
+    "eps_rel": 1e-09,
+    "eps_infeas": 1e-10,
+    "max_iters": 6000,
+    "time_limit_secs": 279.61466760002077,
+    "verbose": true
+  },
+  "cached_conic_source": "etf_search\\results\\round6_facial_reduction\\solver_support4_clarabel_streamed",
+  "cone": {
+    "z": 2346,
+    "s": [
+      128,
+      99,
+      86,
+      98,
+      86,
+      98,
+      77,
+      75
+    ]
+  },
+  "solver_scale_diagnostics": {
+    "primal": {
+      "linear_residual_inf": 3.5946326120534465e-06,
+      "equality_residual_inf": 8.818968948443029e-07,
+      "slack_psd_min_eigenvalues": [
+        -9.03610384464046e-17,
+        -3.197838463150962e-18,
+        4.386725566103266e-06,
+        1.7529904153214274e-17,
+        -3.939884030806314e-17,
+        -3.614575728207962e-17,
+        -1.6146664316352522e-17,
+        4.656486486534237e-06
+      ],
+      "moment_psd_min_eigenvalues": [
+        -4.60844622610751e-07,
+        2.9798847905532647e-07,
+        4.386725566106997e-06,
+        -7.842728298663775e-08,
+        5.329894440303701e-07,
+        -3.7288106118657655e-07,
+        5.864139102158673e-07,
+        4.656486489645253e-06
+      ],
+      "objective": 0.0
+    },
+    "dual": {
+      "stationarity_inf": 7.57237176154987e-07,
+      "psd_min_eigenvalues": [
+        -4.7864542531954085e-17,
+        -4.173196819620118e-17,
+        -1.7677281976603698e-23,
+        -7.974251418394142e-17,
+        -5.64942948006232e-17,
+        -6.867213066056729e-17,
+        -7.371544902007357e-17,
+        -3.421843129302848e-23
+      ],
+      "b_dot_y": 6.515270868385489e-09,
+      "objective": -6.515270868385489e-09
+    },
+    "dual_infeasibility_ray": null
+  },
+  "numeric_only": true
+}

@@ -46,3 +46,10 @@ All Round 1 phases executed on 2026-11-27. See [progress.md](progress.md) for ev
 2. Select cubic monomial orbits and build the symmetry-compressed degree-six model. Solve both the fixed quartic extension and the free model under a monitored budget.
 3. Independently validate any dual obstruction or feasible moment vector, including the equation provenance and the selected blocks.
 4. Archive all decisions and compare the remote head after pushing.
+
+## Round 6
+
+1. Derive common null directions from degree-three polynomial identities and include their cross constraints. Compare exact compression sizes with Round 5.
+2. Run guarded Clarabel and SCS on the reduced three- and four-point problems. Use the independent verifier on any stored witness or dual.
+3. Extend the PSD monomial space to the five-point and six-point cubic shapes in that order, with the corresponding tail subgroups. Report measured or estimated resource requirements for stages that do not reach a solve.
+4. Record exact versus numerical status, document the branch decision if applicable, and push verified artifacts.

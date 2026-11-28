@@ -1,0 +1,142 @@
+[
+  {
+    "stage": "support3",
+    "original_sizes": [
+      183,
+      136,
+      104,
+      110,
+      104,
+      110,
+      69,
+      72
+    ],
+    "kernel_dimensions": [
+      109,
+      81,
+      58,
+      60,
+      58,
+      60,
+      34,
+      33
+    ],
+    "reduced_sizes": [
+      74,
+      55,
+      46,
+      50,
+      46,
+      50,
+      35,
+      39
+    ],
+    "original_psd_rows": 54325,
+    "reduced_psd_rows": 10437
+  },
+  {
+    "stage": "support4",
+    "original_sizes": [
+      437,
+      357,
+      281,
+      299,
+      281,
+      299,
+      210,
+      208
+    ],
+    "kernel_dimensions": [
+      309,
+      258,
+      195,
+      201,
+      195,
+      201,
+      133,
+      133
+    ],
+    "reduced_sizes": [
+      128,
+      99,
+      86,
+      98,
+      86,
+      98,
+      77,
+      75
+    ],
+    "original_psd_rows": 372439,
+    "reduced_psd_rows": 36243
+  },
+  {
+    "stage": "support5",
+    "original_sizes": [
+      1452,
+      1342,
+      1007,
+      1035,
+      1007,
+      1035,
+      722,
+      722
+    ],
+    "kernel_dimensions": [
+      1079,
+      1000,
+      723,
+      733,
+      723,
+      733,
+      483,
+      487
+    ],
+    "reduced_sizes": [
+      373,
+      342,
+      284,
+      302,
+      284,
+      302,
+      239,
+      235
+    ],
+    "original_psd_rows": 4565353,
+    "reduced_psd_rows": 357260
+  },
+  {
+    "stage": "support6",
+    "original_sizes": [
+      3341,
+      3209,
+      2327,
+      2365,
+      2327,
+      2365,
+      1627,
+      1623
+    ],
+    "kernel_dimensions": [
+      2455,
+      2354,
+      1625,
+      1644,
+      1625,
+      1644,
+      1048,
+      1050
+    ],
+    "reduced_sizes": [
+      886,
+      855,
+      702,
+      721,
+      702,
+      721,
+      579,
+      573
+    ],
+    "original_psd_rows": 24388356,
+    "reduced_psd_rows": 2105310
+  }
+]

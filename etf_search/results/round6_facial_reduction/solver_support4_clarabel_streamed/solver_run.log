@@ -1,0 +1,4 @@
+Loaded support4 with blocks [437, 357, 281, 299, 281, 299, 210, 208]
+Exact face blocks [128, 99, 86, 98, 86, 98, 77, 75], 199974 new equalities, A(238381, 2716)
+Solver A(38589, 2716) nnz=357217, rank compression {'old_rows': 202138, 'retained_rows': 2346, 'sparse_gram_rank': 2346, 'selection_attempts': 3, 'max_dropped_row_error': 4.3298697960381105e-15, 'max_dropped_rhs_error': 1.2888995426507677e-15, 'smallest_retained_qr_pivot': 0.02122791965345744, 'smallest_positive_gram_eigenvalue': 0.002236776399192272, 'largest_discarded_gram_eigenvalue': 1.783882176842442e-13}
+memory allocation of 742479640 bytes failed

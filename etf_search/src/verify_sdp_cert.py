@@ -99,7 +99,13 @@ class RealField:
 
 
 def read_object(path):
-    data = path.read_bytes()
+    if path.suffix == ".gz":
+        import gzip
+
+        with gzip.open(path, "rb") as stream:
+            data = stream.read()
+    else:
+        data = path.read_bytes()
 
     def strict_pairs(pairs):
         result = dict(pairs)
@@ -338,6 +344,8 @@ def main():
     parser.add_argument("certificate", type=Path)
     parser.add_argument("--trusted-constraints", type=Path)
     parser.add_argument("--model", type=Path, help="equations and moment order for the certificate")
+    parser.add_argument("--negative-direction", type=Path, help="verify a PSD counterexample for a primal candidate")
+    parser.add_argument("--audit-face", action="store_true", help="audit a structural facial reduction manifest")
     parser.add_argument("--audit-level3-model", action="store_true", help="audit the manifest supplied as the first argument")
     parser.add_argument("--primal-npz", type=Path, help="also diagnose the numeric x vector in a solver NPZ")
     parser.add_argument("--fixed1", action="store_true", help="verify necessary equations for the single-fixed-line branch")
@@ -349,7 +357,23 @@ def main():
         if args.digits < 20:
             raise ValueError("working precision must be at least 20 digits")
         document, digest = read_object(args.certificate)
-        if args.audit_level3_model:
+        if args.negative_direction:
+            from verify_sdp_face import verify_negative_direction
+
+            model, model_hash = read_object(args.model or args.certificate.with_name("solver_face_model.json"))
+            witness, witness_hash = read_object(args.negative_direction)
+            report = verify_negative_direction(document, model, witness)
+            report.update(face_model_sha256=model_hash, integer_test_vector_sha256=witness_hash)
+        elif args.audit_face:
+            from verify_sdp_face import check_exact_face
+
+            source, source_hash = read_object(args.model) if args.model else (None, None)
+            if source is not None and document.get("source_sha256") != source_hash:
+                raise ValueError("facial source manifest SHA-256 disagrees")
+            report = check_exact_face(document, source)
+            if source_hash is not None:
+                report["source_model_sha256"] = source_hash
+        elif args.audit_level3_model:
             from verify_sdp_level3 import audit_model_numerically
 
             coordinates = None
@@ -375,6 +399,8 @@ def main():
             from verify_sdp_level3 import verify_degree6_primal, verify_moment_dual
 
             model_path = args.model or args.certificate.with_name("solver_model.json")
+            if args.model is None and not model_path.exists():
+                model_path = args.certificate.with_name("solver_face_model.json")
             if args.model is None and not model_path.exists():
                 model_path = args.certificate.with_name("anchored_model.json")
             model, model_hash = read_object(model_path)

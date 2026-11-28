@@ -1,0 +1,16 @@
+Loaded support3 with blocks [183, 136, 104, 110, 104, 110, 69, 72]
+Exact face blocks [74, 55, 46, 50, 46, 50, 35, 39], 19856 new equalities, A(31057, 2547)
+Traceback (most recent call last):
+  File "E:\Research\Guess\etf_search\src\solve_level3_face_4_9.py", line 249, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "E:\Research\Guess\etf_search\src\solve_level3_face_4_9.py", line 245, in main
+    return worker(args) if args.worker else supervise(args)
+           ^^^^^^^^^^^^
+  File "E:\Research\Guess\etf_search\src\solve_level3_face_4_9.py", line 125, in worker
+    selected, compression = compress_rows(scaled_A, scaled_b, full_cone)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Research\Guess\etf_search\src\solve_level3_face_4_9.py", line 44, in compress_rows
+    residual_rows = equality[dropped] - relation.T @ equality[kept]
+                    ~~~~~~~~^^^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 383. MiB for an array with shape (19733, 2547) and data type float64

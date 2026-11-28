@@ -1,0 +1,2 @@
+Solving rank-887 exact rational square system by Dixon lifting
+{"schema": "anchored-exact-primal-v1", "coefficient_basis": ["1", "sqrt(10)/5"], "rational_equality_rank": 887, "maximum_coordinate_change": 1.277810643754429e-10, "all_equalities_exact": true, "failed_equality_count": 0, "first_failed_equality_rows": []}

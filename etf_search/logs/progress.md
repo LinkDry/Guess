@@ -87,3 +87,12 @@ $$
 - **Agent 3** 缩放三点自由、三点固定、四点自由、四点固定运行分别耗时约 94.4、142.1、209.9、379.8 秒（其中三点固定使用原锥）。最高采样峰值 RSS 约 1375 MiB。两条未缩放四点长跑达到墙钟上限，导出前退出。为导出留出时间后，各补跑 950 步并归档原始向量。本轮无通过验收的不可行对偶或六次矩可行见证。
 
 下轮处理零枢轴关联的线性矩约束并减少半正定块的结构性零方向。超出当前四点基底的三个边因子轨道先加入“相邻两边加一条不相交边”的五点轨道，再加入三条两两不相交边的六点匹配轨道。对应的固定子空间证明需改用固定前五或六个顶点的子群。一般复数 ETF$(4,9)$ 继续记为 `?`。
+
+## Round 6 · 2026-11-28（北京时间）
+
+- **Agent 2** 从一次与二次恒等式乘低次单项式得到结构性核，随后在每个字符块施加 $M_kq=0$。求解使用由非枢轴坐标张成的补空间以保留稀疏性。另导出原轨道和基下的精确正交补 $V_k$，并以轨道长度为内积权重逐列核对。三点与四点的最大块分别从 183 降到 74、从 437 降到 128。[面约简计划](../level3_facial_reduction_plan.md) · [三点正交补](../results/round6_facial_reduction/support3_orthogonal_complements.json) · [四点正交补](../results/round6_facial_reduction/support4_orthogonal_complements.json)
+- **Agent 3** 将三点与四点模型的含归一化等式从 20620、202138 条缩到 887、2346 条供求解，之后在全部等式上检验代数重建。三点 Clarabel 在 480 秒达到墙钟上限，峰值采样 RSS 2509.4 MiB。四点 Clarabel 在分批预处理后，因子分解时申请约 708 MiB 连续内存失败，峰值采样 RSS 3406.4 MiB。三点 SCS 在 175 步返回 `solved`，受限进程墙钟 15.8 秒，面约简后原尺度最小特征值约 $1.83\times10^{-4}$。四点 SCS 在 6000 步达到迭代上限，原始残差约 $3.59\times10^{-6}$。正裕量试验同样达到迭代上限。[求解记录](../results/round6_facial_reduction/)
+- **Agent 4** 逐个重建两组面约简的核来源、补空间和压缩矩系数，并核对 19856 和 199974 条交叉等式。三点的 Dixon 代数重建在原始模型的 763 条齐次等式和八个未约简 PSD 块上通过独立精确验收，也满足全部结构核等式。四点重建满足全部等式，但第一块存在整数负方向，单位化二次型严格低于 0，其有理上界约为 $-7.26380533\times10^{-6}$。四点松弛的可行性仍待定。[三点精确见证](../results/round6_facial_reduction/solver_support3_exact_dixon/independent_exact_original_primal_verification.json) · [四点负方向](../results/round6_facial_reduction/solver_support4_exact_dixon/independent_negative_direction_verification.json)
+- **阶段 6A / 6B** 已实现五点和六点三次单项式的分阶段构造，分别使用固定前五点和前六点的尾部子群。两组精确核维数已计算，约化后最大块为 373 与 886，打包 PSD 行为 357260 与 2105310。三点和四点在 Clarabel 下均未达到高精度准入条件。因此五点和六点只做到分块与核规模评估。[四阶段块尺寸](../results/round6_facial_reduction/face_dimensions.json)
+
+一般 ETF$(4,9)$ 继续记为 `?`。当前未触发 A/B 停损决策。完整的面约简六阶松弛仍待精确检验。

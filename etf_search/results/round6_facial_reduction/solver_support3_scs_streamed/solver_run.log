@@ -1,0 +1,30 @@
+Loaded support3 with blocks [183, 136, 104, 110, 104, 110, 69, 72]
+Exact face blocks [74, 55, 46, 50, 46, 50, 35, 39], 19856 new equalities, A(31057, 2547)
+Solver A(11324, 2547) nnz=61929, rank compression {'old_rows': 20620, 'retained_rows': 887, 'sparse_gram_rank': 887, 'selection_attempts': 1, 'max_dropped_row_error': 2.7755575615628914e-15, 'max_dropped_rhs_error': 5.619512141332102e-16, 'smallest_retained_qr_pivot': 0.032386101219410414, 'smallest_positive_gram_eigenvalue': 0.0006473068243008581, 'largest_discarded_gram_eigenvalue': 3.2644834146669204e-14}
+------------------------------------------------------------------
+	       SCS v3.3.2 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+------------------------------------------------------------------
+problem:  variables n: 2547, constraints m: 11324
+cones: 	  z: primal zero / dual free vars: 887
+	  s: psd vars: 10437, ssize: 8
+settings: eps_abs: 1.0e-09, eps_rel: 1.0e-09, eps_infeas: 1.0e-10
+	  alpha: 1.50, scale: 1.00e-01, adaptive_scale: 1
+	  max_iters: 12000, normalize: 1, rho_x: 1.00e-06
+	  acceleration_lookback: 10, acceleration_interval: 5
+	  time_limit_secs: 3.45e+02
+lin-sys:  sparse-direct-amd-qdldl
+	  nnz(A): 61929, nnz(P): 0
+------------------------------------------------------------------
+ iter | pri res | dua res |   gap   |   obj   |  scale  | time (s)
+------------------------------------------------------------------
+     0| 9.83e-01  1.34e+00  1.68e+00  8.42e-01  1.00e-01  4.21e-02
+   175| 8.18e-11  3.49e-11  3.24e-13  1.62e-13  1.00e-01  5.25e-01
+------------------------------------------------------------------
+status:  solved
+timings: total: 5.25e-01s = setup: 3.76e-02s + solve: 4.87e-01s
+	 lin-sys: 9.72e-02s, cones: 3.58e-01s, accel: 1.05e-02s
+------------------------------------------------------------------
+objective = 0.000000
+------------------------------------------------------------------
+scs returned solved; saved vectors

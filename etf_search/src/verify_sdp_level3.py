@@ -173,11 +173,29 @@ def declared_polynomials(block):
     return result
 
 
+def checked_face_rows(manifest):
+    model = manifest.model
+    if "face_reduction" not in model:
+        return (*manifest.check_rows(), None)
+    from verify_sdp_face import check_exact_face
+
+    audit = check_exact_face(model)
+    if not audit["passed"]:
+        raise ValueError("facial equivalence to original relaxation was not verified")
+    count = model["face_reduction"]["input_equality_count"]
+    original = {**model, "equalities": model["equalities"][:count],
+                "equality_witnesses": model["equality_witnesses"][:count]}
+    rows, kinds, names = MomentManifest(original).check_rows()
+    kinds["face_kernel"] = len(model["equalities"]) - count
+    rows.extend(row_terms(row, len(manifest.representatives)) for row in model["equalities"][count:])
+    return rows, kinds, names, audit
+
+
 def verify_moment_dual(candidate, model):
     if candidate["coefficient_basis"] != BASIS:
         raise ValueError("unexpected dual coefficient basis")
     manifest = MomentManifest(model)
-    equality_rows, kinds, rank_names = manifest.check_rows()
+    equality_rows, kinds, rank_names, face = checked_face_rows(manifest)
     equality_dual = [rational(v) for v in candidate["equality_dual"]]
     denominator = candidate["psd_factor_denominator"]
     if type(denominator) is not int or denominator <= 0 or len(equality_dual) != len(equality_rows):
@@ -200,7 +218,9 @@ def verify_moment_dual(candidate, model):
             for j, right in enumerate(basis[:i+1]):
                 if gram[i,j]:
                     weight = Fraction(gram[i,j] * (1 if i == j else 2), denominator**2)
-                    for index, coefficient in manifest.full_product(left, right).items():
+                    product = (manifest.character_product(left, right) if face is not None
+                               else manifest.full_product(left, right))
+                    for index, coefficient in product.items():
                         residual[index][0] -= weight*coefficient
         sizes.append(len(basis))
     # Equality row zero is m_empty=1. Both sides of this inequality are
@@ -211,12 +231,13 @@ def verify_moment_dual(candidate, model):
     return {"passed": margin > 0, "mode": "exact_anchored_moment_dual", "conditional": conditional,
             "relaxation_refuted_on_unit_box": margin > 0, "etf_nonexistence_verified": margin > 0 and not conditional,
             "equality_rows_verified": kinds, "rank_equations_verified": rank_names,
-            "psd_factor_block_sizes": sizes, "residual_upper_bound": str(bound), "margin": str(margin)}
+            "psd_factor_block_sizes": sizes, "residual_upper_bound": str(bound), "margin": str(margin),
+            **({"structural_face_equivalence_verified": True} if face is not None else {})}
 
 
 @cache
 def selected_monomials(stage):
-    if stage not in ("support3", "support4"):
+    if stage not in ("support3", "support4", "support5", "support6"):
         raise ValueError("unknown cubic support restriction")
     cutoff = int(stage[-1])
     monomials = [()]
@@ -228,7 +249,7 @@ def selected_monomials(stage):
 
 
 def canonical_psd_bases(stage):
-    return compressed_psd_bases(selected_monomials(stage))
+    return compressed_psd_bases(selected_monomials(stage), fixed_vertices=max(4, int(stage[-1])))
 
 
 def validate_polynomial_manifest(model):
@@ -249,7 +270,7 @@ def verify_degree6_primal(candidate, model, exact_psd, field):
     values = [pair(p) for p in candidate["moments"]]
     if len(values) != len(manifest.representatives) or values[0] != (1, 0):
         raise ValueError("constant moment must equal 1 and moment count must match")
-    rows, kinds, rank_names = manifest.check_rows()
+    rows, kinds, rank_names, face = checked_face_rows(manifest)
     polynomial_count = validate_polynomial_manifest(model)
     failures = []
     for number, row in enumerate(rows[1:], 1):
@@ -286,6 +307,7 @@ def verify_degree6_primal(candidate, model, exact_psd, field):
             "relaxation_feasibility_verified": passed, "equality_rows_verified": kinds,
             "rank_equations_verified": rank_names, "failed_row_numbers": failures,
             "declared_polynomials_verified": polynomial_count,
+            **({"structural_face_equivalence_verified": True} if face is not None else {}),
             "scope": "Targeted degree six with selected cubic support and manifest equality witnesses"}
 
 

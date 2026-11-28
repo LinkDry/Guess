@@ -161,16 +161,18 @@ class SignedAverage:
         return self._orbits[compact]
 
 
-def compressed_psd_bases(quadratic_monomials):
+def compressed_psd_bases(quadratic_monomials, fixed_vertices=4):
     """Orbit character projections for tail S4 and two head transpositions."""
     from itertools import product
 
     # Enumerate the entire subgroup. Retain one nonzero projection per orbit.
     head = [(0, 1, 2, 3), (1, 0, 2, 3), (0, 1, 3, 2), (1, 0, 3, 2)]
     subgroup = []
+    if not 4 <= fixed_vertices <= 8:
+        raise ValueError("invalid fixed vertex count in PSD compression")
     for switches, first_four in enumerate(head):
-        for tail in permutations((4, 5, 6, 7)):
-            permutation = first_four + tail
+        for tail in permutations(range(fixed_vertices, 8)):
+            permutation = first_four + tuple(range(4, fixed_vertices)) + tail
             mapping = []
             for kind, i, j in VARIABLES:
                 a, b = permutation[i], permutation[j]

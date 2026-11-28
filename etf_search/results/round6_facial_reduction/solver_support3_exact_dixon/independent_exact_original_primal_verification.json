@@ -1,0 +1,121 @@
+{
+  "certificate_sha256": "c5d556ce1898b6ed86ceeff809eb7fd6708f88eafd46b39bc2c79d43fc19b7e8",
+  "cubics": 2576,
+  "declared_polynomials_verified": 38,
+  "equality_rows_verified": {
+    "base": 531,
+    "rank": 232
+  },
+  "failed_row_numbers": [],
+  "mode": "exact_anchored_degree6_primal",
+  "model_sha256": "c5f5a095ac5aedb203058a32c4b90626d3598cf40bbd91b087e2fc2bb83f4213",
+  "passed": true,
+  "psd": [
+    {
+      "character": [
+        1,
+        1,
+        1
+      ],
+      "holds": true,
+      "rank": 74,
+      "size": 183
+    },
+    {
+      "character": [
+        1,
+        1,
+        -1
+      ],
+      "holds": true,
+      "rank": 55,
+      "size": 136
+    },
+    {
+      "character": [
+        1,
+        -1,
+        1
+      ],
+      "holds": true,
+      "rank": 46,
+      "size": 104
+    },
+    {
+      "character": [
+        1,
+        -1,
+        -1
+      ],
+      "holds": true,
+      "rank": 50,
+      "size": 110
+    },
+    {
+      "character": [
+        -1,
+        1,
+        1
+      ],
+      "holds": true,
+      "rank": 46,
+      "size": 104
+    },
+    {
+      "character": [
+        -1,
+        1,
+        -1
+      ],
+      "holds": true,
+      "rank": 50,
+      "size": 110
+    },
+    {
+      "character": [
+        -1,
+        -1,
+        1
+      ],
+      "holds": true,
+      "rank": 35,
+      "size": 69
+    },
+    {
+      "character": [
+        -1,
+        -1,
+        -1
+      ],
+      "holds": true,
+      "rank": 39,
+      "size": 72
+    }
+  ],
+  "rank_equations_verified": [
+    "gram5_01234_01234_real",
+    "gram5_01234_01235_imag",
+    "gram5_01234_01235_real",
+    "gram5_01234_01238_imag",
+    "gram5_01234_01238_real",
+    "gram5_01234_01256_imag",
+    "gram5_01234_01256_real",
+    "gram5_01234_01258_imag",
+    "gram5_01234_01258_real",
+    "gram5_01238_01238_real",
+    "gram5_01238_01248_imag",
+    "gram5_01238_01248_real",
+    "gram5_01238_01458_imag",
+    "gram5_01238_01458_real",
+    "schur4_0123_0123_real",
+    "schur4_0123_0124_imag",
+    "schur4_0123_0124_real",
+    "schur4_0123_0145_imag",
+    "schur4_0123_0145_real",
+    "schur4_0123_0456_imag",
+    "schur4_0123_0456_real"
+  ],
+  "relaxation_feasibility_verified": true,
+  "scope": "Targeted degree six with selected cubic support and manifest equality witnesses",
+  "stage": "support3"
+}

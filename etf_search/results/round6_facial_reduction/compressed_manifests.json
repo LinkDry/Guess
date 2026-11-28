@@ -1,0 +1,14 @@
+{
+  "solver_support4_clarabel": {
+    "file": "solver_face_model.json.gz",
+    "original_bytes": 252549141,
+    "gzip_bytes": 15330149,
+    "uncompressed_sha256": "407a87700111076f3b75853eff142333c230189f9085dcf9e43c2264278b1bd1"
+  },
+  "solver_support4_clarabel_streamed": {
+    "file": "solver_face_model.json.gz",
+    "original_bytes": 252549141,
+    "gzip_bytes": 15330149,
+    "uncompressed_sha256": "407a87700111076f3b75853eff142333c230189f9085dcf9e43c2264278b1bd1"
+  }
+}

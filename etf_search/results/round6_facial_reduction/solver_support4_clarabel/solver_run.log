@@ -1,0 +1,22 @@
+Loaded support4 with blocks [437, 357, 281, 299, 281, 299, 210, 208]
+Exact face blocks [128, 99, 86, 98, 86, 98, 77, 75], 199974 new equalities, A(238381, 2716)
+Traceback (most recent call last):
+  File "E:\Research\Guess\etf_search\src\solve_level3_face_4_9.py", line 249, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "E:\Research\Guess\etf_search\src\solve_level3_face_4_9.py", line 245, in main
+    return worker(args) if args.worker else supervise(args)
+           ^^^^^^^^^^^^
+  File "E:\Research\Guess\etf_search\src\solve_level3_face_4_9.py", line 125, in worker
+    selected, compression = compress_rows(scaled_A, scaled_b, full_cone)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Research\Guess\etf_search\src\solve_level3_face_4_9.py", line 34, in compress_rows
+    equality = matrix[:zero_count, :].toarray()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\A\AppData\Local\Programs\Python\Python311\Lib\site-packages\scipy\sparse\_compressed.py", line 1005, in toarray
+    out = self._process_toarray_args(order, out)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\A\AppData\Local\Programs\Python\Python311\Lib\site-packages\scipy\sparse\_base.py", line 1523, in _process_toarray_args
+    return np.zeros(self.shape, dtype=self.dtype, order=order)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 4.09 GiB for an array with shape (202138, 2716) and data type float64

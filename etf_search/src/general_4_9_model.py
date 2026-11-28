@@ -150,9 +150,11 @@ def transposition(i, j):
     return edge_action(permutation)
 
 
-def basis_blocks(monomials, split):
+def basis_blocks(monomials, split, *, fixed_vertices=4):
     """Build integer bases of the tail S4 fixed space and its character spaces."""
-    generators = [(transposition(i, i + 1), 1) for i in range(4, 7)]
+    if not 4 <= fixed_vertices <= N:
+        raise ValueError("fixed_vertices must be between four and eight")
+    generators = [(transposition(i, i + 1), 1) for i in range(fixed_vertices, N - 1)]
     heads = [transposition(0, 1), transposition(2, 3)]
     characters = product((1, -1), repeat=3) if split else [(1, 1, 0)]
     for first, second, conj in characters:
