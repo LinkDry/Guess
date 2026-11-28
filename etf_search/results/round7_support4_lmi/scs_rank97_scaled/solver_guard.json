@@ -1,0 +1,26 @@
+{
+  "command": [
+    "E:\\Research\\Guess\\.venv\\Scripts\\python.exe",
+    "-B",
+    "E:\\Research\\Guess\\etf_search\\src\\solve_level3_lmi_4_9.py",
+    "--backend",
+    "scs",
+    "--psd-congruence",
+    "--input",
+    "etf_search/results/round7_support4_lmi/lmi_conic_data_rank97.npz",
+    "--output",
+    "etf_search/results/round7_support4_lmi/scs_rank97_scaled",
+    "--worker"
+  ],
+  "worker_pid": 29156,
+  "exit_code": 0,
+  "kill_reason": null,
+  "guard_error": null,
+  "wall_seconds": 375.1940262001008,
+  "peak_sampled_rss_bytes": 388247552,
+  "wall_limit_seconds": 900,
+  "memory_limit_bytes": 4294967296,
+  "rss_poll_max_seconds": 0.05,
+  "hard_memory_limit_enforced": true,
+  "windows_job_commit_limit_enforced": true
+}

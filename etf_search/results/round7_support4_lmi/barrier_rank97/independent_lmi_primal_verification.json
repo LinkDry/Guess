@@ -1,0 +1,259 @@
+{
+  "numeric": {
+    "mode": "numeric_reduced_lmi",
+    "exact_proof": false,
+    "packing": "lower",
+    "shape": [
+      36243,
+      97
+    ],
+    "nnz": 3226358,
+    "primal": {
+      "objective": 0.0,
+      "min_eigenvalues": [
+        3.290280070751033e-08,
+        4.30347928754754e-06,
+        0.00014944108982804208,
+        4.8755867403253955e-06,
+        2.2417699271688157e-05,
+        7.230003387187263e-06,
+        2.506298764195423e-05,
+        0.00028852823864374607
+      ],
+      "slack_residual_inf": 7.105427357601002e-15,
+      "slack_min_eigenvalues": [
+        3.290280007908109e-08,
+        4.3034792878462515e-06,
+        0.00014944108982805108,
+        4.875586739992298e-06,
+        2.241769927065389e-05,
+        7.230003386912078e-06,
+        2.506298764198857e-05,
+        0.00028852823864344444
+      ],
+      "affine_complementarity": 7.485994285732619e-07
+    },
+    "dual": {
+      "min_eigenvalues": [
+        1.0368961139551274e-11,
+        2.0107801977446103e-11,
+        1.6565719939594656e-11,
+        1.0899202909007875e-11,
+        1.599320934781091e-11,
+        8.913777537547753e-12,
+        1.1389976099808737e-11,
+        9.247308883783838e-12
+      ],
+      "objective_stationarity_inf": 8.56846409359181e-12,
+      "ray_stationarity_inf": 8.56846409359181e-12,
+      "ray_b_dot_z": 7.485990770246518e-07
+    }
+  },
+  "structural_face_equivalence_verified": true,
+  "stage": "support4",
+  "model_sha256": "407a87700111076f3b75853eff142333c230189f9085dcf9e43c2264278b1bd1",
+  "exact_primal": {
+    "passed": true,
+    "relaxation_feasibility_verified": true,
+    "failed_equality_count": 0,
+    "first_failed_equalities": [],
+    "blocks": [
+      {
+        "character": [
+          1,
+          1,
+          1
+        ],
+        "min_eigenvalue_approx": 3.290280005760583e-08,
+        "size": 128,
+        "holds": true,
+        "rank": 128,
+        "method": "exact_diagonal_dominance"
+      },
+      {
+        "character": [
+          1,
+          1,
+          -1
+        ],
+        "min_eigenvalue_approx": 4.3034792882742504e-06,
+        "size": 99,
+        "holds": true,
+        "rank": 99,
+        "method": "exact_diagonal_dominance"
+      },
+      {
+        "character": [
+          1,
+          -1,
+          1
+        ],
+        "min_eigenvalue_approx": 0.0001494410898268028,
+        "size": 86,
+        "holds": true,
+        "rank": 86,
+        "method": "exact_diagonal_dominance"
+      },
+      {
+        "character": [
+          1,
+          -1,
+          -1
+        ],
+        "min_eigenvalue_approx": 4.8755867397249296e-06,
+        "size": 98,
+        "holds": true,
+        "rank": 98,
+        "method": "exact_diagonal_dominance"
+      },
+      {
+        "character": [
+          -1,
+          1,
+          1
+        ],
+        "min_eigenvalue_approx": 2.2417699271598422e-05,
+        "size": 86,
+        "holds": true,
+        "rank": 86,
+        "method": "exact_diagonal_dominance"
+      },
+      {
+        "character": [
+          -1,
+          1,
+          -1
+        ],
+        "min_eigenvalue_approx": 7.230003385954575e-06,
+        "size": 98,
+        "holds": true,
+        "rank": 98,
+        "method": "exact_diagonal_dominance"
+      },
+      {
+        "character": [
+          -1,
+          -1,
+          1
+        ],
+        "min_eigenvalue_approx": 2.506298764483592e-05,
+        "size": 77,
+        "holds": true,
+        "rank": 77,
+        "method": "exact_diagonal_dominance"
+      },
+      {
+        "character": [
+          -1,
+          -1,
+          -1
+        ],
+        "min_eigenvalue_approx": 0.0002885282386425783,
+        "size": 75,
+        "holds": true,
+        "rank": 75,
+        "method": "exact_diagonal_dominance"
+      }
+    ],
+    "free_coordinate_denominator": 1000000000000000,
+    "retained_chart_columns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      110
+    ]
+  }
+}

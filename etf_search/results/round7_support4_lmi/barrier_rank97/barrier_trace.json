@@ -1,0 +1,74 @@
+[
+  {
+    "mu": 0.01,
+    "primal_scaled_min_margin": -7.366143879078863,
+    "dual_b_dot_y": 0.10385612092108369,
+    "dual_stationarity_inf_unscaled": 3.666716181984636e-14,
+    "barrier_gap_at_stationarity": 7.47,
+    "termination": "barrier_stage_complete",
+    "wall_seconds": 0.9841272998601198
+  },
+  {
+    "mu": 0.001,
+    "primal_scaled_min_margin": -0.6743254513442719,
+    "dual_b_dot_y": 0.07267454865396106,
+    "dual_stationarity_inf_unscaled": 1.5148101590906245e-11,
+    "barrier_gap_at_stationarity": 0.747,
+    "termination": "barrier_stage_complete",
+    "wall_seconds": 1.6318619998637587
+  },
+  {
+    "mu": 0.0001,
+    "primal_scaled_min_margin": -0.04036870080059196,
+    "dual_b_dot_y": 0.03433129919581207,
+    "dual_stationarity_inf_unscaled": 8.417696800559239e-10,
+    "barrier_gap_at_stationarity": 0.0747,
+    "termination": "barrier_stage_complete",
+    "wall_seconds": 2.46120009990409
+  },
+  {
+    "mu": 1e-05,
+    "primal_scaled_min_margin": -0.0012200024051556965,
+    "dual_b_dot_y": 0.006249997594845071,
+    "dual_stationarity_inf_unscaled": 3.971877080705122e-14,
+    "barrier_gap_at_stationarity": 0.007470000000000001,
+    "termination": "barrier_stage_complete",
+    "wall_seconds": 4.684490599902347
+  },
+  {
+    "mu": 1e-06,
+    "primal_scaled_min_margin": -3.0033422246838238e-05,
+    "dual_b_dot_y": 0.0007169669676342035,
+    "dual_stationarity_inf_unscaled": 6.679697169871416e-09,
+    "barrier_gap_at_stationarity": 0.0007469999999999999,
+    "termination": "barrier_stage_complete",
+    "wall_seconds": 6.079416999826208
+  },
+  {
+    "mu": 1e-07,
+    "primal_scaled_min_margin": -7.130306901725753e-07,
+    "dual_b_dot_y": 7.398697031045444e-05,
+    "dual_stationarity_inf_unscaled": 1.0836610239725142e-11,
+    "barrier_gap_at_stationarity": 7.47e-05,
+    "termination": "barrier_stage_complete",
+    "wall_seconds": 6.957856999943033
+  },
+  {
+    "mu": 1e-08,
+    "primal_scaled_min_margin": -1.0472963103631427e-08,
+    "dual_b_dot_y": 7.459527017474174e-06,
+    "dual_stationarity_inf_unscaled": 1.9558962807112064e-13,
+    "barrier_gap_at_stationarity": 7.4700000000000005e-06,
+    "termination": "barrier_stage_complete",
+    "wall_seconds": 8.108001499902457
+  },
+  {
+    "mu": 1e-09,
+    "primal_scaled_min_margin": 1.5993364298347415e-09,
+    "dual_b_dot_y": 7.485990769383358e-07,
+    "dual_stationarity_inf_unscaled": 8.56846409359181e-12,
+    "barrier_gap_at_stationarity": 7.47e-07,
+    "termination": "barrier_stage_complete",
+    "wall_seconds": 8.884946299949661
+  }
+]

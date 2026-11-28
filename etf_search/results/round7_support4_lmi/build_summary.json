@@ -1,0 +1,31 @@
+{
+  "model_sha256": "407a87700111076f3b75853eff142333c230189f9085dcf9e43c2264278b1bd1",
+  "lmi_sha256": "bfd93acba648526c0016130d33829b1e051a76f0b36d37aa6adce379808ad2f3",
+  "equalities_checked_exactly": 202138,
+  "exact_rank": 2346,
+  "free_dimension": 370,
+  "zero_cone_rows": 0,
+  "psd_blocks": [
+    128,
+    99,
+    86,
+    98,
+    86,
+    98,
+    77,
+    75
+  ],
+  "conic_shape": [
+    36243,
+    370
+  ],
+  "conic_nnz": 3290649,
+  "conic_density": 0.2453893426577807,
+  "conic_csc_bytes": 39489272,
+  "exact_chart_nnz": 138738,
+  "largest_chart_denominator_bits": 67,
+  "minimum_numeric_qr_pivot": 0.004912183548225776,
+  "seconds_dixon": 13.540419499855489,
+  "seconds_check_all_equalities": 20.713268799940124,
+  "wall_seconds": 44.54239089996554
+}

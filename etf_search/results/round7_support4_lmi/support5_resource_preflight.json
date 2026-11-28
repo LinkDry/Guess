@@ -1,0 +1,47 @@
+{
+  "dimension_source": "Round 6 face_dimensions.json",
+  "stages": [
+    {
+      "stage": "support4",
+      "reduced_block_orders": [
+        128,
+        99,
+        86,
+        98,
+        86,
+        98,
+        77,
+        75
+      ],
+      "packed_rows": 36243,
+      "dense_cone_triangle_slots": 92447676,
+      "cone_triangle_float64_bytes": 739581408,
+      "cone_triangle_float64_int32_bytes": 1109372112,
+      "dense_pencil_bytes_per_visible_direction": 289944,
+      "dense_hessian_transform_bytes_per_visible_direction": 573912,
+      "face_cross_equalities_upper_bound_before_dedup": 512521,
+      "equalities_and_lmi_rank_measured": true
+    },
+    {
+      "stage": "support5",
+      "reduced_block_orders": [
+        373,
+        342,
+        284,
+        302,
+        284,
+        302,
+        239,
+        235
+      ],
+      "packed_rows": 357260,
+      "dense_cone_triangle_slots": 8679772394,
+      "cone_triangle_float64_bytes": 69438179152,
+      "cone_triangle_float64_int32_bytes": 104157268728,
+      "dense_pencil_bytes_per_visible_direction": 2858080,
+      "dense_hessian_transform_bytes_per_visible_direction": 5697272,
+      "face_cross_equalities_upper_bound_before_dedup": 6582480,
+      "equalities_and_lmi_rank_measured": false
+    }
+  ]
+}

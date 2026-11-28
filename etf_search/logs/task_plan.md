@@ -53,3 +53,9 @@ All Round 1 phases executed on 2026-11-27. See [progress.md](progress.md) for ev
 2. Run guarded Clarabel and SCS on the reduced three- and four-point problems. Use the independent verifier on any stored witness or dual.
 3. Extend the PSD monomial space to the five-point and six-point cubic shapes in that order, with the corresponding tail subgroups. Report measured or estimated resource requirements for stages that do not reach a solve.
 4. Record exact versus numerical status, document the branch decision if applicable, and push verified artifacts.
+
+## Round 7
+
+1. Select candidate pivots from the saved row compression, solve for an affine chart over the rationals, and verify it against every face equation. Archive pivot and free coordinates, the source hash, the exact chart, and the PSD-only conic data.
+2. Independently assess certificate reconstruction while running guarded Clarabel and SCS on the same coefficient data. Record unscaled primal and dual diagnostics and measured resource use.
+3. Check any feasible point or refutation in exact arithmetic against the original moment model. If exact feasibility is established, assess the comparable five-point build. Archive and push with fresh tests and remote-head verification.

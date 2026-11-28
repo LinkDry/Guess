@@ -96,3 +96,13 @@ $$
 - **阶段 6A / 6B** 已实现五点和六点三次单项式的分阶段构造，分别使用固定前五点和前六点的尾部子群。两组精确核维数已计算，约化后最大块为 373 与 886，打包 PSD 行为 357260 与 2105310。三点和四点在 Clarabel 下均未达到高精度准入条件。因此五点和六点只做到分块与核规模评估。[四阶段块尺寸](../results/round6_facial_reduction/face_dimensions.json)
 
 一般 ETF$(4,9)$ 继续记为 `?`。当前未触发 A/B 停损决策。完整的面约简六阶松弛仍待精确检验。
+
+## Round 7 · 2026-11-28（北京时间）
+
+- **Agent 1** 复核了公开文献。Waldron, *An Introduction to Finite Tight Frames*, Example 12.68 明确提出此例。Fickus、Jasper、Mixon 的 *The Singer–Zauner Gap for Equiangular Tight Frames*（arXiv:2605.28738）覆盖 $d^2-d+1<N<d^2$，$(4,9)$ 及其 Naimark 补均在区间之外。
+- **Agent 2** 以有理 Dixon 消元并逐条验证全部 202,138 条等式，确认秩 2,346 和 370 个自由坐标。用精确系数证明 97 列张成整个 PSD 仿射方向像，得到 36,243 个 PSD 打包行、97 个变量、零等式锥行的等价 LMI。重新构建两份数值档案并得到同一 SHA-256。[消元与五点预评估](../round7_lmi_plan.md)
+- **Agent 3** 在 4 GiB、900 秒限额下运行 Clarabel。QDLDL 与 Faer 都在初始化时申请 739,581,408 字节失败。该数值等于八个 PSD 打包块稠密三角的双精度存储量。SCS 两次均设置 `eps_abs=eps_rel=1e-9` 并跑满 20,000 步。原尺度运行约 386 秒，原始残差 $1.24\times10^{-4}$，重算最小仿射特征值 $2.19\times10^{-8}$。正对角合同缩放运行约 375 秒，原始残差 $3.07\times10^{-6}$，原尺度重算最小仿射特征值 $-8.10\times10^{-5}$。两次状态均为 `solved (inaccurate)`。[求解器原始向量与日志](../results/round7_support4_lmi/)
+- **协调** 在同一 97 变量 LMI 上加入共同谱裕量，改用紧凑对数行列式 Newton 计算。约 9.1 秒取得正归一化裕量 $1.5993364\times10^{-9}$。把自由坐标有理舍入后，代入精确仿射式生成 $\mathbb Q(\sqrt{10})$ 见证。[障碍路径与见证](../results/round7_support4_lmi/barrier_rank97/)
+- **Agent 4** 独立复核原始四点模型的面约简等价性、完整面等式和八个约简块的精确正定性。最小的约简块浮点特征值约 $3.29\times10^{-8}$。验收成立，四点六阶松弛精确可行，一般复数 ETF$(4,9)$ 的存在性仍为 `?`。[原始矩见证的独立验收](../results/round7_support4_lmi/barrier_rank97/independent_face_original_primal_verification.json)
+
+**五点阶段。** 已评估面约简结构与零空间求解的资源预算。八块共有 357,260 个 PSD 打包行，按当前 Clarabel 组装方式，仅稠密锥缩放的数值数组约 64.7 GiB。五点的实际等式秩和 PSD 方向像秩待测。下一阶段优先分批生成交叉约束，保留稀疏独立行，再以流式块运算累计紧凑 Hessian，控制 4 GiB 内存预算。[规模数据](../results/round7_support4_lmi/support5_resource_preflight.json)

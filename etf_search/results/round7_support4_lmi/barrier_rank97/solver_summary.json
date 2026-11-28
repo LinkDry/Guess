@@ -1,0 +1,9 @@
+{
+  "mu": 1e-09,
+  "primal_scaled_min_margin": 1.5993364298347415e-09,
+  "dual_b_dot_y": 7.485990769383358e-07,
+  "dual_stationarity_inf_unscaled": 8.56846409359181e-12,
+  "barrier_gap_at_stationarity": 7.47e-07,
+  "termination": "barrier_stage_complete",
+  "wall_seconds": 9.067878700094298
+}

@@ -1,0 +1,116 @@
+{
+  "stage": "support4",
+  "model_sha256": "407a87700111076f3b75853eff142333c230189f9085dcf9e43c2264278b1bd1",
+  "candidate_sha256": "6930dccc568a6e0a8507404d40ec128c972a50b00313dd5f331b794bffa5de47",
+  "candidate_source_rounding_denominator": 100000000000000,
+  "structural_face_equivalence_verified": true,
+  "face_equivalence_verification": "independent_lmi_primal_verification.json",
+  "exact_primal": {
+    "passed": true,
+    "relaxation_feasibility_verified": true,
+    "failed_equality_count": 0,
+    "first_failed_equalities": [],
+    "blocks": [
+      {
+        "character": [
+          1,
+          1,
+          1
+        ],
+        "min_eigenvalue_approx": 3.29028001849821e-08,
+        "size": 128,
+        "holds": true,
+        "rank": 128,
+        "method": "exact_diagonal_dominance"
+      },
+      {
+        "character": [
+          1,
+          1,
+          -1
+        ],
+        "min_eigenvalue_approx": 4.303479288513023e-06,
+        "size": 99,
+        "holds": true,
+        "rank": 99,
+        "method": "exact_diagonal_dominance"
+      },
+      {
+        "character": [
+          1,
+          -1,
+          1
+        ],
+        "min_eigenvalue_approx": 0.0001494410898265706,
+        "size": 86,
+        "holds": true,
+        "rank": 86,
+        "method": "exact_diagonal_dominance"
+      },
+      {
+        "character": [
+          1,
+          -1,
+          -1
+        ],
+        "min_eigenvalue_approx": 4.875586739304642e-06,
+        "size": 98,
+        "holds": true,
+        "rank": 98,
+        "method": "exact_diagonal_dominance"
+      },
+      {
+        "character": [
+          -1,
+          1,
+          1
+        ],
+        "min_eigenvalue_approx": 2.2417699270200696e-05,
+        "size": 86,
+        "holds": true,
+        "rank": 86,
+        "method": "exact_diagonal_dominance"
+      },
+      {
+        "character": [
+          -1,
+          1,
+          -1
+        ],
+        "min_eigenvalue_approx": 7.230003385906559e-06,
+        "size": 98,
+        "holds": true,
+        "rank": 98,
+        "method": "exact_diagonal_dominance"
+      },
+      {
+        "character": [
+          -1,
+          -1,
+          1
+        ],
+        "min_eigenvalue_approx": 2.5062987644940046e-05,
+        "size": 77,
+        "holds": true,
+        "rank": 77,
+        "method": "exact_diagonal_dominance"
+      },
+      {
+        "character": [
+          -1,
+          -1,
+          -1
+        ],
+        "min_eigenvalue_approx": 0.00028852823864368015,
+        "size": 75,
+        "holds": true,
+        "rank": 75,
+        "method": "exact_diagonal_dominance"
+      }
+    ]
+  },
+  "moment_count": 2716,
+  "equalities_checked": 202138,
+  "moment_bounds_verified": true,
+  "wall_seconds_excluding_prior_face_audit": 5.930296499980614
+}
