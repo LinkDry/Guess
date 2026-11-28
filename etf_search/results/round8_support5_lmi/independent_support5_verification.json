@@ -1,0 +1,135 @@
+{
+  "passed": true,
+  "stage": "support5",
+  "model_sha256": "06e5774d389e49bd6be674843aabc1af1e33919b8b7031a88a8f14eed10c7677",
+  "inherited_face_sha256": "407a87700111076f3b75853eff142333c230189f9085dcf9e43c2264278b1bd1",
+  "conditional": false,
+  "moment_count": 2719,
+  "inherited_equality_rank": 2346,
+  "inherited_homogeneous_rows_checked": 202137,
+  "equations": {
+    "unique_cross_rows": 7027,
+    "cross_row_proposals": 66581,
+    "additional_rank": 296,
+    "additional_minor_prime": 65537,
+    "exact_rank_including_normalization": 2642,
+    "free_dimension": 77
+  },
+  "psd_image": {
+    "exact_rank": 75,
+    "minor_prime": 65537,
+    "exact_discarded_direction_relations": 2
+  },
+  "psd_stencils_checked": 357260,
+  "psd_block_sizes": [
+    373,
+    342,
+    284,
+    302,
+    284,
+    302,
+    239,
+    235
+  ],
+  "scope": "Inherited support-four face equalities, plus support-five raw kernel cross rows and principal-coordinate PSD blocks in the eight selected characters. Every anchored ETF satisfies these constraints, subject to any fixed moment assumptions. Raw cross rows imply the projected kernel cross rows, so PSD lifts by congruence to the original eight support-five character blocks.",
+  "common_kernel": {
+    "dimensions": [
+      9,
+      6,
+      4,
+      6,
+      4,
+      6,
+      3,
+      3
+    ],
+    "affine_coefficients_checked": 78
+  },
+  "exact_primal": {
+    "passed": true,
+    "blocks": [
+      {
+        "min_eigenvalue_approx": 7.428537612047901e-06,
+        "size": 364,
+        "holds": true,
+        "rank": 364,
+        "method": "exact_diagonal_dominance",
+        "original_block_order": 373,
+        "principal_order": 364,
+        "verified_kernel_dimension": 9
+      },
+      {
+        "min_eigenvalue_approx": 4.3576755438381566e-05,
+        "size": 336,
+        "holds": true,
+        "rank": 336,
+        "method": "exact_diagonal_dominance",
+        "original_block_order": 342,
+        "principal_order": 336,
+        "verified_kernel_dimension": 6
+      },
+      {
+        "min_eigenvalue_approx": 0.00017125615826119712,
+        "size": 280,
+        "holds": true,
+        "rank": 280,
+        "method": "exact_diagonal_dominance",
+        "original_block_order": 284,
+        "principal_order": 280,
+        "verified_kernel_dimension": 4
+      },
+      {
+        "min_eigenvalue_approx": 0.00023589009799236102,
+        "size": 296,
+        "holds": true,
+        "rank": 296,
+        "method": "exact_diagonal_dominance",
+        "original_block_order": 302,
+        "principal_order": 296,
+        "verified_kernel_dimension": 6
+      },
+      {
+        "min_eigenvalue_approx": 0.00017394983191864884,
+        "size": 280,
+        "holds": true,
+        "rank": 280,
+        "method": "exact_diagonal_dominance",
+        "original_block_order": 284,
+        "principal_order": 280,
+        "verified_kernel_dimension": 4
+      },
+      {
+        "min_eigenvalue_approx": 0.00019700035930963626,
+        "size": 296,
+        "holds": true,
+        "rank": 296,
+        "method": "exact_diagonal_dominance",
+        "original_block_order": 302,
+        "principal_order": 296,
+        "verified_kernel_dimension": 6
+      },
+      {
+        "min_eigenvalue_approx": 0.001484085290448609,
+        "size": 236,
+        "holds": true,
+        "rank": 236,
+        "method": "exact_diagonal_dominance",
+        "original_block_order": 239,
+        "principal_order": 236,
+        "verified_kernel_dimension": 3
+      },
+      {
+        "min_eigenvalue_approx": 0.0017685363515925303,
+        "size": 232,
+        "holds": true,
+        "rank": 232,
+        "method": "exact_diagonal_dominance",
+        "original_block_order": 235,
+        "principal_order": 232,
+        "verified_kernel_dimension": 3
+      }
+    ],
+    "inherited_equations_checked": 202137,
+    "cross_equations_checked": 7027
+  }
+}

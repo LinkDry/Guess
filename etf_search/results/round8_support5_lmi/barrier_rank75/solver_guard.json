@@ -1,0 +1,27 @@
+{
+  "command": [
+    "C:\\Users\\A\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "E:\\Research\\Guess\\etf_search\\src\\solve_support5_barrier.py",
+    "--input",
+    "E:\\Research\\Guess\\etf_search\\results\\round8_support5_lmi\\pencil",
+    "--output",
+    "E:\\Research\\Guess\\etf_search\\results\\round8_support5_lmi\\barrier_rank75",
+    "--seconds",
+    "1800",
+    "--memory-mib",
+    "3584",
+    "--worker"
+  ],
+  "worker_pid": 14080,
+  "exit_code": 0,
+  "kill_reason": null,
+  "guard_error": null,
+  "wall_seconds": 365.2202488000039,
+  "peak_sampled_rss_bytes": 205971456,
+  "wall_limit_seconds": 1800.0,
+  "memory_limit_bytes": 3758096384,
+  "rss_poll_max_seconds": 0.05,
+  "hard_memory_limit_enforced": true,
+  "windows_job_commit_limit_enforced": true
+}

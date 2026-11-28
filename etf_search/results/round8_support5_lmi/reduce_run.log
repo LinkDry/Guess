@@ -1,0 +1,10 @@
+296 new pivots and 77 free variables. Composing exact charts.
+PSD numeric image rank after block 0: 75
+PSD numeric image rank after block 1: 75
+PSD numeric image rank after block 2: 75
+PSD numeric image rank after block 3: 75
+PSD numeric image rank after block 4: 75
+PSD numeric image rank after block 5: 75
+PSD numeric image rank after block 6: 75
+PSD numeric image rank after block 7: 75
+{'stage': 'support5', 'moments': 2719, 'additional_equality_rank': 296, 'equality_rank': 2642, 'free_dimension': 77, 'psd_image_rank': 75, 'block_sizes': [373, 342, 284, 302, 284, 302, 239, 235], 'packed_psd_rows': 357260, 'estimated_blockwise_bytes': 606843392, 'reduction_seconds': 53.161458999849856, 'budget_gate_passed': True}

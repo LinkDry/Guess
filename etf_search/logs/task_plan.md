@@ -59,3 +59,9 @@ All Round 1 phases executed on 2026-11-27. See [progress.md](progress.md) for ev
 1. Select candidate pivots from the saved row compression, solve for an affine chart over the rationals, and verify it against every face equation. Archive pivot and free coordinates, the source hash, the exact chart, and the PSD-only conic data.
 2. Independently assess certificate reconstruction while running guarded Clarabel and SCS on the same coefficient data. Record unscaled primal and dual diagnostics and measured resource use.
 3. Check any feasible point or refutation in exact arithmetic against the original moment model. If exact feasibility is established, assess the comparable five-point build. Archive and push with fresh tests and remote-head verification.
+
+## Round 8
+
+1. Generate five-point face equations by orbit representatives of the products of structural kernel polynomials and the monomial basis. Recover the same face without materializing the unreduced moment blocks.
+2. Seed row reduction with the certified Round 7 chart. Select independent added equations, solve over the rationals, and verify every generated row. Reduce the packed PSD image and record the exact rank and budget.
+3. Use a guarded blockwise margin solve if the resource bound permits it. Independently certify any positive primal or negative dual result. Archive the numerical result with the next-round decision.

@@ -1,0 +1,10 @@
+{
+  "phase": "model",
+  "exit_code": 0,
+  "kill_reason": null,
+  "wall_seconds": 28.468860800145194,
+  "peak_sampled_rss_bytes": 902590464,
+  "memory_limit_bytes": 4194304000,
+  "wall_limit_seconds": 700.0,
+  "windows_job_commit_limit_enforced": true
+}

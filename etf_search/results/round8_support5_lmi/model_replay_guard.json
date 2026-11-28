@@ -1,0 +1,22 @@
+{
+  "phase": "model",
+  "exit_code": 0,
+  "kill_reason": null,
+  "wall_seconds": 31.373666800092906,
+  "peak_sampled_rss_bytes": 890408960,
+  "memory_limit_bytes": 4194304000,
+  "wall_limit_seconds": 700.0,
+  "windows_job_commit_limit_enforced": true,
+  "command": [
+    "C:\\Users\\A\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "E:\\Research\\Guess\\etf_search\\src\\build_support5_lmi.py",
+    "--face",
+    "etf_search/results/round6_facial_reduction/solver_support4_clarabel_streamed/solver_face_model.json.gz",
+    "--output",
+    "C:\\Users\\A\\AppData\\Local\\Temp\\etf-round8-certified-replay",
+    "--seconds",
+    "700",
+    "--worker"
+  ]
+}

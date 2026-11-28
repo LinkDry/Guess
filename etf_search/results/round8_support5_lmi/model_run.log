@@ -1,0 +1,10 @@
+support5: 66581 face row proposals, 7027 unique nonzero rows, 2719 moments so far
+PSD block 0: 373 by 373, 173497 terms, 2719 moments so far
+PSD block 1: 342 by 342, 160195 terms, 2719 moments so far
+PSD block 2: 284 by 284, 125750 terms, 2719 moments so far
+PSD block 3: 302 by 302, 132434 terms, 2719 moments so far
+PSD block 4: 284 by 284, 125450 terms, 2719 moments so far
+PSD block 5: 302 by 302, 132005 terms, 2719 moments so far
+PSD block 6: 239 by 239, 98725 terms, 2719 moments so far
+PSD block 7: 235 by 235, 99756 terms, 2719 moments so far
+Sparse model ready in 28.02s
