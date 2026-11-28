@@ -172,7 +172,7 @@ def combinations_with_diagonal(items):
 
 
 def check_provenance(variables, branch, used_equations):
-    from verify_sdp_anchored import BRANCH, anchored_variable_order, canonical_anchored_equations
+    from verify_sdp_anchored import BRANCH, anchored_variable_order, canonical_anchored_equations, named_rank_equation
 
     if branch == BRANCH:
         if not anchored_variable_order(variables):
@@ -190,11 +190,14 @@ def check_provenance(variables, branch, used_equations):
     coordinate_cache = {}
     expression_cache = {}
     for name, supplied in sorted(used_equations.items()):
-        if name not in canonical:
+        expression = canonical.get(name)
+        if expression is None and branch == BRANCH:
+            expression = named_rank_equation(name)
+        if expression is None:
             missing.append(name)
             continue
         expected = {}
-        for exponent, value in sp.Poly(canonical[name].expand(), *symbols).terms():
+        for exponent, value in sp.Poly(expression.expand(), *symbols).terms():
             if value:
                 power = tuple(i for i, degree in enumerate(exponent) for _ in range(degree))
                 if value not in expression_cache:

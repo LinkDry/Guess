@@ -21,6 +21,10 @@ ETF branches also get a coefficient-by-coefficient constraint provenance check.
 An anchored-exact-primal-v1 candidate uses --model (default anchored_model.json
 next to the candidate) for moment order. The audit derives equations and PSD
 blocks independently and checks any included reanchoring witnesses.
+For anchored-moment-box-dual-v1 and degree-six primal candidates, the verifier
+checks canonical equality witnesses and signed orbit products. Use
+--audit-level3-model to audit a manifest without a certificate, optionally
+with --primal-npz to report numerical feasibility diagnostics.
 """
 
 import argparse
@@ -333,7 +337,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("certificate", type=Path)
     parser.add_argument("--trusted-constraints", type=Path)
-    parser.add_argument("--model", type=Path, help="equations for search-sdp-certificate-v1")
+    parser.add_argument("--model", type=Path, help="equations and moment order for the certificate")
+    parser.add_argument("--audit-level3-model", action="store_true", help="audit the manifest supplied as the first argument")
+    parser.add_argument("--primal-npz", type=Path, help="also diagnose the numeric x vector in a solver NPZ")
     parser.add_argument("--fixed1", action="store_true", help="verify necessary equations for the single-fixed-line branch")
     parser.add_argument("--digits", type=int, default=50)
     parser.add_argument("--tolerance", default="1e-9")
@@ -343,19 +349,41 @@ def main():
         if args.digits < 20:
             raise ValueError("working precision must be at least 20 digits")
         document, digest = read_object(args.certificate)
-        if document.get("schema") == "search-sdp-certificate-v1":
+        if args.audit_level3_model:
+            from verify_sdp_level3 import audit_model_numerically
+
+            coordinates = None
+            if args.primal_npz:
+                import numpy as np
+                from io import BytesIO
+
+                primal_bytes = args.primal_npz.read_bytes()
+                with np.load(BytesIO(primal_bytes), allow_pickle=False) as archive:
+                    coordinates = archive["x"]
+            report = audit_model_numerically(document, coordinates)
+            if coordinates is not None:
+                report["primal_sha256"] = sha256(primal_bytes).hexdigest()
+        elif document.get("schema") == "search-sdp-certificate-v1":
             from verify_sdp_factor_cert import verify_factor_certificate
 
             model_path = args.model if args.model is not None else args.certificate.with_name("model.json")
             model, model_hash = read_object(model_path)
             report = verify_factor_certificate(document, model)
             report["model_sha256"] = model_hash
-        elif document.get("schema") == "anchored-exact-primal-v1":
+        elif document.get("schema") in {"anchored-exact-primal-v1", "anchored-moment-box-dual-v1"}:
             from verify_sdp_anchored import audit_anchored_primal
+            from verify_sdp_level3 import verify_degree6_primal, verify_moment_dual
 
-            model_path = args.model or args.certificate.with_name("anchored_model.json")
+            model_path = args.model or args.certificate.with_name("solver_model.json")
+            if args.model is None and not model_path.exists():
+                model_path = args.certificate.with_name("anchored_model.json")
             model, model_hash = read_object(model_path)
-            report = audit_anchored_primal(document, model, exact_psd, RealField(10))
+            if document["schema"] == "anchored-moment-box-dual-v1":
+                report = verify_moment_dual(document, model)
+            elif model.get("maximum_monomial_degree") == 6:
+                report = verify_degree6_primal(document, model, exact_psd, RealField(10))
+            else:
+                report = audit_anchored_primal(document, model, exact_psd, RealField(10))
             report["model_sha256"] = model_hash
         else:
             trusted, trusted_hash = read_object(args.trusted_constraints) if args.trusted_constraints else (None, None)

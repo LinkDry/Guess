@@ -39,3 +39,10 @@ All Round 1 phases executed on 2026-11-27. See [progress.md](progress.md) for ev
 2. Run the resulting SDP with guarded solver processes. Preserve primal moments and dual diagnostics. Investigate the full-label gauge-invariant Bargmann hierarchy in parallel.
 3. Verify constraint provenance and PSD independently. A refutation requires an exact positive margin. If the relaxation is feasible, report which constraints and PSD blocks were tested and whether feasibility is exact or numerical.
 4. Commit code, evidence, and progress. Verify the remote head.
+
+## Round 5
+
+1. Generate exact Gram and Schur rank minors and test every new equality that is evaluable by the old moment vector.
+2. Select cubic monomial orbits and build the symmetry-compressed degree-six model. Solve both the fixed quartic extension and the free model under a monitored budget.
+3. Independently validate any dual obstruction or feasible moment vector, including the equation provenance and the selected blocks.
+4. Archive all decisions and compare the remote head after pushing.

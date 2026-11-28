@@ -33,6 +33,78 @@ def canonical_anchored_equations():
     }
 
 
+@cache
+def canonical_rank_minor(kind, rows, columns):
+    """Reconstruct a rank constraint from the original first-line gauged Gram."""
+    symbols = sp.symbols("x:56", real=True)
+    mu = sp.sqrt(10) / 8
+    if kind == "schur":
+        dimension, order = 8, 4
+    elif kind == "gram":
+        dimension, order = 9, 5
+    else:
+        raise ValueError("rank minor must be a Schur or Gram minor")
+    for indices in (rows, columns):
+        if len(indices) != order or tuple(sorted(set(indices))) != indices or any(
+            type(i) is not int or not 0 <= i < dimension for i in indices
+        ):
+            raise ValueError("invalid rank minor indices")
+
+    def gram_entry(i, j):
+        if i == j:
+            return sp.S.One
+        if 8 in (i, j):
+            return mu
+        position = EDGE_INDEX[min(i, j), max(i, j)]
+        orientation = 1 if i < j else -1
+        return mu * (symbols[position] + orientation * sp.I * symbols[position+1])
+
+    # Compute in an exact polynomial ring over Q(sqrt(10), i). Laplace
+    # expansion reuses complementary minors and keeps intermediate terms sparse.
+    from sympy.polys.rings import ring
+
+    expressions = [[gram_entry(i, j) - (mu**2 if kind == "schur" else 0) for j in columns] for i in rows]
+    active = tuple(x for x in symbols if any(entry.has(x) for row in expressions for entry in row))
+    domain = sp.QQ.algebraic_field(sp.sqrt(10), sp.I)
+    polynomial_ring, *_ = ring(active, domain)
+    matrix = [[polynomial_ring.from_expr(value) for value in row] for row in expressions]
+
+    @cache
+    def determinant(remaining):
+        if not remaining:
+            return polynomial_ring.one
+        i = order - len(remaining)
+        total = polynomial_ring.zero
+        for position, j in enumerate(remaining):
+            if matrix[i][j]:
+                product = matrix[i][j] * determinant(remaining[:position] + remaining[position+1:])
+                total += product if position % 2 == 0 else -product
+        return total
+
+    real, imag = [], []
+    for degrees, coefficient in determinant(tuple(range(order))).items():
+        monomial = sp.prod(x**degree for x, degree in zip(active, degrees) if degree)
+        c, d = domain.to_sympy(coefficient).as_real_imag()
+        real.append(c * monomial)
+        imag.append(d * monomial)
+    return symbols, sp.Add(*real), sp.Add(*imag)
+
+
+@cache
+def named_rank_equation(name):
+    """Expand the scaled determinant used by the degree-six manifest."""
+    import re
+
+    match = re.fullmatch(r"(schur4|gram5)_([0-8]+)_([0-8]+)_(real|imag)", name)
+    if not match:
+        return None
+    stem, rows, columns, part = match.groups()
+    kind = "schur" if stem == "schur4" else "gram"
+    indices = tuple(map(int, rows)), tuple(map(int, columns))
+    _, real, imag = canonical_rank_minor(kind, *indices)
+    return (32 ** len(rows)) * (real if part == "real" else imag)
+
+
 def anchored_variable_order(variables):
     expected_names = [f"x{i}" for i in range(len(VARIABLES))]
     return variables == expected_names or variables == [list(edge) for edge in VARIABLES]

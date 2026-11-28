@@ -211,6 +211,48 @@ class AnchoredVerifierTests(unittest.TestCase):
                 self.assertFalse(report["etf_nonexistence_verified"])
                 model["equations"]["row_imag"].append([[], [1, 0, 0, 0]])
 
+    def test_conditional_box_dual_replays_the_exact_psd_and_margin(self):
+        variables = [[kind, i, j] for i in range(8) for j in range(i+1, 8) for kind in ("x", "y")]
+        model = {"variables": variables, "coefficient_basis": ["1", "sqrt(10)/5"],
+                 "moments": [[], [0]], "equalities": [{"0": [-2, 0], "1": [1, 0]}],
+                 "equality_witnesses": [{"type": "fixed_moment", "monomial": [0], "value": ["2", "0"]}],
+                 "psd_blocks": [{"basis": [[[[], 1]]]}]}
+        cert = {"schema": "anchored-moment-box-dual-v1", "coefficient_basis": model["coefficient_basis"],
+                "equality_dual": ["-1", "-1/2"], "psd_factor_denominator": 4,
+                "psd_factor_integer_rows": [[[1]]]}
+        with TemporaryDirectory() as folder:
+            base = Path(folder)
+            (base / "candidate.json").write_text(json.dumps(cert), encoding="ascii")
+            for valid in (True, False):
+                (base / "solver_model.json").write_text(json.dumps(model), encoding="ascii")
+                run = subprocess.run([sys.executable, "-B", str(SCRIPT), str(base / "candidate.json")],
+                                     capture_output=True, text=True)
+                self.assertEqual(run.stderr, "")
+                report = json.loads(run.stdout)
+                if valid:
+                    self.assertEqual(run.returncode, 0, run.stdout)
+                    self.assertEqual(report["margin"], "7/16")
+                    self.assertTrue(report["conditional"])
+                    self.assertFalse(report["etf_nonexistence_verified"])
+                else:
+                    self.assertEqual(run.returncode, 2, run.stdout)
+                    self.assertIn("independent expansion", report["error"])
+                model["equalities"][0]["0"] = [-3, 0]
+
+    def test_schur_rank_minor_matches_full_gram_minor(self):
+        import sympy as sp
+
+        sys.path.insert(0, str(SCRIPT.parent))
+        self.addCleanup(sys.path.pop, 0)
+        from verify_sdp_anchored import canonical_rank_minor
+
+        symbols, real, imag = canonical_rank_minor("schur", (0, 1, 2, 3), (0, 1, 2, 4))
+        for offset in (0, 4):
+            values = {x: sp.Rational((i + offset) % 7 - 3, 11) for i, x in enumerate(symbols)}
+            _, full_real, full_imag = canonical_rank_minor("gram", (0, 1, 2, 3, 8), (0, 1, 2, 4, 8))
+            self.assertEqual(sp.simplify(real.subs(values) - full_real.subs(values)), 0)
+            self.assertEqual(sp.simplify(imag.subs(values) - full_imag.subs(values)), 0)
+
     def test_anchored_primal_rejects_wrong_constant_moment(self):
         with TemporaryDirectory() as folder:
             base = Path(folder)
