@@ -1,0 +1,26 @@
+{
+  "solver_free_support4_minors": {
+    "equality_shape": [
+      2164,
+      2716
+    ],
+    "relative_rank_cutoff": 1e-10,
+    "numeric_rank": 1257,
+    "nullity": 1459,
+    "smallest_retained_singular": 0.03903392794643232,
+    "largest_discarded_singular": 1.883491924273333e-14,
+    "normalized_equality_residual_inf": 1.609823385706477e-15
+  },
+  "solver_fixed_support4_minors": {
+    "equality_shape": [
+      2270,
+      2716
+    ],
+    "relative_rank_cutoff": 1e-10,
+    "numeric_rank": 1265,
+    "nullity": 1451,
+    "smallest_retained_singular": 0.03832721204560946,
+    "largest_discarded_singular": 1.9118113073377147e-14,
+    "normalized_equality_residual_inf": 8.326672684688674e-16
+  }
+}

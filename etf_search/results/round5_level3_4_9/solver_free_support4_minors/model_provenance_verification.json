@@ -1,0 +1,110 @@
+{
+  "certificate_sha256": "ae349d87b1bb3093904c8d6b7c31de2ab339ec1cc8cda2a3b87a37e264951215",
+  "cubic_monomials": 14056,
+  "declared_polynomials_verified": 38,
+  "equality_rows_verified": {
+    "base": 1931,
+    "rank": 232
+  },
+  "mode": "exact_degree6_model_provenance",
+  "moment_coordinates": 2716,
+  "passed": true,
+  "psd_blocks": [
+    {
+      "character": [
+        1,
+        1,
+        1
+      ],
+      "entries_verified": 95039,
+      "size": 437
+    },
+    {
+      "character": [
+        1,
+        1,
+        -1
+      ],
+      "entries_verified": 63607,
+      "size": 357
+    },
+    {
+      "character": [
+        1,
+        -1,
+        1
+      ],
+      "entries_verified": 39500,
+      "size": 281
+    },
+    {
+      "character": [
+        1,
+        -1,
+        -1
+      ],
+      "entries_verified": 44728,
+      "size": 299
+    },
+    {
+      "character": [
+        -1,
+        1,
+        1
+      ],
+      "entries_verified": 39500,
+      "size": 281
+    },
+    {
+      "character": [
+        -1,
+        1,
+        -1
+      ],
+      "entries_verified": 44728,
+      "size": 299
+    },
+    {
+      "character": [
+        -1,
+        -1,
+        1
+      ],
+      "entries_verified": 22151,
+      "size": 210
+    },
+    {
+      "character": [
+        -1,
+        -1,
+        -1
+      ],
+      "entries_verified": 21688,
+      "size": 208
+    }
+  ],
+  "rank_equations_verified": [
+    "gram5_01234_01234_real",
+    "gram5_01234_01235_imag",
+    "gram5_01234_01235_real",
+    "gram5_01234_01238_imag",
+    "gram5_01234_01238_real",
+    "gram5_01234_01256_imag",
+    "gram5_01234_01256_real",
+    "gram5_01234_01258_imag",
+    "gram5_01234_01258_real",
+    "gram5_01238_01238_real",
+    "gram5_01238_01248_imag",
+    "gram5_01238_01248_real",
+    "gram5_01238_01458_imag",
+    "gram5_01238_01458_real",
+    "schur4_0123_0123_real",
+    "schur4_0123_0124_imag",
+    "schur4_0123_0124_real",
+    "schur4_0123_0145_imag",
+    "schur4_0123_0145_real",
+    "schur4_0123_0456_imag",
+    "schur4_0123_0456_real"
+  ],
+  "stage": "support4"
+}

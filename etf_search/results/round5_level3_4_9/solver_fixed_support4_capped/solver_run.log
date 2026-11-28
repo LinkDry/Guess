@@ -1,0 +1,31 @@
+Assembled A(374709, 2716), nnz=2143123, {'z': 2270, 's': [437, 357, 281, 299, 281, 299, 210, 208]}, fixed=106
+------------------------------------------------------------------
+	       SCS v3.3.2 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+------------------------------------------------------------------
+problem:  variables n: 2716, constraints m: 374709
+cones: 	  z: primal zero / dual free vars: 2270
+	  s: psd vars: 372439, ssize: 8
+settings: eps_abs: 1.0e-08, eps_rel: 1.0e-08, eps_infeas: 1.0e-09
+	  alpha: 1.50, scale: 1.00e-01, adaptive_scale: 1
+	  max_iters: 950, normalize: 1, rho_x: 1.00e-06
+	  acceleration_lookback: 10, acceleration_interval: 5
+	  time_limit_secs: 1.55e+02
+lin-sys:  sparse-direct-amd-qdldl
+	  nnz(A): 2143123, nnz(P): 0
+------------------------------------------------------------------
+ iter | pri res | dua res |   gap   |   obj   |  scale  | time (s)
+------------------------------------------------------------------
+     0| 5.70e+00  3.59e+01  1.17e+02  5.85e+01  1.00e-01  2.74e+00
+   250| 2.60e-03  6.67e-04  4.70e-07 -2.35e-07  4.35e-03  3.24e+01
+   500| 2.68e-03  2.32e-04  7.70e-07 -3.85e-07  4.35e-03  6.04e+01
+   750| 2.39e-03  2.58e-04  6.11e-07 -3.06e-07  4.35e-03  8.81e+01
+   950| 2.01e-03  2.76e-04  3.48e-07 -1.74e-07  4.35e-03  1.10e+02
+------------------------------------------------------------------
+status:  solved (inaccurate - reached max_iters)
+timings: total: 1.10e+02s = setup: 2.61e+00s + solve: 1.08e+02s
+	 lin-sys: 1.13e+01s, cones: 8.92e+01s, accel: 1.35e+00s
+------------------------------------------------------------------
+objective = -0.000000 (inaccurate)
+------------------------------------------------------------------
+scs returned solved (inaccurate - reached max_iters); saved raw vectors.

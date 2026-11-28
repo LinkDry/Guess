@@ -1,0 +1,28 @@
+{
+  "command": [
+    "E:\\Research\\Guess\\.venv\\Scripts\\python.exe",
+    "-B",
+    "E:\\Research\\Guess\\etf_search\\src\\solve_level3_4_9.py",
+    "--reuse-model",
+    "etf_search/results/round5_level3_4_9/solver_free_support4_minors",
+    "--output",
+    "etf_search/results/round5_level3_4_9/solver_free_support4_capped",
+    "--seconds",
+    "175",
+    "--memory-mib",
+    "2200",
+    "--iterations",
+    "950",
+    "--verbose",
+    "--worker"
+  ],
+  "exit_code": 0,
+  "kill_reason": null,
+  "wall_seconds": 112.21785299992189,
+  "peak_sampled_rss_bytes": 776392704,
+  "wall_limit_seconds": 175.0,
+  "memory_limit_bytes": 2306867200,
+  "windows_job_commit_limit_enforced": true,
+  "windows_job_error": null,
+  "rss_poll_max_seconds": 0.05
+}

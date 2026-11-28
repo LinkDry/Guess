@@ -1,0 +1,50 @@
+{
+  "coefficient_basis": [
+    "1",
+    "sqrt(10)/5"
+  ],
+  "counts_by_family_and_multiplier_degree": [
+    {
+      "family": "gram5",
+      "multiplier_degree": 0,
+      "total": 24,
+      "quartic_readable": 22,
+      "identically_zero": 19,
+      "violated": 0
+    },
+    {
+      "family": "gram5",
+      "multiplier_degree": 1,
+      "total": 1344,
+      "quartic_readable": 1118,
+      "identically_zero": 1118,
+      "violated": 0
+    },
+    {
+      "family": "schur4",
+      "multiplier_degree": 0,
+      "total": 9,
+      "quartic_readable": 9,
+      "identically_zero": 7,
+      "violated": 0
+    },
+    {
+      "family": "schur4",
+      "multiplier_degree": 1,
+      "total": 504,
+      "quartic_readable": 427,
+      "identically_zero": 427,
+      "violated": 0
+    },
+    {
+      "family": "schur4",
+      "multiplier_degree": 2,
+      "total": 14364,
+      "quartic_readable": 11738,
+      "identically_zero": 11738,
+      "violated": 0
+    }
+  ],
+  "violations": [],
+  "wall_seconds": 44.39785620011389
+}

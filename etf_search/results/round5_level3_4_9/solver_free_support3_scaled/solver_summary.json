@@ -1,0 +1,122 @@
+{
+  "scope": "S8 and conjugation invariant partial order-three relaxation (support3)",
+  "status": "feasible",
+  "raw_info": {
+    "status_val": 1,
+    "iter": 6225,
+    "scale_updates": 61,
+    "scale": 0.009883834453388942,
+    "pobj": 0.0,
+    "dobj": -2.1424554061158606e-09,
+    "res_pri": 3.570116371993933e-08,
+    "res_dual": 1.0655105107755947e-09,
+    "gap": 2.1424554061158606e-09,
+    "res_infeas": null,
+    "res_unbdd_a": null,
+    "res_unbdd_p": null,
+    "comp_slack": 2.6129359093074456e-13,
+    "solve_time": 93538.4044,
+    "setup_time": 72.0197,
+    "lin_sys_time": 7434.042299999994,
+    "cone_time": 82403.81700000007,
+    "accel_time": 1296.8853999999535,
+    "rejected_accel_steps": 64,
+    "accepted_accel_steps": 29,
+    "status": "solved",
+    "lin_sys_solver": "sparse-direct-amd-qdldl",
+    "aa_stats": {
+      "iter": 10,
+      "n_accept": 93,
+      "n_reject_lapack": 0,
+      "n_reject_rank0": 0,
+      "n_reject_nonfinite": 0,
+      "n_reject_weight_cap": 0,
+      "n_safeguard_reject": 64,
+      "last_rank": 10,
+      "last_aa_norm": 6241234.873501266,
+      "last_regularization": 5.768309309913483e-13
+    }
+  },
+  "builder": "level3_4_9_model",
+  "factory": "build_model",
+  "builder_options": {},
+  "settings": {
+    "eps_abs": 1e-08,
+    "eps_rel": 1e-08,
+    "eps_infeas": 1e-09,
+    "max_iters": 10000,
+    "time_limit_secs": 356.5798796999734,
+    "verbose": true
+  },
+  "backend": "scs",
+  "diagonal_cone_scaling": true,
+  "reused_model_dir": "etf_search\\results\\round5_level3_4_9\\solver_free_support3_scs",
+  "versions": {
+    "scs": "3.3.2",
+    "clarabel": "0.11.1",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1"
+  },
+  "rows": 55089,
+  "moments": 2547,
+  "nnz": 213965,
+  "cone": {
+    "z": 764,
+    "s": [
+      183,
+      136,
+      104,
+      110,
+      104,
+      110,
+      69,
+      72
+    ]
+  },
+  "fixed_moment_rows": 0,
+  "rank_minors": false,
+  "diagnostics": {
+    "primal": {
+      "linear_residual_inf": 4.946898348734408e-07,
+      "equality_residual_inf": 6.375652234727903e-09,
+      "slack_psd_min_eigenvalues": [
+        -2.7724638488970915e-14,
+        -8.809549721032983e-15,
+        -1.2591673068531106e-14,
+        -1.1775509412327055e-14,
+        -1.4067967869098898e-14,
+        -2.4964654772856542e-14,
+        -6.858285089479289e-15,
+        -9.557173553852237e-15
+      ],
+      "moment_psd_min_eigenvalues": [
+        -6.222824812055994e-08,
+        -3.172883121462394e-08,
+        -6.654288857436164e-08,
+        -2.3464949752195905e-08,
+        -6.654288871802539e-08,
+        -2.3464950175603363e-08,
+        -2.1026360957068312e-08,
+        -1.5723527416383295e-08
+      ],
+      "objective": 0.0
+    },
+    "dual": {
+      "stationarity_inf": 1.0655106519319446e-09,
+      "psd_min_eigenvalues": [
+        -2.545647361503052e-16,
+        -2.246014512915425e-16,
+        -1.4674627149072426e-16,
+        -1.6658018533071594e-16,
+        -2.801587215675124e-17,
+        -8.110111587811422e-17,
+        -1.5901598527803585e-17,
+        -2.394822278950953e-15
+      ],
+      "b_dot_y": 2.1424554061158606e-09,
+      "objective": -2.1424554061158606e-09
+    },
+    "dual_infeasibility_ray": null
+  },
+  "wall_seconds_worker": 94.13203700003214
+}

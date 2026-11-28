@@ -1,0 +1,123 @@
+{
+  "scope": "S8 and conjugation invariant partial order-three relaxation (support4)",
+  "status": "feasible",
+  "raw_info": {
+    "status_val": 2,
+    "iter": 950,
+    "scale_updates": 9,
+    "scale": 0.004318156673842969,
+    "pobj": 0.0,
+    "dobj": -2.7122457419507596e-07,
+    "res_pri": 0.0017417101941952274,
+    "res_dual": 0.0001971316992261515,
+    "gap": 2.7122457419507596e-07,
+    "res_infeas": null,
+    "res_unbdd_a": null,
+    "res_unbdd_p": null,
+    "comp_slack": 4.631711680858075e-15,
+    "solve_time": 106550.6606,
+    "setup_time": 3008.8053,
+    "lin_sys_time": 10996.377899999994,
+    "cone_time": 88364.64970000008,
+    "accel_time": 1351.4295999999956,
+    "rejected_accel_steps": 9,
+    "accepted_accel_steps": 0,
+    "status": "solved (inaccurate - reached max_iters)",
+    "lin_sys_solver": "sparse-direct-amd-qdldl",
+    "aa_stats": {
+      "iter": 9,
+      "n_accept": 9,
+      "n_reject_lapack": 0,
+      "n_reject_rank0": 0,
+      "n_reject_nonfinite": 0,
+      "n_reject_weight_cap": 0,
+      "n_safeguard_reject": 9,
+      "last_rank": 10,
+      "last_aa_norm": 477152.36410443403,
+      "last_regularization": 5.836384755624998e-13
+    }
+  },
+  "builder": "level3_4_9_model",
+  "factory": "build_model",
+  "builder_options": {},
+  "settings": {
+    "eps_abs": 1e-08,
+    "eps_rel": 1e-08,
+    "eps_infeas": 1e-09,
+    "max_iters": 950,
+    "time_limit_secs": 155.34860619995743,
+    "verbose": true
+  },
+  "backend": "scs",
+  "diagonal_cone_scaling": false,
+  "reused_model_dir": "etf_search\\results\\round5_level3_4_9\\solver_free_support4_minors",
+  "warm_start": null,
+  "versions": {
+    "scs": "3.3.2",
+    "clarabel": "0.11.1",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1"
+  },
+  "rows": 374603,
+  "moments": 2716,
+  "nnz": 2142911,
+  "cone": {
+    "z": 2164,
+    "s": [
+      437,
+      357,
+      281,
+      299,
+      281,
+      299,
+      210,
+      208
+    ]
+  },
+  "fixed_moment_rows": 0,
+  "rank_minors": false,
+  "diagnostics": {
+    "primal": {
+      "linear_residual_inf": 0.0017417101941887836,
+      "equality_residual_inf": 1.320867333287623e-07,
+      "slack_psd_min_eigenvalues": [
+        -2.8084911663582526e-13,
+        -8.525925345497806e-13,
+        -3.3552930194195834e-13,
+        -2.0039780828144245e-13,
+        -3.0378492415414265e-13,
+        -3.115973762722771e-13,
+        -1.7410756003214606e-13,
+        -7.077375147508965e-14
+      ],
+      "moment_psd_min_eigenvalues": [
+        -0.006390515514656829,
+        -0.0021307047850840067,
+        -0.0028963514998749914,
+        -0.001360952969993568,
+        -0.0028963514998736947,
+        -0.0013609529699916514,
+        -0.0020772006202696763,
+        -0.0010482063874039872
+      ],
+      "objective": 0.0
+    },
+    "dual": {
+      "stationarity_inf": 0.00019713169922317558,
+      "psd_min_eigenvalues": [
+        -1.0854011815452418e-16,
+        -3.296689404383788e-17,
+        -1.241793839902183e-16,
+        -5.517140246579907e-17,
+        -1.349958729107938e-16,
+        -1.6377142023113155e-16,
+        -3.485238365319369e-17,
+        -8.31286925155077e-17
+      ],
+      "b_dot_y": 2.712245741950759e-07,
+      "objective": -2.712245741950759e-07
+    },
+    "dual_infeasibility_ray": null
+  },
+  "wall_seconds_worker": 111.8698696999345
+}

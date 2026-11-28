@@ -78,3 +78,20 @@ python -B "$src/bargmann_4_9.py" --output "$res/bargmann_exact_moments.json"
 ```
 
 [第四轮模型推导](general_4_9_sdp_plan.md) · [第四轮日志](logs/progress.md)
+
+## 复现第五轮
+
+从仓库根目录运行。两种阶段的三次基分别使用至多三个或四个顶点。求解命令为每个子进程设置内存和时间上限。归档的 `solver_guard.json` 记录完整命令和实测资源。
+
+```powershell
+$src = 'etf_search/src'
+$res = 'etf_search/results/round5_level3_4_9'
+$r4 = 'etf_search/results/round4_general_4_9/anchored_s8_qdldl'
+python -B "$src/probe_level3_quartic.py" "$r4/anchored_model.json" "$r4/anchored_exact_primal_candidate.json" "$res/quartic_minor_probe.json"
+.venv/Scripts/python.exe -B "$src/solve_level3_4_9.py" --minors --builder-options '{"stage":"support3"}' --output "$res/reproduction_support3" --seconds 450 --memory-mib 3072 --eps 1e-8 --verbose
+.venv/Scripts/python.exe -B "$src/solve_level3_4_9.py" --minors --builder-options '{"stage":"support4"}' --output "$res/reproduction_support4" --seconds 1790 --memory-mib 4096 --eps 1e-8 --verbose
+.venv/Scripts/python.exe -B "$src/recover_level3_primal.py" "$res/solver_free_support3_scaled" --model "$res/solver_free_support3_scs/solver_model.json"
+python -B "$src/verify_sdp_cert.py" "$res/solver_free_support3_scaled/exact_primal_candidate.json" --model "$res/solver_free_support3_scs/solver_model.json"
+```
+
+固定旧矩的探针额外传入 `--fixed-candidate` 和 `--fixed-model`，指向第四轮的 `anchored_exact_primal_candidate.json` 和 `anchored_model.json`。精确线性重建使用 `python-flint` 0.9.0 加速。精确验收为测试对象重新构造子式、乘子及矩块。[第五轮模型推导](level3_4_9_sdp_plan.md)

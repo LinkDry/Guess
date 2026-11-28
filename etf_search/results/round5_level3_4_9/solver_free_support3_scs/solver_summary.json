@@ -1,0 +1,122 @@
+{
+  "scope": "S8 and conjugation invariant partial order-three relaxation (support3)",
+  "status": "feasible",
+  "raw_info": {
+    "status_val": 1,
+    "iter": 4750,
+    "scale_updates": 46,
+    "scale": 0.018418410841236466,
+    "pobj": 0.0,
+    "dobj": -8.480019492917165e-09,
+    "res_pri": 2.085386750873876e-07,
+    "res_dual": 6.254235584851815e-09,
+    "gap": 8.480019492917165e-09,
+    "res_infeas": null,
+    "res_unbdd_a": null,
+    "res_unbdd_p": null,
+    "comp_slack": 9.661542399452827e-14,
+    "solve_time": 65165.8913,
+    "setup_time": 122.5243,
+    "lin_sys_time": 5327.291899999999,
+    "cone_time": 57260.145800000006,
+    "accel_time": 862.7598999999724,
+    "rejected_accel_steps": 50,
+    "accepted_accel_steps": 15,
+    "status": "solved",
+    "lin_sys_solver": "sparse-direct-amd-qdldl",
+    "aa_stats": {
+      "iter": 10,
+      "n_accept": 65,
+      "n_reject_lapack": 0,
+      "n_reject_rank0": 0,
+      "n_reject_nonfinite": 0,
+      "n_reject_weight_cap": 0,
+      "n_safeguard_reject": 50,
+      "last_rank": 10,
+      "last_aa_norm": 150259.47812110017,
+      "last_regularization": 1.6532635928817803e-12
+    }
+  },
+  "builder": "level3_4_9_model",
+  "factory": "build_model",
+  "builder_options": {
+    "stage": "support3"
+  },
+  "settings": {
+    "eps_abs": 1e-08,
+    "eps_rel": 1e-08,
+    "eps_infeas": 1e-09,
+    "max_iters": 12000,
+    "time_limit_secs": 520.3027468000073,
+    "verbose": true
+  },
+  "backend": "scs",
+  "versions": {
+    "scs": "3.3.2",
+    "clarabel": "0.11.1",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1"
+  },
+  "rows": 55089,
+  "moments": 2547,
+  "nnz": 213965,
+  "cone": {
+    "z": 764,
+    "s": [
+      183,
+      136,
+      104,
+      110,
+      104,
+      110,
+      69,
+      72
+    ]
+  },
+  "fixed_moment_rows": 0,
+  "rank_minors": true,
+  "diagnostics": {
+    "primal": {
+      "linear_residual_inf": 2.085386796579769e-07,
+      "equality_residual_inf": 5.38159464041866e-09,
+      "slack_psd_min_eigenvalues": [
+        -3.408407853887514e-14,
+        -1.4790439065315527e-14,
+        -1.999278156388097e-14,
+        -2.0625114834347072e-14,
+        -1.078055405388387e-14,
+        -1.0009094237074388e-14,
+        -9.949161953346844e-15,
+        -9.038230073541318e-15
+      ],
+      "moment_psd_min_eigenvalues": [
+        -7.579850331992145e-08,
+        -8.230698714516305e-08,
+        -7.789245789156926e-08,
+        -6.093514037104939e-08,
+        -7.78924575714087e-08,
+        -6.093514022329129e-08,
+        -7.944474451412513e-08,
+        -4.0152845716724726e-08
+      ],
+      "objective": 0.0
+    },
+    "dual": {
+      "stationarity_inf": 6.254236052660733e-09,
+      "psd_min_eigenvalues": [
+        -7.098775454664248e-16,
+        -4.127789408617033e-16,
+        -6.39104461270445e-16,
+        -9.19635011770071e-16,
+        -1.3575482821743098e-15,
+        -8.319199172008931e-16,
+        -1.6807869308143664e-16,
+        -2.312902110737209e-16
+      ],
+      "b_dot_y": 8.480019492917165e-09,
+      "objective": -8.480019492917165e-09
+    },
+    "dual_infeasibility_ray": null
+  },
+  "wall_seconds_worker": 82.05066500022076
+}

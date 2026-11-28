@@ -1,0 +1,31 @@
+{
+  "command": [
+    "E:\\Research\\Guess\\.venv\\Scripts\\python.exe",
+    "-B",
+    "E:\\Research\\Guess\\etf_search\\src\\solve_level3_4_9.py",
+    "--reuse-model",
+    "etf_search/results/round5_level3_4_9/solver_fixed_support4_minors",
+    "--warm-start",
+    "etf_search/results/round5_level3_4_9/solver_free_support4_scaled/solver_primal_dual.npz",
+    "--diagonal-scale",
+    "--output",
+    "etf_search/results/round5_level3_4_9/solver_fixed_support4_scaled",
+    "--seconds",
+    "445",
+    "--memory-mib",
+    "2200",
+    "--iterations",
+    "3000",
+    "--verbose",
+    "--worker"
+  ],
+  "exit_code": 0,
+  "kill_reason": null,
+  "wall_seconds": 379.8484498001635,
+  "peak_sampled_rss_bytes": 807624704,
+  "wall_limit_seconds": 445.0,
+  "memory_limit_bytes": 2306867200,
+  "windows_job_commit_limit_enforced": true,
+  "windows_job_error": null,
+  "rss_poll_max_seconds": 0.05
+}

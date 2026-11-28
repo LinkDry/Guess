@@ -17,12 +17,7 @@ from solve_general_4_9 import (THREADS, augment_equalities, diagnostics, pack_mo
 BASIS = ('1', 'sqrt(10)/5')
 CAP_SECONDS = 1800
 CAP_MIB = 8064
-
-
-def mul_pair(left, right):
-    a, b = left
-    c, d = right
-    return a*c + Fraction(2, 5)*b*d, a*d + b*c
+DEADLINE_ENV = 'ETF_LEVEL3_WALL_DEADLINE'
 
 
 def clarabel_order(cone):
@@ -273,7 +268,10 @@ def worker(args):
     if args.diagonal_scale:
         np.save(out/'solver_diagonal_cone_scales.npy', scales, allow_pickle=False)
     print(f'Assembled A{matrix.shape}, nnz={matrix.nnz}, {cone}, fixed={fixed}', flush=True)
-    remaining = args.seconds-(perf_counter()-started)-3
+    deadline = float(os.environ[DEADLINE_ENV])
+    # Reserve time for diagnostic work and binary output after the backend returns.
+    export_reserve = min(60, max(15, args.seconds * 0.10))
+    remaining = deadline - perf_counter() - export_reserve
     if remaining <= 0:
         raise TimeoutError('builder exhausted solver time')
     initial_x = None
@@ -321,8 +319,9 @@ def supervise(args):
     if existing:
         raise FileExistsError(f'Solver output exists in {out}; select a new output directory')
     command = [sys.executable, '-B', str(Path(__file__).resolve()), *sys.argv[1:], '--worker']
-    env = dict(os.environ, PYTHONUNBUFFERED='1', **{name: '1' for name in THREADS})
     begin = perf_counter()
+    env = dict(os.environ, PYTHONUNBUFFERED='1', **{name: '1' for name in THREADS})
+    env[DEADLINE_ENV] = str(begin + args.seconds)
     limit = args.memory_mib * 1024**2
     peak = 0
     reason = None

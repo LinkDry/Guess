@@ -1,0 +1,129 @@
+{
+  "certificate_sha256": "fe5a88b27f25e9f4d1e8bf9bf6f7a90b2bdcd7cd705bb7241ba4b65348caa9c1",
+  "cubics": 2576,
+  "declared_polynomials_verified": 38,
+  "equality_rows_verified": {
+    "base": 531,
+    "rank": 232
+  },
+  "failed_row_numbers": [],
+  "mode": "exact_anchored_degree6_primal",
+  "model_sha256": "c5f5a095ac5aedb203058a32c4b90626d3598cf40bbd91b087e2fc2bb83f4213",
+  "passed": false,
+  "psd": [
+    {
+      "character": [
+        1,
+        1,
+        1
+      ],
+      "holds": false,
+      "pivot_index": 9,
+      "reason": "nonzero Schur row at zero pivot",
+      "size": 183
+    },
+    {
+      "character": [
+        1,
+        1,
+        -1
+      ],
+      "holds": false,
+      "pivot_index": 4,
+      "reason": "nonzero Schur row at zero pivot",
+      "size": 136
+    },
+    {
+      "character": [
+        1,
+        -1,
+        1
+      ],
+      "holds": false,
+      "pivot_index": 3,
+      "reason": "nonzero Schur row at zero pivot",
+      "size": 104
+    },
+    {
+      "character": [
+        1,
+        -1,
+        -1
+      ],
+      "holds": false,
+      "pivot_index": 5,
+      "reason": "nonzero Schur row at zero pivot",
+      "size": 110
+    },
+    {
+      "character": [
+        -1,
+        1,
+        1
+      ],
+      "holds": false,
+      "pivot_index": 3,
+      "reason": "nonzero Schur row at zero pivot",
+      "size": 104
+    },
+    {
+      "character": [
+        -1,
+        1,
+        -1
+      ],
+      "holds": false,
+      "pivot_index": 5,
+      "reason": "nonzero Schur row at zero pivot",
+      "size": 110
+    },
+    {
+      "character": [
+        -1,
+        -1,
+        1
+      ],
+      "holds": false,
+      "pivot_index": 4,
+      "reason": "nonzero Schur row at zero pivot",
+      "size": 69
+    },
+    {
+      "character": [
+        -1,
+        -1,
+        -1
+      ],
+      "holds": false,
+      "pivot_index": 3,
+      "reason": "nonzero Schur row at zero pivot",
+      "size": 72
+    }
+  ],
+  "rank_equations_verified": [
+    "gram5_01234_01234_real",
+    "gram5_01234_01235_imag",
+    "gram5_01234_01235_real",
+    "gram5_01234_01238_imag",
+    "gram5_01234_01238_real",
+    "gram5_01234_01256_imag",
+    "gram5_01234_01256_real",
+    "gram5_01234_01258_imag",
+    "gram5_01234_01258_real",
+    "gram5_01238_01238_real",
+    "gram5_01238_01248_imag",
+    "gram5_01238_01248_real",
+    "gram5_01238_01458_imag",
+    "gram5_01238_01458_real",
+    "schur4_0123_0123_real",
+    "schur4_0123_0124_imag",
+    "schur4_0123_0124_real",
+    "schur4_0123_0145_imag",
+    "schur4_0123_0145_real",
+    "schur4_0123_0456_imag",
+    "schur4_0123_0456_real"
+  ],
+  "relaxation_feasibility_verified": false,
+  "scope": "Targeted degree six with selected cubic support and manifest equality witnesses",
+  "stage": "support3"
+}

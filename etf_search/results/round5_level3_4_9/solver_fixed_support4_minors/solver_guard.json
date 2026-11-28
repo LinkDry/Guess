@@ -1,0 +1,31 @@
+{
+  "command": [
+    "E:\\Research\\Guess\\.venv\\Scripts\\python.exe",
+    "-B",
+    "E:\\Research\\Guess\\etf_search\\src\\solve_level3_4_9.py",
+    "--minors",
+    "--fixed-candidate",
+    "etf_search/results/round4_general_4_9/anchored_s8_qdldl/anchored_exact_primal_candidate.json",
+    "--fixed-model",
+    "etf_search/results/round4_general_4_9/anchored_s8_qdldl/anchored_model.json",
+    "--output",
+    "etf_search/results/round5_level3_4_9/solver_fixed_support4_minors",
+    "--seconds",
+    "1780",
+    "--memory-mib",
+    "4000",
+    "--iterations",
+    "20000",
+    "--verbose",
+    "--worker"
+  ],
+  "exit_code": 15,
+  "kill_reason": "wall_limit",
+  "wall_seconds": 1780.009001800092,
+  "peak_sampled_rss_bytes": 1442209792,
+  "wall_limit_seconds": 1780.0,
+  "memory_limit_bytes": 4194304000,
+  "windows_job_commit_limit_enforced": true,
+  "windows_job_error": null,
+  "rss_poll_max_seconds": 0.05
+}

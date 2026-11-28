@@ -1,0 +1,6 @@
+usage: solve_general_4_9.py [-h] --output OUTPUT
+                            [--extra-equalities EXTRA_EQUALITIES]
+                            [--seconds SECONDS] [--memory-mib MEMORY_MIB]
+                            [--eps EPS] [--iterations ITERATIONS] [--indirect]
+                            [--no-recover] [--verbose]
+solve_general_4_9.py: error: unrecognized arguments: --minors --fixed-candidate etf_search/results/round4_general_4_9/anchored_s8_qdldl/anchored_exact_primal_candidate.json --fixed-model etf_search/results/round4_general_4_9/anchored_s8_qdldl/anchored_model.json
