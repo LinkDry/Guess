@@ -65,3 +65,9 @@ All Round 1 phases executed on 2026-11-27. See [progress.md](progress.md) for ev
 1. Generate five-point face equations by orbit representatives of the products of structural kernel polynomials and the monomial basis. Recover the same face without materializing the unreduced moment blocks.
 2. Seed row reduction with the certified Round 7 chart. Select independent added equations, solve over the rationals, and verify every generated row. Reduce the packed PSD image and record the exact rank and budget.
 3. Use a guarded blockwise margin solve if the resource bound permits it. Independently certify any positive primal or negative dual result. Archive the numerical result with the next-round decision.
+
+## Round 9
+
+1. Assemble and eliminate the support-six model under a single Windows Job and wall deadline. Save exact stencils and rank evidence. Launch the blockwise Newton phase only if the remaining resources suffice.
+2. Draft the English manuscript and Lean algebra files in parallel. Integrate the observed probe outcome and audit every quantitative statement against its source artifact.
+3. Replay the verification and compile the manuscript. Record Lean compilation status, then commit and verify remote main.

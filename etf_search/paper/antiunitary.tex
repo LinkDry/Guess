@@ -1,0 +1,74 @@
+Suppose an antiunitary $A$ preserves the line set. Its square is a scalar unitary by Section~\ref{sec:unitary}, so the permutation is an involution or the identity. In either case it has a fixed line. If $Af=c f$ on this line with $|c|=1$, then $A^2 f=\bar c c f=f$, so $A^2=I$. The real fixed space $\{v:Av=v\}$ is a real form of $\C^4$. The two summands of $(v+Av)/2+i(v-Av)/(2i)$ express $v$ as the sum of a fixed vector and $i$ times a fixed vector, and inner products between fixed vectors are real. In an orthonormal basis of this real form, $A$ is coordinate conjugation. We choose real unit representatives on fixed lines and conjugate unit representatives on swapped pairs.
+
+Five fixed lines would give a real Gram matrix $I+\mu J_0$ of order five and rank at most four, with $J_0$ an integral matrix having off-diagonal entries $\pm1$ and zero diagonal. Then $-1/\mu$ is an algebraic integer, contrary to $(1/\mu)^2=32/5$. Thus there are one or three fixed lines, giving types $2^4 1$ and $2^3 1^3$. When there are three, the product of the three fixed-edge signs is invariant under rephasing by real signs. By choosing positive inner products with the first fixed line, we leave one sign $\sigma\in\{+1,-1\}$ on the remaining edge. On each swapped pair we can independently choose the phase of $z_j$ and the conjugate phase of $\bar z_j$ so that its inner products with the first fixed vector are both $\mu$.
+
+\subsection{Real Gram coordinates}
+
+Replace each pair $(z_j,\bar z_j)$ by $u_j=\sqrt2\Re z_j$ and $v_j=\sqrt2\Im z_j$. This replaces the two columns by their product with the unitary matrix $2^{-1/2}\begin{psmallmatrix}1&-i\\1&i\end{psmallmatrix}$. The resulting real Gram matrix has the form
+\[
+ R=\begin{pmatrix}K&C\\ C^T&D\end{pmatrix},\qquad R^2=\lambda R.
+\]
+Here $K$ is the Gram matrix of the fixed vectors, and $D$ is indexed by the real two-column blocks $(u_j,v_j)$. For $j\ne k$, writing $D_{jk}=\begin{psmallmatrix}a&b\\c&d\end{psmallmatrix}$ gives
+\begin{align*}
+ |\langle z_j,z_k\rangle|^2 &= \bigl((a+d)^2+(b-c)^2\bigr)/4,\\
+ |\langle z_j,\bar z_k\rangle|^2 &= \bigl((a-d)^2+(b+c)^2\bigr)/4.
+\end{align*}
+The difference is $\det D_{jk}$, so $\det D_{jk}=0$. The same calculation on a diagonal block, with $\|z_j\|^2=1$ and $|\langle z_j,\bar z_j\rangle|^2=\mu^2$, gives $\det D_{jj}=1-\mu^2$. The fixed block $K$ is positive definite, since it has size at most three and $1-2\mu>0$. The Schur complement
+\begin{equation}\label{eq:schur}
+ Z=D-C^T K^{-1} C
+\end{equation}
+has rank $4-\rank K$ by congruence to $\operatorname{diag}(K,Z)$ and $\rank R=4$.
+
+\subsection{A rational identity for one fixed line}
+
+Let $e_0$ be the real unit representative of the fixed line. Write $u_j=a e_0+x_j$ and $v_j=y_j$, where $a=\sqrt2\mu$ and $x_j,y_j\in e_0^\perp\cong\R^3$. Set $X=[x_1\ \cdots\ x_4]$, $Y=[y_1\ \cdots\ y_4]$ and $W=[x_1\times y_1\ \cdots\ x_4\times y_4]$. The tight frame operator on $e_0^\perp$ yields $T=0$, where
+\[
+ T=XX^T+YY^T-\lambda I_3.
+\]
+The wedge inner products $\langle u_j\wedge v_j,u_k\wedge v_k\rangle$ are $\det D_{jk}$. Decomposing the wedges into $\Lambda^2 e_0^\perp$ and $e_0\wedge e_0^\perp$ therefore yields $E=0$, where
+\[
+ E=W^TW+a^2Y^TY-bI_4,\qquad b=1-\mu^2=27/32.
+\]
+In fact $YY^T\preceq\lambda I_3$ gives $Y^TY\preceq\lambda I_4$, so $W^TW\succeq(b-a^2\lambda)I_4$. Since $b-a^2\lambda=9/64>0$ and $W$ has three rows, the equations are inconsistent.
+
+For a polynomial certificate, take $h\in\R^4$ with $Wh=0$ and $h^Th=1$, which is possible for every such $W$. Put $\Delta=b-a^2\lambda=9/64$. Then
+\begin{align}\label{eq:fixed1identity}
+ -1={}&\frac{a^2}{\lambda\Delta}
+ \bigl(\|\lambda h-Y^TYh\|^2+\|X^TYh\|^2\bigr)+(h^Th-1)\notag\\
+ &+\frac{h^TEh-(Wh)^T(Wh)-(a^2/\lambda)(Yh)^TT(Yh)}{\Delta}.
+\end{align}
+To check the identity, set $v=Yh$. The two squared norms sum to $\lambda^2h^Th-\lambda v^Tv+v^TTv$, and $h^TEh-(Wh)^T(Wh)=a^2v^Tv-bh^Th$. Substitution cancels the $v$ terms and gives $-1$. At a solution only the positive multiple of the two squared norms remains. The coefficients of the identity are rational since $a$ occurs only through $a^2=5/16$. The archived certificate encodes these eight squares as rank-one Gram blocks. Its verifier reconstructs the constraints and checks the polynomial identity and the block ranks in exact arithmetic (Appendix~\ref{app:replay}).
+
+\subsection{Polynomial certificates for three fixed lines}
+
+Use labels $0,1,2$ for the fixed lines and pair labels $(3,4),(5,6),(7,8)$. For each sign $\sigma$, the following assignments define the entire complex Hermitian matrix $G(x)$, completed by Hermitian transposition. Its diagonal is one and $G_{0j}=\mu$ for $j>0$, with $G_{12}=\sigma\mu$. In the following list, each new phase $z$ or $w$ has the form $\mu(x_{2k}+i x_{2k+1})$ for a new index $k$.
+\begin{enumerate}
+\item For each left pair index $a\in\{3,5,7\}$ in increasing order, set $G_{a,a+1}=z$.
+\item Immediately after the internal edge of that pair, for $i=1,2$ in order set $(G_{i,a},G_{i,a+1})=(z,\bar z)$ using a new phase for each $i$.
+\item Still in the loop for $a$, for each $b>a$ among $\{3,5,7\}$ in order set
+\[
+ (G_{a,b},G_{a+1,b+1},G_{a,b+1},G_{a+1,b})=(z,\bar z,w,\bar w)
+\]
+using two new phases in the order $z,w$.
+\end{enumerate}
+There are 15 phases and 30 real coordinates. All solutions satisfy the circle equations $x_{2k}^2+x_{2k+1}^2-1=0$ and therefore lie in $[-1,1]^{30}$. Let $Q$ be the block diagonal matrix with $I_3$ on the fixed columns and the pair transform above on the other columns. Form $R=Q^*G(x)Q$ and $Z$ by \eqref{eq:schur}. The equations $h_i=0$ used in the certificate consist of the circles, every upper-triangular entry of $R^2-\lambda R$, and the minors
+\[
+ Z_{a,i}Z_{b,j}-Z_{a,j}Z_{b,i},
+ \qquad 0\le a<b<6,\quad 0\le i<j<6,\quad (a,b)\le(i,j)
+\]
+in lexicographic order on the row and column pairs. These are the 120 upper-triangular entries of the matrix of second minors before dropping identically zero equations. A frame must satisfy them by $\rank Z=1$. The lists are independently reconstructed by the verifier. All coefficients belong to $\Q(\sqrt2,\sqrt5)$, with ordered rational basis $(1,\sqrt2,\sqrt5,\sqrt{10})$.
+
+For each sign, the stored polynomial multipliers $m_i$ are rational and the sum-of-squares factors $L_b$ are integer matrices with a common positive denominator $d$. With $v_b$ the archived monomial vector for block $b$, define the residual polynomial
+\begin{equation}\label{eq:fixed3residual}
+ r=-1-\sum_i m_i h_i -\sum_b \|L_b^T v_b/d\|^2.
+\end{equation}
+To bound $r$, expand its coefficients exactly in the given field basis. If $N$ is the stored positive interval denominator, enclose each $\sqrt{k}$, $k=2,5,10$, between $\lfloor\sqrt{kN^2}\rfloor/N$ and $(\lfloor\sqrt{kN^2}\rfloor+1)/N$. Rational interval addition with sign-aware multiplication by the four basis coefficients gives an interval for each coefficient of $r$. Summing the larger absolute endpoint over all monomials bounds $|r(x)|$ on the unit box. The rational bounds from the two archived certificates are
+\begin{align*}
+ B_{+}&=\frac{117823544948222256047655021017435399191}
+ {291600000000000000000000000000000000000000000}
+ <4.05\times10^{-7},\\
+ B_{-}&=\frac{414220049013296592397744354622927415857}
+ {777600000000000000000000000000000000000000000}
+ <5.33\times10^{-7}.
+\end{align*}
+At a common zero of the $h_i$, equation \eqref{eq:fixed3residual} gives $r\le-1$, contradicting $|r|\le B_\sigma<1$. The exact argument uses rational field coordinates, interval endpoints, and the integer Gram factors. Appendix~\ref{app:replay} gives the commands to reconstruct these bounds and check the provenance of the equations. These two contradictions and \eqref{eq:fixed1identity} exclude every antiunitary case and complete Theorem~\ref{thm:asymmetry}.

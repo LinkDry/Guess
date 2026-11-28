@@ -1,0 +1,22 @@
+{
+  "stage": "support6",
+  "moments": 2719,
+  "additional_equality_rank": 2,
+  "equality_rank": 2644,
+  "free_dimension": 75,
+  "psd_image_rank": 75,
+  "block_sizes": [
+    886,
+    855,
+    702,
+    721,
+    702,
+    721,
+    579,
+    573
+  ],
+  "packed_psd_rows": 2105310,
+  "estimated_blockwise_bytes": 1283845760,
+  "reduction_seconds": 33.84051290014759,
+  "budget_gate_passed": true
+}

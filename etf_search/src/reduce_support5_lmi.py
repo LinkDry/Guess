@@ -162,8 +162,16 @@ def reduce_lmi(args):
     model=json.loads((out/'model.json').read_text(encoding='utf-8'))
     raw_chart=gzip.decompress(args.chart.read_bytes())
     old_chart=json.loads(raw_chart)
-    if hashlib.sha256(gzip.decompress(args.face.read_bytes())).hexdigest() != old_chart['model_sha256']:
-        raise ValueError('Round 7 chart hash mismatch')
+    prior_is_support5 = getattr(args, 'prior_source', None) == 'support5'
+    raw_prior = args.face.read_bytes()
+    if not prior_is_support5:
+        raw_prior = gzip.decompress(raw_prior)
+    if hashlib.sha256(raw_prior).hexdigest() != old_chart['model_sha256']:
+        raise ValueError('inherited chart hash mismatch')
+    prior_model = json.loads(raw_prior) if prior_is_support5 else None
+    if prior_is_support5 and (prior_model['stage'] != 'support5' or
+                              model['moments'][:model['old_moments']] != prior_model['moments']):
+        raise ValueError('support-six coordinate prefix differs from support five')
     old_size=model['old_moments']
     moments=model['moments']
     parity=np.asarray([len(word)%2 for word in moments])
@@ -178,7 +186,7 @@ def reduce_lmi(args):
     equality=load_npz(out/'cross_rows.npz').tocsr()
     rows,free,elimination=solve_equalities(equality,prior,old_free+list(range(old_size,len(moments))))
     with gzip.open(out/'affine_chart.json.gz','wt',encoding='utf-8') as stream:
-        json.dump({'schema':'support5-affine-chart-v1', 'source_chart_sha256':hashlib.sha256(raw_chart).hexdigest(),
+        json.dump({'schema':f"{model['stage']}-affine-chart-v1", 'source_chart_sha256':hashlib.sha256(raw_chart).hexdigest(),
                    'model_sha256':hashlib.sha256((out/'model.json').read_bytes()).hexdigest(),
                    'parity':parity.tolist(),'rows':encode(rows),'free_columns':free,**elimination},stream,separators=(',',':'))
     sizes=model['block_sizes']
@@ -190,8 +198,14 @@ def reduce_lmi(args):
     keep,rank=rank_psd(maps,rows,parity)
     (out/'pencil_rank_certificate.json').write_text(json.dumps(rank,separators=(',',':'))+'\n',encoding='utf-8')
     rank_count=len(keep)
-    # Estimate four dense copies of the largest block stencil, plus compact work.
-    estimated=4*max(sizes)**2*(rank_count+1)*8+(rank_count+1)**2*8+256*2**20
+    # The Newton solver maps each block's directional coefficients from disk.
+    # Bound a packed whitening operand and its BLAS copy, the bounded batch
+    # temporaries, all stored slacks/factors, and the compact Hessian.
+    largest = max(sizes)
+    largest_packed = largest * (largest+1)//2
+    estimated = (2 * largest_packed * (rank_count+1) * 8 + 8 * sum(n*n for n in sizes)*8
+                 + (rank_count+1)**2*8 + 512*2**20) if prior_is_support5 else (
+                    4*largest**2*(rank_count+1)*8+(rank_count+1)**2*8+256*2**20)
     report={'stage':model['stage'],'moments':len(moments),'additional_equality_rank':elimination['additional_rank'],
             'equality_rank':len(moments)-len(free),'free_dimension':len(free),'psd_image_rank':rank_count,
             'block_sizes':sizes,'packed_psd_rows':sum(size*(size+1)//2 for size in sizes),

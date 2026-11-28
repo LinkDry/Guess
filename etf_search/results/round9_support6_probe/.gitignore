@@ -1,0 +1,4 @@
+# Regenerated floating-point coefficient caches and solver scratch files.
+/pencil/block_*.npz
+/barrier/pencil_scratch/
+/barrier/*.tmp.npz

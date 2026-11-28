@@ -1,0 +1,154 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\pathcode}[1]{\nolinkurl{#1}}
+\title{Projective asymmetry and exact moment feasibility for nine equiangular tight lines in $\C^4$}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Any complex equiangular tight frame of nine lines in dimension four has trivial projective unitary automorphism group and admits no antiunitary symmetry. We exclude the nine prime-order unitary permutation types by trace and cyclic-span arguments together with a Fourier obstruction for three free orbits. For antiunitaries, a real Gram reduction leaves three cases. One admits an explicit rational sum-of-squares identity, and the other two admit factorized polynomial certificates with rigorously bounded residuals. In the unrestricted problem, we give exact feasible moments for the full quartic relaxation and for rank-strengthened sextic relaxations with three through six vertices in the cubic monomial supports. The five-vertex problem has zero common spectral margin before a second facial reduction and admits strictly feasible moments on the reduced face. The six-vertex relaxation tests all cubic monomials with a selected family of degree-six equalities and has a strict witness after structural facial reduction. Existence of the frame remains open.
+\end{abstract}
+
+\section{Introduction}
+
+An equiangular tight frame (ETF) is a spanning family of unit vectors whose pairwise inner products have constant modulus and whose frame operator is a scalar multiple of the identity. It attains equality in the Welch coherence bound \cite{welch}. Write $\operatorname{ETF}(d,N)$ for $N$ distinct such lines in $\C^d$. Naimark complementation exchanges $d$ and $N-d$. We consider representatives with $N>2d$, using the smaller dimension in each such pair. The complex absolute bound $N\le d^2$ rules out $d\le2$ in this range. For $d=3$ the only possibilities are $N=7,8,9$. Constructions exist for $(3,7)$ and $(3,9)$, and Sz\"oll\H{o}si excludes $(3,8)$ and its Naimark complement $(5,8)$ by a Gr\"obner-basis computation. Thus $(4,9)$ is the smallest unresolved pair by $N$ in the regime $N>2d$, up to Naimark complementation, in the literature we checked \cite[pp.~3, 5 and Table~2]{fickusmixon}\cite[Proposition~4.2 and Theorem~4.3]{szollosi}.
+
+The $\operatorname{ETF}(4,9)$ parameters are absent from the existence table of Fickus and Mixon \cite[Table~2]{fickusmixon}. The numerical packings of Dhillon, Heath, Strohmer, and Tropp and the spectral searches of Goyeneche and Turek give benchmarks for small parameters \cite[Table~2]{dhillon}\cite[Sections~VI--VII]{goyeneche}. The author-maintained packing table of Jasper, King, and Mixon lists coherence $0.40185012$ for its best submitted nine-line packing in dimension four, above the Welch value $\sqrt{10}/8\approx0.39528471$. A submitted packing supplies an upper bound on optimal coherence \cite{gameofsloanes}. The Singer--Zauner gap in dimension four excludes $N=14,15$ \cite{gap}.
+
+Projective unitary symmetry acts on the lines underlying a frame, so it allows each unit representative to acquire a phase. This is the symmetry notion associated with projective unitary equivalence and the corresponding cyclic Gram products \cite{chienwaldron}. We also consider conjugate-linear isometries. The two main results constrain the symmetries of a putative frame and establish feasibility of specific relaxations of the unrestricted Gram equations.
+
+\begin{theorem}[Projective asymmetry]\label{thm:asymmetry}
+Suppose nine lines in $\C^4$ admit unit representatives forming an ETF. Every unitary preserving the line set is a scalar, and no antiunitary preserves the line set.
+\end{theorem}
+
+\begin{theorem}[Exact moment feasibility]\label{thm:moment}
+The anchored Gram equations for a complex $\operatorname{ETF}(4,9)$ have feasible moments in the full quartic relaxation and in the rank-strengthened three-, four-, five-, and six-vertex sextic relaxations defined in Section~\ref{sec:moments}. In the five-vertex relaxation, the eight blocks obtained after structural facial reduction have optimal common spectral margin zero. Removing their exact common kernels yields a strictly feasible point in the reduced blocks. The six-vertex pencil also has a strictly feasible point on its structural face with the selected equality family.
+\end{theorem}
+
+Exact arithmetic certifies both three-fixed-line exclusions and the feasible linear functionals on the truncated polynomial spaces.
+
+\section{Gram equations and unitary automorphisms}\label{sec:unitary}
+
+Let $F=[f_1\ \cdots\ f_9]$ be a matrix of unit frame vectors, and use the convention $G_{ij}=f_i^*f_j$ for $G=F^*F$. Set
+\[
+ \lambda=\frac94,\qquad \mu=\frac{\sqrt{10}}8,\qquad
+ \beta=\frac{\lambda-2}{\mu}=\frac{\sqrt{10}}5.
+\]
+The exact Gram conditions are
+\begin{equation}\label{eq:gram}
+ G=G^*,\qquad G_{ii}=1,\qquad |G_{ij}|=\mu\quad(i\ne j),\qquad G^2=\lambda G.
+\end{equation}
+Indeed, $FF^*=\lambda I_4$ follows from tightness and the trace, and applying $\tr(G^2)=\lambda\tr G$ yields $\mu^2=5/32$. Conversely a matrix satisfying \eqref{eq:gram} has eigenvalues in $\{0,\lambda\}$ and trace nine. It is positive semidefinite of rank four and factors as the Gram matrix of the required ETF. The signature matrix $S=(G-I)/\mu$ satisfies
+\begin{equation}\label{eq:signature}
+ S^2=8I+\beta S.
+\end{equation}
+
+A unitary fixing the nine lines is scalar. Its eigenvectors from distinct eigenspaces are orthogonal, whereas $|f_i^*f_j|=\mu>0$ for $i\ne j$. All frame vectors therefore have the same eigenvalue, and they span $\C^4$. Hence the projective unitary automorphism group acts faithfully on the nine lines. A permutation of prime order $p$ has a unitary lift $U$ with $U^p=I$, obtained by rescaling its original lift by a scalar of unit modulus. By Cauchy's theorem it suffices to exclude the following nine cycle types.
+\begin{center}
+\begin{tabular}{@{}cll@{}}
+\toprule
+Order & Cycle types & Obstruction\\
+\midrule
+$2$ & $2\,1^7,\ 2^2 1^5,\ 2^3 1^3,\ 2^4 1$ & Trace and parity\\
+$3$ & $3\,1^6,\ 3^2 1^3$ & Fixed lines in a small eigenspace\\
+$3$ & $3^3$ & Fourier block correlation\\
+$5$ & $5\,1^4$ & Full cyclic span\\
+$7$ & $7\,1^2$ & Full cyclic span\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Order two.}
+The lift $U$ is Hermitian and has trace $2r-4$ for $0\le r\le4$. Tightness gives
+\[
+ \lambda(2r-4)=\sum_j f_j^*Uf_j=a+2\mu b,
+\]
+where $a$ is the sum of the signs on the fixed lines. A swapped pair contributes two equal terms because $U^2=I$. Each is real since $U=U^*$, and each has modulus $\mu$, so the pair contributes $\pm2\mu$. Thus $b$ is an integer. In all four cycle types $a$ is odd with $|a|\le7$. Irrationality of $\mu$ implies $b=0$. The only integer values of the left side are $-9,0,9$, giving a contradiction in each type.
+
+\paragraph{Orders three, five, and seven with fixed lines.}
+For an orbit of length $m$, let $K$ be the Gram matrix of $f,Uf,\ldots,U^{m-1}f$. Cauchy--Schwarz on its nonzero eigenvalues gives
+\begin{equation}\label{eq:orbit-rank}
+ \rank K\ \ge\ \frac{(\tr K)^2}{\tr(K^2)}
+ =\frac{m}{1+(m-1)\mu^2}.
+\end{equation}
+The projections of the orbit vectors to an eigenspace of $U$ are proportional. In order three the lower bound $16/7$ forces an orbit rank of three. All three cube roots of unity occur, so each eigenspace has dimension at most two. In types $3\,1^6$ and $3^2 1^3$ at least three fixed lines occur. Because they are pairwise nonorthogonal eigenlines, they lie in one eigenspace. Their Gram matrix also has rank at least $16/7$, contradicting its rank at most two. For the five- and seven-cycles, the lower bounds are $40/13$ and $112/31$, respectively. In both cases the orbit spans $\C^4$, so all eigenspaces are one-dimensional. Each type has at least two distinct nonorthogonal fixed lines and these must again belong to one eigenspace. This excludes both types.
+
+\paragraph{Order three without fixed lines.}
+Label the lines $(a,x)$ with $a,x\in\{0,1,2\}$, choosing representatives $f_{a,x}=U^x f_{a,0}$. Then $G_{(a,x),(b,y)}=g_{ab}[y-x]$, with indices in brackets taken modulo three. For $\omega=e^{2\pi i/3}$, its Fourier blocks are
+\[
+ \widehat G_k[a,b]=\sum_{t=0}^2 g_{ab}[t]\omega^{kt},\qquad F_k=\widehat G_k/\lambda.
+\]
+The transform uses columns $\delta_{ab}\omega^{kx}/\sqrt3$. Thus \eqref{eq:gram} makes $F_k$ orthogonal projections whose ranks add to four. Each block has diagonal entries at least $(1-2\mu)/\lambda>0$ and hence is nonzero. Multiplying each $f_{a,x}$ by $\omega^{mx}$ shifts the frequency labels, so we may assume the ranks are $(2,1,1)$ in that order.
+
+For a triple of matrices $B=(B_0,B_1,B_2)$ define
+\[
+ \mathcal M(B)=\sum_{k=0}^2 B_{k+1}\odot\overline{B_k}
+   -\diag\bigl((B_1+B_2)_{00},(B_1+B_2)_{11},(B_1+B_2)_{22}\bigr),
+\]
+where $\odot$ is entrywise multiplication and frequency indices are cyclic. Fourier orthogonality gives
+\[
+ \sum_k F_{k+1}[a,b]\overline{F_k[a,b]}
+  =\frac{3}{\lambda^2}\sum_t |g_{ab}[t]|^2\omega^t.
+\]
+The right side is zero off the diagonal and equals $3(1-\mu^2)/\lambda^2=1/2$ on the diagonal. Also $\sum_k F_k[a,a]=3/\lambda=4/3$. It follows that $\mathcal M(F)$ is diagonal and
+\[
+ \mathcal M(F)_{aa}=F_0[a,a]-\frac56
+ \le \frac{1+2\mu}{\lambda}-\frac56=-\frac{7-2\sqrt{10}}{18}<0.
+\]
+On the other hand, write $F_0=I-uu^*$, $F_1=vv^*$, and $F_2=ww^*$ for unit vectors. With $p=v\odot\bar u$, $q=w\odot\bar v$, and $r=u\odot\bar w$, expansion gives
+\[
+ \mathcal M(F)=-pp^*+qq^*-rr^*.
+\]
+A nonzero vector orthogonal to $p$ and $r$ has nonnegative quadratic form, contradicting the negative diagonal. This excludes $3^3$ and completes the unitary part of Theorem~\ref{thm:asymmetry}.
+
+\begin{proposition}[Quantitative free-$C_3$ obstruction]\label{prop:c3residual}
+Let $G$ be Hermitian and invariant under the three simultaneous shifts above. Assume the unit-diagonal and modulus conditions in \eqref{eq:gram}. Then
+\[
+ \|G^2-\lambda G\|_F\ge
+ \frac{\lambda^2(7-2\sqrt{10})}{36(2\sqrt3+\sqrt2)}.
+\]
+\end{proposition}
+\begin{proof}
+Write $\varepsilon=\|G^2-\lambda G\|_F$ and $\gamma=(7-2\sqrt{10})/18$. Round the eigenvalues of each Fourier block of $G$ to the nearer of $0$ and $\lambda$ to obtain $H$. For a real eigenvalue $s$, the larger of $|s|$ and $|s-\lambda|$ is at least $\lambda/2$. Hence $\eta=\|G-H\|_F\le2\varepsilon/\lambda$. Suppose $\varepsilon<\lambda^2\gamma/[2(2\sqrt3+\sqrt2)]$. This is smaller than both $\lambda^2/12$ and $\lambda(1-2\mu)/2$. The first threshold gives $|\tr H-9|\le3\eta<\lambda/2$, forcing rank four. The second gives $\eta<1-2\mu$, so each rounded block is nonzero. After shifting the frequencies, $P_k=\widehat H_k/\lambda$ have ranks $(2,1,1)$.
+
+Let $\delta^2=\sum_k\|P_k-F_k\|_F^2=\eta^2/\lambda^2$. Every entry of a projection has modulus at most one, as does every entry of $F_k$ by the bounds $(1+2\mu)/\lambda$ on the diagonal and $3\mu/\lambda$ off the diagonal. Taking differences one factor at a time, the three Hadamard products in $\mathcal M$ contribute at most $2\sqrt3\,\delta$ in Frobenius norm. The diagonal subtraction contributes at most $\sqrt2\,\delta$. Thus $\|\mathcal M(P)-\mathcal M(F)\|_2\le(2\sqrt3+\sqrt2)\delta<\gamma$. The entrywise Fourier calculation gives $\mathcal M(F)\preceq-\gamma I$, while the rank decomposition guarantees a nonnegative direction for $\mathcal M(P)$, a contradiction.
+\end{proof}
+
+\paragraph{Root-of-unity phases.}
+Equation \eqref{eq:signature} also excludes any Gram matrix that can be rephased to have only roots of unity in the off-diagonal signature entries. In such a gauge
+\[
+ \beta=\sum_{\ell\notin\{i,j\}} S_{i\ell}S_{\ell j}\overline{S_{ij}}
+ \qquad (i\ne j)
+\]
+is an algebraic integer. Its square $2/5$ contradicts rational algebraic integrality.
+
+\section{Antiunitary automorphisms}\label{sec:anti}
+\input{antiunitary}
+
+\section{Moment relaxations of the unrestricted Gram equations}\label{sec:moments}
+\input{moments}
+
+\section{Discussion}\label{sec:discussion}
+\input{discussion}
+
+\appendix
+\section{Replaying the certificates}\label{app:replay}
+\input{reproduction}
+
+\input{references}
+\end{document}

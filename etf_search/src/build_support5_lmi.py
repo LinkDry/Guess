@@ -151,7 +151,9 @@ def model_inputs(args):
     from scipy.sparse import save_npz
 
     started = perf_counter()
-    with gzip.open(args.face,'rt',encoding='utf-8') as stream:
+    input_path = args.face
+    opener = gzip.open if input_path.suffix == '.gz' else Path.open
+    with opener(input_path, 'rt', encoding='utf-8') as stream:
         model = json.load(stream)
     old = tuple(map(tuple,model['moments']))
     del model

@@ -1,0 +1,21 @@
+{
+  "exit_code": 0,
+  "kill_reason": null,
+  "seconds": 999.6058459000196,
+  "peak_sampled_rss_bytes": 806137856,
+  "wall_limit_seconds": 1790,
+  "memory_limit_bytes": 3690987520,
+  "execution_seconds_including_first_phase": 1186.6702924000565,
+  "windows_job_commit_limit_enforced": true,
+  "command": [
+    "C:\\Users\\A\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "E:\\Research\\Guess\\etf_search\\src\\run_support6_probe.py",
+    "--prior",
+    "etf_search/results/round8_support5_lmi",
+    "--output",
+    "etf_search/results/round9_support6_probe",
+    "--resume",
+    "--worker"
+  ]
+}

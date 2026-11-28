@@ -1,0 +1,31 @@
+Generating exact sparse support-six model
+support6: 99821 face row proposals, 7048 unique nonzero rows, 2719 moments so far
+PSD block 0: 886 by 886, 889450 terms, 2719 moments so far
+PSD block 1: 855 by 855, 859467 terms, 2719 moments so far
+PSD block 2: 702 by 702, 676164 terms, 2719 moments so far
+PSD block 3: 721 by 721, 695625 terms, 2719 moments so far
+PSD block 4: 702 by 702, 671382 terms, 2719 moments so far
+PSD block 5: 721 by 721, 688116 terms, 2719 moments so far
+PSD block 6: 579 by 579, 530508 terms, 2719 moments so far
+PSD block 7: 573 by 573, 534260 terms, 2719 moments so far
+Sparse model ready in 186.07s
+Model phase 186.08 s
+Traceback (most recent call last):
+  File "E:\Research\Guess\etf_search\src\run_support6_probe.py", line 117, in <module>
+    parser = argparse.ArgumentParser(description=__doc__)
+                     ^^^^^^
+  File "E:\Research\Guess\etf_search\src\run_support6_probe.py", line 113, in main
+    return int(reason is not None or child.returncode != 0)
+           ^^^^^^^^^^^^
+  File "E:\Research\Guess\etf_search\src\run_support6_probe.py", line 39, in worker
+    print('Generating exact sparse support-six model', flush=True)
+^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Research\Guess\etf_search\src\reduce_support5_lmi.py", line 165, in reduce_lmi
+    prior_is_support5 = getattr(args, 'prior_source', None) == 'support5'
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\A\AppData\Local\Programs\Python\Python311\Lib\gzip.py", line 601, in decompress
+    if _read_gzip_header(fp) is None:
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\A\AppData\Local\Programs\Python\Python311\Lib\gzip.py", line 428, in _read_gzip_header
+    raise BadGzipFile('Not a gzipped file (%r)' % magic)
+gzip.BadGzipFile: Not a gzipped file (b'{"')

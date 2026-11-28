@@ -1,0 +1,93 @@
+\subsection{Antiunitary certificates}
+
+The numerical discovery runs, exact certificates, and independent verifiers are in the companion repository. The three antiunitary certificates and four feasible-moment witnesses below are present at \href{https://github.com/LinkDry/Guess/tree/968d2d5/etf_search}{revision \texttt{968d2d5}}. The commands use PowerShell syntax and run from the root of that checkout. Replay uses Python 3.11 with NumPy, SciPy, SymPy, mpmath, and python-flint. The commands operate directly on archived certificates and moment vectors.
+
+\begin{verbatim}
+$s = 'etf_search/src'
+$r = 'etf_search/results'
+$a = "$r/round3_sdp"
+python -B "$s/verify_sdp_cert.py" `
+  "$a/identity_fixed1/certificate.json" --fixed1
+foreach ($branch in 'fixed3_positive_dense','fixed3_negative_dense') {
+  $b = "$a/schur/$branch"
+  python -B "$s/verify_sdp_cert.py" "$b/certificate.json" `
+    --model "$b/model.json"
+}
+\end{verbatim}
+
+The first command reconstructs the constraints of \eqref{eq:fixed1identity} and checks all coefficients and eight rank-one Gram blocks. The next two commands independently reconstruct the circle, real Gram tightness, and Schur-minor equations from Section~\ref{sec:anti}. Each checks 179 used equation polynomials against the stored model and recomputes the exact rational residual bound for the corresponding integer factors. Each verifier reports a passed exact proof.
+
+\subsection{Quartic and three-vertex moments}
+
+\begin{verbatim}
+$q = "$r/round4_general_4_9/anchored_s8_reanchored"
+python -B "$s/verify_sdp_cert.py" `
+  "$q/anchored_exact_primal_candidate.json" `
+  --model "$q/anchored_model.json"
+$p5 = "$r/round5_level3_4_9"
+$p6 = "$r/round6_facial_reduction"
+$w3 = "$p6/solver_support3_exact_dixon"
+$m3 = "$p5/solver_free_support3_scs/solver_model.json"
+$f3 = "$p6/solver_support3_scs/solver_face_model.json"
+python -B "$s/verify_sdp_cert.py" `
+  "$w3/solver_exact_primal_candidate.json" --model "$m3"
+python -B "$s/verify_sdp_cert.py" `
+  "$w3/solver_exact_primal_candidate.json" --model "$f3"
+\end{verbatim}
+
+The quartic verifier checks the 183 homogeneous baseline equations, 48 change-of-anchor identities, normalization, and eight PSD blocks. The first three-vertex check uses the original quartic and sextic equations and original block bases for that stage. The second also checks the 19{,}856 structural cross equations on the same moment vector. The exact PSD rank of each original three-vertex block equals its principal complement order in Table~\ref{tab:sizes}.
+
+\subsection{Four- and five-vertex moments}
+
+\begin{verbatim}
+$p7 = "$r/round7_support4_lmi"
+$p8 = "$r/round8_support5_lmi"
+$f4a = "$p6/solver_support4_clarabel"
+$f4 = "$f4a/solver_face_model.json.gz"
+$m4 = "$p5/solver_free_support4_minors/solver_model.json"
+$f4w = "$p6/solver_support4_clarabel_streamed/solver_face_model.json.gz"
+python -B "$s/verify_sdp_cert.py" "$f4" --audit-face --model "$m4"
+python -B "$s/verify_sdp_lmi.py" --model "$f4w" `
+  --primal-certificate "$p7/barrier_rank97/exact_original_primal.json"
+python -B "$s/verify_support5_rank.py" --input "$p8" `
+  --prior-face "$f4" --prior-chart "$p7/affine_chart.json.gz" `
+  --prior-audit "$f4a/independent_face_verification.json" `
+  --common-kernel "$p8/common_kernel.json" `
+  --primal "$p8/barrier_rank75/exact_original_primal.json"
+\end{verbatim}
+
+The face audit verifies the source of the kernel directions and the coefficient maps for passage to the principal complements. The four-vertex check verifies normalization and all face equations and uses a rational congruence and strict diagonal dominance for the positive definiteness of the reduced blocks. The five-vertex check also regenerates the new cross equations and packed PSD maps, verifies the two ranks of the chart and its image, and checks the common kernel against every affine coefficient block before testing the witness. It uses the constant and homogeneous parts of the affine chart to verify the reductions and lifts the PSD witnesses by the congruence in Section~\ref{sec:moments}. The five-vertex moment feasibility report records the absence of any assumption fixing lower moments.
+
+\subsection{Six-vertex extension probe}
+
+\begin{verbatim}
+$p9 = "$r/round9_support6_probe"
+python -B "$s/verify_support6_probe.py" --input "$p9" --prior "$p8" `
+  --inherited-primal "$p8/barrier_rank75/exact_original_primal.json"
+\end{verbatim}
+
+The inherited-point replay reports \texttt{no\_exact\_equality\_extension} and returns status 1 because the exact vector fails the new equality system. It also verifies the new equality rank and the PSD-direction rank. This test fixes the inherited witness and concerns that point alone.
+
+
+The following replay checks the six-vertex strict witness. It reconstructs the exact moment vector from the archived checkpoint and rebuilds the coefficient stencils before certifying positive definiteness. The saved vector appears in \pathcode{exact_original_primal.json} in the six-vertex archive.
+\begin{verbatim}
+python -B "$s/verify_support6_probe.py" --input "$p9" --prior "$p8" `
+  --solution "$p9/barrier/solver_primal_dual.npz" `
+  --audit-stencils --include-certificates
+\end{verbatim}
+
+\subsection{Regression tests and Lean draft}
+
+The archived Python regression suite passed all 86 tests with Python 3.11.9, NumPy 2.4.6, SciPy 1.17.1, SymPy 1.14.0, mpmath 1.3.0, python-flint 0.9.0, SCS 3.3.2, Clarabel 0.11.1, and psutil 7.2.2. Run the suite from the repository root in that environment.
+\begin{verbatim}
+python -B -m unittest discover -s etf_search/tests -v
+\end{verbatim}
+
+The companion Lean sources in \pathcode{etf_search/lean} give the signature algebra and the single-fixed-line identity. To attempt a build under the pinned Lean and mathlib versions, run the following in that directory with Elan available.
+\begin{verbatim}
+lake update
+lake exe cache get
+lake build ETF49
+lake env lean Check.lean
+\end{verbatim}
+The final command checks the stated examples and prints the declaration axiom dependencies.
